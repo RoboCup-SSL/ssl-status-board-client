@@ -6,7 +6,7 @@ div.sidenav-container {
   height: 100vh;
 }
 
-.settings-button-container {
+.settings-button {
   position: absolute;
   top: 0.1em;
   left: 0.1em;
@@ -40,10 +40,6 @@ h1 {
   font-size: 1em;
   margin-top: 0.1em;
   margin-bottom: 0.5em;
-}
-
-div {
-  font-size: 4vh;
 }
 
 div.app-header {
