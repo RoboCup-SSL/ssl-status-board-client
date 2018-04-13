@@ -50,3 +50,11 @@ div.score-container {
   justify-content: center;
   align-items: center;
 }
+
+.originator-yellow {
+  color: gold;
+}
+
+.originator-blue {
+  color: blue;
+}
