@@ -1,6 +1,5 @@
 .team-name {
   margin-top: 0.1em;
-  font-size: 1.5em;
 }
 
 .team-logo {
@@ -14,11 +13,10 @@
 }
 
 .card {
-  border-radius: 5px;
-  padding: 0.5em;
-  width: 0.7em;
-  height: 1.5em;
-  margin: 0.3em;
+  border-radius: 0.5vmin;
+  width: 3vmin;
+  height: 5vmin;
+  margin: 0.5vmin;
   display: inline-block;
   font-size: initial;
   /* IE 7 hack */
@@ -35,7 +33,7 @@
   background: #ea1a18;
 }
 
-.timeout {
+.timeout-card {
   background: azure;
 }
 
@@ -44,5 +42,10 @@
 }
 
 .cards {
+  vertical-align: middle;
+}
+
+.card-time {
+  display: inline-block;
   vertical-align: middle;
 }

@@ -3,11 +3,18 @@
 <div class="team-name" [style.color]="color">{{team.Name}}</div>
 
 <div class="team-details">
-  <div>Timeouts left: {{team.Timeouts}} ({{team.TimeoutTime | minuteSeconds}})</div>
   <div class="cards">
+    <!--suppress JSUnusedLocalSymbols -->
+    <div *ngFor="let _ of numberReturn(team.Timeouts)" class="card timeout-card"></div>
+    <div class="card-time">{{team.TimeoutTime | minuteSeconds}}</div>
+  </div>
+  <div class="cards">
+    <!--suppress JSUnusedLocalSymbols -->
     <div *ngFor="let _ of numberReturn(team.RedCards)" class="card red-card"></div>
+    <!--suppress JSUnusedLocalSymbols -->
     <div *ngFor="let _ of numberReturn(team.YellowCards)" class="card yellow-card"></div>
     <!--suppress JSUnusedLocalSymbols -> false positive-->
-    <span *ngFor="let time of team.YellowCardTimes">{{time | minuteSeconds}} </span>
+    <div class="card-time" *ngFor="let time of team.YellowCardTimes; let last=last">{{time | minuteSeconds}}<span
+      *ngIf="!last">,</span></div>
   </div>
 </div>
