@@ -16,8 +16,8 @@
 
   <div class="status-container">
     <div class="game-event-container">
-      <div class="game-event-element"
-           *ngIf="refereeMessage.GameEvent.Type != 'UNKNOWN'">{{refereeMessage.GameEvent.Type}}</div>
+      <div *ngIf="refereeMessage.GameEvent.Type != 'UNKNOWN'">
+        <div class="game-event-element">{{refereeMessage.GameEvent.Type}}</div>
       <div class="game-event-element"
            *ngIf="refereeMessage.GameEvent.Originator.Team != null && refereeMessage.GameEvent.Originator.Team != 'TEAM_UNKNOWN'">
         by <span
@@ -25,8 +25,9 @@
         <span
           *ngIf="refereeMessage.GameEvent.Originator.BotId != -1"> bot {{refereeMessage.GameEvent.Originator.BotId}}</span>
       </div>
-      <div class="game-event-element" *ngIf="refereeMessage.GameEvent.Message != null">
-      {{refereeMessage.GameEvent.Message}}
+        <div class="game-event-element" *ngIf="refereeMessage.GameEvent.Message != null">
+        {{refereeMessage.GameEvent.Message}}
+        </div>
       </div>
     </div>
 

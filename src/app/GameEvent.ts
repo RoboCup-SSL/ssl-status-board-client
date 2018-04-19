@@ -6,7 +6,7 @@ export class GameEvent {
   Message: string;
 
   constructor() {
-    this.Type = 'unknown game event';
+    this.Type = 'UNKNOWN';
     this.Originator = new Originator();
     this.Message = 'custom message';
   }
