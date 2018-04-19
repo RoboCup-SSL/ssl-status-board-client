@@ -2,15 +2,15 @@
 
   <div class="team-score-container">
     <div class="team-container">
-      <app-team [team]="refereeMessage.TeamYellow" [color]="'gold'"></app-team>
+      <app-team [team]="refereeMessage.TeamYellow" [color]="'#fff145'"></app-team>
     </div>
 
     <div class="score-container">
-    {{refereeMessage.TeamYellow.Goals}} : {{refereeMessage.TeamBlue.Goals}}
+      <span style="white-space: nowrap">{{refereeMessage.TeamYellow.Goals}} : {{refereeMessage.TeamBlue.Goals}}</span>
     </div>
 
     <div class="team-container">
-      <app-team [team]="refereeMessage.TeamBlue" [color]="'blue'"></app-team>
+      <app-team [team]="refereeMessage.TeamBlue" [color]="'#779fff'"></app-team>
     </div>
   </div>
 

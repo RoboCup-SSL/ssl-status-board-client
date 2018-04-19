@@ -23,7 +23,7 @@ div.score-container {
   width: 20%;
   height: 100%;
   float: left;
-  font-size: 1.5em;
+  font-size: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,5 +56,5 @@ div.score-container {
 }
 
 .originator-blue {
-  color: #65c3ff;
+  color: #779fff;
 }
