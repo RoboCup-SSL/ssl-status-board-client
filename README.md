@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
 
-You can find the server component here: https://github.com/g3force/ssl-status-board-server
+You can find the server component here: https://github.com/RoboCup-SSL/ssl-status-board-server
 
 ## Development server
 
