@@ -4,6 +4,7 @@ div.sidenav-container {
 
 .main-content {
   height: 100vh;
+  font-size: 6vmin;
 }
 
 .settings-button {
@@ -26,13 +27,6 @@ mat-sidenav.mat-closed.mat-locked-open-add-active {
 }
 
 .settings-container > * {
-  width: 100%;
-}
-
-.github {
-  text-align: left;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
 
