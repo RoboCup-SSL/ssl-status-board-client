@@ -5,7 +5,11 @@
     @g3force</a>
 </div>
 
+<div *ngFor="let label of getWebSocketLabels()">
+  <button mat-button (click)="onAddressSelected(label)">Connect to {{label}}</button>
+</div>
+
 <mat-form-field class="settings-form-field">
-  <input #box matInput type="text" placeholder="Status WebSocket" value="{{statusWebSocket}}"
-         (keyup.enter)="onEnter(box.value)">
+  <input #box matInput type="text" placeholder="Custom Address" value="{{statusWebSocket}}"
+         (keyup.enter)="updateWebSocket(box.value)">
 </mat-form-field>

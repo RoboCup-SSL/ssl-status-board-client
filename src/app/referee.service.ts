@@ -18,7 +18,7 @@ export class RefereeService {
   public static getStatusWebSocketAddress() {
     let statusWebSocket = localStorage.getItem(RefereeService.webSocketKey);
     if (statusWebSocket == null) {
-      statusWebSocket = environment.defaultStatusWebSocket;
+      statusWebSocket = environment.availableStatusWebSockets.values().next().value;
     }
     return statusWebSocket;
   }

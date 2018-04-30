@@ -5,5 +5,7 @@
 
 export const environment = {
   production: false,
-  defaultStatusWebSocket: 'ws://localhost:4201/ssl-status/subscribe'
+  availableStatusWebSockets: new Map()
+    .set('Field A', 'ws://localhost:4201/ssl-status/field-a/subscribe')
+    .set('Field B', 'ws://localhost:4201/ssl-status/field-b/subscribe')
 };
