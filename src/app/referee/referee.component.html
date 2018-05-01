@@ -18,13 +18,16 @@
     <div class="game-event-container">
       <div *ngIf="refereeMessage.GameEvent.Type != 'UNKNOWN'">
         <div class="game-event-element">{{refereeMessage.GameEvent.Type}}</div>
-      <div class="game-event-element"
-           *ngIf="refereeMessage.GameEvent.Originator.Team != null && refereeMessage.GameEvent.Originator.Team != 'TEAM_UNKNOWN'">
-        by <span
-        [ngClass]="{'originator-yellow': refereeMessage.GameEvent.Originator.Team == 'TEAM_YELLOW', 'originator-blue': refereeMessage.GameEvent.Originator.Team == 'TEAM_BLUE'}">{{refereeMessage.GameEvent.Originator.Team}}</span>
-        <span
-          *ngIf="refereeMessage.GameEvent.Originator.BotId != -1"> bot {{refereeMessage.GameEvent.Originator.BotId}}</span>
-      </div>
+        <div class="game-event-element"
+             *ngIf="refereeMessage.GameEvent.Originator.Team != null && refereeMessage.GameEvent.Originator.Team != 'TEAM_UNKNOWN'">
+          by
+          <span *ngIf="refereeMessage.GameEvent.Originator.Team == 'TEAM_YELLOW'"
+                ngClass="originator-yellow">{{refereeMessage.TeamYellow.Name}}</span>
+          <span *ngIf="refereeMessage.GameEvent.Originator.Team == 'TEAM_BLUE'"
+                ngClass="originator-blue">{{refereeMessage.TeamBlue.Name}}</span>
+          <span
+            *ngIf="refereeMessage.GameEvent.Originator.BotId != -1"> bot {{refereeMessage.GameEvent.Originator.BotId}}</span>
+        </div>
         <div class="game-event-element" *ngIf="refereeMessage.GameEvent.Message != null">
         {{refereeMessage.GameEvent.Message}}
         </div>
