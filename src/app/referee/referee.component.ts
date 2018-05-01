@@ -10,12 +10,13 @@ import {Team} from '../Team';
 })
 export class RefereeComponent implements OnInit {
 
-  refereeMessage = new RefereeMessage();
+  refereeMessage: RefereeMessage;
   private refereeService: RefereeService;
   knownLogos: string[] = ['tigers-mannheim', 'er-force'];
 
   constructor(refereeService: RefereeService) {
     this.refereeService = refereeService;
+    this.updateRefereeMessage(new RefereeMessage());
   }
 
 
