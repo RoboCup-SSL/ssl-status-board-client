@@ -30,7 +30,7 @@ export class RefereeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.refereeService.socket.subscribe(
+    this.refereeService.subject.subscribe(
       (refereeMsg: MessageEvent) => this.updateRefereeMessage(JSON.parse(refereeMsg.data))
     );
   }

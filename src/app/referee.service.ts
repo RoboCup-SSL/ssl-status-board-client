@@ -9,10 +9,10 @@ export class RefereeService {
 
   private static webSocketKey = 'ssl-status-board-websocket-address';
 
-  socket: Subject<any>;
+  subject: Subject<any>;
 
   constructor() {
-    this.reconnect(RefereeService.getStatusWebSocketAddress());
+    this.subject = this.createSubject(RefereeService.getStatusWebSocketAddress());
   }
 
   public static getStatusWebSocketAddress() {
@@ -23,20 +23,12 @@ export class RefereeService {
     return statusWebSocket;
   }
 
-  public reconnect(statusWebSocket: string) {
-    if (this.socket != null) {
-      this.socket.unsubscribe();
-      this.socket.complete();
-    }
-    this.socket = this.createWebSocket(statusWebSocket);
-  }
-
   public updateWebSocketAddress(statusWebSocketAddress) {
     localStorage.setItem(RefereeService.webSocketKey, statusWebSocketAddress);
-    this.reconnect(statusWebSocketAddress);
+    window.location.reload();
   }
 
-  private createWebSocket(url: string): Subject<MessageEvent> {
+  private createSubject(url: string): Subject<MessageEvent> {
     const socket = new WebSocket(url);
     const observable = Observable.create(
       (o: Observer<MessageEvent>) => {
