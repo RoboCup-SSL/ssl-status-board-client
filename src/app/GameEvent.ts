@@ -6,8 +6,8 @@ export class GameEvent {
   Message: string;
 
   constructor() {
-    this.Type = 'UNKNOWN';
+    this.Type = 'NOTHING';
     this.Originator = new Originator();
-    this.Message = 'custom message';
+    this.Message = 'Nothing happened :) Just testing custom message.';
   }
 }

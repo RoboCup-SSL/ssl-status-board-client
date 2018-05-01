@@ -3,7 +3,7 @@ export class Originator {
   BotId: number;
 
   constructor() {
-    this.Team = 'unknown team';
+    this.Team = 'TEAM_BLUE';
     this.BotId = 1;
   }
 }
