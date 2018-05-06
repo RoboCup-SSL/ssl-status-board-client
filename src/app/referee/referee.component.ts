@@ -12,7 +12,7 @@ export class RefereeComponent implements OnInit {
 
   refereeMessage: RefereeMessage;
   private refereeService: RefereeService;
-  knownLogos: string[] = ['tigers-mannheim', 'er-force'];
+  knownLogos: string[] = ['tigers-mannheim', 'er-force', 'ais', 'kiks', 'robofei', 'roboteam-twente', 'ubc-thunderbots'];
 
   constructor(refereeService: RefereeService) {
     this.refereeService = refereeService;
