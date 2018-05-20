@@ -16,11 +16,14 @@ export class RefereeComponent implements OnInit {
     'ais',
     'er-force',
     'kiks',
+    'robodragons',
     'robofei',
     'roboime',
+    'robojackets',
     'roboteam-twente',
     'tigers-mannheim',
-    'ubc-thunderbots'
+    'ubc-thunderbots',
+    'zjunlict'
   ];
 
   constructor(refereeService: RefereeService) {
