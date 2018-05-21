@@ -14,10 +14,12 @@ import {TeamComponent} from './referee/team/team.component';
 import {FieldComponent} from './field/field.component';
 import {RouterModule, Routes} from '@angular/router';
 import {VisionService} from './vision.service';
+import {GreeterComponent} from './greeter/greeter.component';
 
 const appRoutes: Routes = [
   {path: 'field', component: FieldComponent},
-  {path: '**', component: RefereeComponent}
+  {path: 'referee', component: RefereeComponent},
+  {path: '**', component: GreeterComponent}
 ];
 
 @NgModule({
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
     MinuteSecondsPipe,
     TeamComponent,
     FieldComponent,
+    GreeterComponent,
   ],
   imports: [
     RouterModule.forRoot(
