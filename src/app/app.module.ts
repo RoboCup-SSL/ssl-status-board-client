@@ -11,6 +11,14 @@ import {MaterialModule} from './material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MinuteSecondsPipe} from './MinutesSecondsPipe';
 import {TeamComponent} from './referee/team/team.component';
+import {FieldComponent} from './field/field.component';
+import {RouterModule, Routes} from '@angular/router';
+import {VisionService} from './vision.service';
+
+const appRoutes: Routes = [
+  {path: 'field', component: FieldComponent},
+  {path: '**', component: RefereeComponent}
+];
 
 @NgModule({
   declarations: [
@@ -18,12 +26,16 @@ import {TeamComponent} from './referee/team/team.component';
     RefereeComponent,
     SettingsComponent,
     MinuteSecondsPipe,
-    TeamComponent
+    TeamComponent,
+    FieldComponent,
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes
+    ),
     BrowserModule, HttpClientModule, MaterialModule, BrowserAnimationsModule
   ],
-  providers: [RefereeService],
+  providers: [RefereeService, VisionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

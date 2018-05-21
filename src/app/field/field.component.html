@@ -1,0 +1,66 @@
+<svg
+  class="field-canvas"
+  attr.viewBox="{{-(fieldLength+boundaryWidth)/2}} {{-(fieldWidth+boundaryWidth)/2}} {{fieldLength+boundaryWidth}} {{fieldWidth+boundaryWidth}}"
+  width="1000" height="1000">
+
+  <!-- rotate field -->
+  <g [attr.transform]="getFieldTransformation()">
+
+    <!-- draw field background -->
+    <rect [attr.x]="-(fieldLength+boundaryWidth)/2" [attr.y]="-(fieldWidth+boundaryWidth)/2"
+          [attr.width]="fieldLength+boundaryWidth" [attr.height]="fieldWidth+boundaryWidth"
+          style="fill:green;fill-opacity:1;stroke:none"></rect>
+
+    <!-- draw field borders -->
+    <line *ngIf="!useShapesFromGeometry"
+          attr.x1="-{{fieldLength/2}}" attr.y1="-{{fieldWidth/2}}" attr.x2="-{{fieldLength/2}}"
+          attr.y2="{{fieldWidth/2}}"
+          style="stroke:white;stroke-width:10px"></line>
+    <line *ngIf="!useShapesFromGeometry"
+          attr.x1="-{{fieldLength/2}}" attr.y1="{{fieldWidth/2}}" attr.x2="{{fieldLength/2}}" attr.y2="{{fieldWidth/2}}"
+          style="stroke:white;stroke-width:10px"></line>
+    <line *ngIf="!useShapesFromGeometry"
+          attr.x1="{{fieldLength/2}}" attr.y1="{{fieldWidth/2}}" attr.x2="{{fieldLength/2}}" attr.y2="-{{fieldWidth/2}}"
+          style="stroke:white;stroke-width:10px"></line>
+    <line *ngIf="!useShapesFromGeometry"
+          attr.x1="{{fieldLength/2}}" attr.y1="-{{fieldWidth/2}}" attr.x2="-{{fieldLength/2}}"
+          attr.y2="-{{fieldWidth/2}}"
+          style="stroke:white;stroke-width:10px"></line>
+    <line *ngIf="!useShapesFromGeometry"
+          attr.x1="0" attr.y1="{{fieldWidth/2}}" attr.x2="0" attr.y2="-{{fieldWidth/2}}"
+          style="stroke:white;stroke-width:10px"></line>
+    <!-- center circle -->
+    <circle *ngIf="!useShapesFromGeometry"
+            [attr.r]="centerCircleRadius" style="stroke:white;stroke-width:10px;fill-opacity:0"></circle>
+    <!-- penalty areas -->
+    <rect *ngIf="!useShapesFromGeometry"
+          [attr.x]="-(fieldLength)/2" [attr.y]="-(penAreaWidth)/2" [attr.width]="penAreaDepth"
+          [attr.height]="penAreaWidth"
+          style="stroke: white;stroke-width:10px; fill-opacity:0"></rect>
+    <rect *ngIf="!useShapesFromGeometry"
+          [attr.x]="(fieldLength/2)-penAreaDepth" [attr.y]="-penAreaWidth/2" [attr.width]="penAreaDepth"
+          [attr.height]="penAreaWidth"
+          style="stroke: white;stroke-width:10px; fill-opacity:0"></rect>
+
+
+    <!-- lines from geometry -->
+    <line *ngFor="let l of lines" [attr.x1]="l.p1.x" [attr.y1]="l.p1.y" [attr.x2]="l.p2.x"
+          [attr.y2]="l.p2.y"
+          style="stroke:white;stroke-width:10px"></line>
+
+    <!-- arcs from geometry (only circles supported for now -->
+    <circle *ngFor="let a of arcs" [attr.cx]="a.center.x" [attr.cy]="a.center.y" [attr.r]="a.radius"
+            style="stroke:white;stroke-width:10px;fill-opacity:0"></circle>
+
+    <!-- robots -->
+    <circle *ngFor="let r of getRobotsYellow()" [attr.r]="botRadius" [attr.cx]="r.x" [attr.cy]="r.y"
+            style="stroke:white;stroke-width:1px;fill: yellow; fill-opacity:1"></circle>
+    <circle *ngFor="let r of getRobotsBlue()" [attr.r]="botRadius" [attr.cx]="r.x" [attr.cy]="r.y"
+            style="stroke:white;stroke-width:1px;fill: blue; fill-opacity:1"></circle>
+
+    <!-- balls -->
+    <circle *ngFor="let r of balls" [attr.r]="ballRadius" [attr.cx]="r.x" [attr.cy]="r.y"
+            style="stroke:black;stroke-width:1px;fill: orangered; fill-opacity:1"></circle>
+  </g>
+</svg>
+
