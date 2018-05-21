@@ -10,6 +10,8 @@ import {
   SSL_WrapperPacket
 } from '../sslProto';
 import {Robot} from './Robot';
+import {RefereeService} from '../referee.service';
+import {RefereeMessage} from '../RefereeMessage';
 
 @Component({
   selector: 'app-field',
@@ -38,10 +40,14 @@ export class FieldComponent implements OnInit {
   robotsBlue: Map<number, Robot> = new Map();
   balls: ISSL_DetectionBall[] = [];
 
-  private visionService: VisionService;
+  refereeMessage: RefereeMessage = new RefereeMessage();
 
-  constructor(visionService: VisionService) {
+  private visionService: VisionService;
+  private refereeService: RefereeService;
+
+  constructor(visionService: VisionService, refereeService: RefereeService) {
     this.visionService = visionService;
+    this.refereeService = refereeService;
   }
 
   static updateRobot(frame: ISSL_DetectionFrame, bot: ISSL_DetectionRobot, robots: Map<number, Robot>) {
@@ -66,6 +72,8 @@ export class FieldComponent implements OnInit {
   ngOnInit() {
     this.visionService.getSubject().subscribe(
       (visionWrapper: MessageEvent) => this.onNewVisionWrapper(visionWrapper.data));
+    this.refereeService.getSubject().subscribe(
+      (refereeMsg: MessageEvent) => this.refereeMessage = JSON.parse(refereeMsg.data));
   }
 
   onNewVisionWrapper(data: Blob) {
@@ -125,5 +133,17 @@ export class FieldComponent implements OnInit {
       return 'rotate(90) scale(' + (this.fieldWidth / this.fieldLength) + ')';
     }
     return '';
+  }
+
+  isCommandForYellow() {
+    return this.refereeMessage.Command.Name.includes('YELLOW');
+  }
+
+  isCommandForBlue() {
+    return this.refereeMessage.Command.Name.includes('BLUE');
+  }
+
+  isCommandNeutral() {
+    return !this.isCommandForBlue() && !this.isCommandForYellow();
   }
 }

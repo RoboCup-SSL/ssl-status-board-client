@@ -25,9 +25,9 @@
             *ngIf="refereeMessage.GameEvent.Originator.BotId != -1"> bot {{refereeMessage.GameEvent.Originator.BotId}}
             of </span>
           <span *ngIf="refereeMessage.GameEvent.Originator.Team == 'TEAM_YELLOW'"
-                ngClass="originator-yellow">{{refereeMessage.TeamYellow.Name}}</span>
+                ngClass="team-yellow">{{refereeMessage.TeamYellow.Name}}</span>
           <span *ngIf="refereeMessage.GameEvent.Originator.Team == 'TEAM_BLUE'"
-                ngClass="originator-blue">{{refereeMessage.TeamBlue.Name}}</span>
+                ngClass="team-blue">{{refereeMessage.TeamBlue.Name}}</span>
         </div>
         <div class="game-event-element" *ngIf="refereeMessage.GameEvent.Message != null">
         {{refereeMessage.GameEvent.Message}}
