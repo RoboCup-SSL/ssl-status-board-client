@@ -1,10 +1,19 @@
+<h2>Select a view</h2>
+
 <nav>
   <div class="nav-container">
-    <a routerLink="/referee" routerLinkActive="active">
-      <img class="nav-logo" src="assets/status.png" alt="Open Referee Board"/>
-    </a>
-    <a routerLink="/field" routerLinkActive="active">
-      <img class="nav-logo" src="assets/field.png" alt="Open Field Board"/>
-    </a>
+
+    <div class="nav-entry">
+      <a routerLink="/referee" routerLinkActive="active">
+        <img class="nav-logo" src="assets/status.png" alt="Open Referee Board"/>
+      </a>
+    </div>
+    <div class="nav-entry">
+      <a routerLink="/field" routerLinkActive="active">
+        <img class="nav-logo" src="assets/field.png" alt="Open Field Board"/>
+      </a>
+    </div>
   </div>
 </nav>
+
+<app-settings></app-settings>

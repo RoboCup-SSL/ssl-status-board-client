@@ -1,14 +1,10 @@
-<div class="github">
-  <a class="github-button" href="https://github.com/RoboCup-SSL/ssl-status-board-client/"
-     data-icon="octicon-eye" aria-label="See RoboCup-SSL/ssl-status-board-client on GitHub">Source</a>
-  <a class="github-button" href="https://github.com/g3force" aria-label="Follow @g3force on GitHub">Follow
-    @g3force</a>
+<div class="connect-button-container" *ngFor="let label of getAvailableLabels()">
+  <button class="connect-button" mat-raised-button color="basic" (click)="onAddressSelected(label)">Connect to
+    {{label}}
+  </button>
 </div>
 
-<div *ngFor="let label of getAvailableLabels()">
-  <button mat-button (click)="onAddressSelected(label)">Connect to {{label}}</button>
-</div>
-
+<p>You can also connect to a custom address, like to a local server:</p>
 <mat-form-field class="settings-form-field">
   <input #statusAddress matInput type="text" placeholder="Custom Status Address" value="{{statusWebSocket}}"
          (keyup.enter)="updateStatusWebSocket(statusAddress.value)">

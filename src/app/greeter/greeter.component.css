@@ -1,9 +1,16 @@
-.nav-logo {
+.nav-entry {
   width: 30%;
   margin: 1em;
 }
 
+.nav-logo {
+  width: 100%;
+}
+
 .nav-container {
   width: 100%;
-  align-content: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

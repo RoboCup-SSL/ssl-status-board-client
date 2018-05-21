@@ -4,7 +4,6 @@ div.sidenav-container {
 
 .main-content {
   height: 100vh;
-  font-size: 6vmin;
 }
 
 .settings-button {
@@ -39,6 +38,7 @@ h1 {
 div.app-header {
   height: 8%;
   max-height: 8%;
+  font-size: 6vmin;
 }
 
 div.app-body {
