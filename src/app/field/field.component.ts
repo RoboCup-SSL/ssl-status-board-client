@@ -90,6 +90,8 @@ export class FieldComponent implements OnInit {
     this.fieldLength = geometry.field.fieldLength;
     this.fieldWidth = geometry.field.fieldWidth;
     this.boundaryWidth = geometry.field.boundaryWidth;
+    this.goalDepth = geometry.field.goalDepth;
+    this.goalWidth = geometry.field.goalWidth;
     if (this.useShapesFromGeometry) {
       this.lines = geometry.field.fieldLines;
       this.arcs = geometry.field.fieldArcs;

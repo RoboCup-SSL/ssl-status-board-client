@@ -1,14 +1,14 @@
 <svg
   class="field-canvas"
-  attr.viewBox="{{-(fieldLength+boundaryWidth)/2}} {{-(fieldWidth+boundaryWidth)/2}} {{fieldLength+boundaryWidth}} {{fieldWidth+boundaryWidth}}"
+  attr.viewBox="{{-(fieldLength/2+boundaryWidth)}} {{-(fieldWidth/2+boundaryWidth)}} {{fieldLength+boundaryWidth*2}} {{fieldWidth+boundaryWidth*2}}"
   width="1000" height="1000">
 
   <!-- rotate field -->
   <g [attr.transform]="getFieldTransformation()">
 
     <!-- draw field background -->
-    <rect [attr.x]="-(fieldLength+boundaryWidth)/2" [attr.y]="-(fieldWidth+boundaryWidth)/2"
-          [attr.width]="fieldLength+boundaryWidth" [attr.height]="fieldWidth+boundaryWidth"
+    <rect [attr.x]="-(fieldLength/2+boundaryWidth)" [attr.y]="-(fieldWidth/2+boundaryWidth)"
+          [attr.width]="fieldLength+boundaryWidth*2" [attr.height]="fieldWidth+boundaryWidth*2"
           style="fill:green;fill-opacity:1;stroke:none"></rect>
 
     <!-- draw field borders -->
@@ -51,6 +51,28 @@
     <!-- arcs from geometry (only circles supported for now -->
     <circle *ngFor="let a of arcs" [attr.cx]="a.center.x" [attr.cy]="a.center.y" [attr.r]="a.radius"
             style="stroke:white;stroke-width:10px;fill-opacity:0"></circle>
+
+    <!-- goals -->
+    <line [attr.x1]="-fieldLength/2" [attr.y1]="-goalWidth/2"
+          [attr.x2]="-fieldLength/2-goalDepth" [attr.y2]="-goalWidth/2"
+          style="stroke:black;stroke-width:10px"></line>
+    <line [attr.x1]="-fieldLength/2" [attr.y1]="goalWidth/2"
+          [attr.x2]="-fieldLength/2-goalDepth" [attr.y2]="goalWidth/2"
+          style="stroke:black;stroke-width:10px"></line>
+    <line [attr.x1]="-fieldLength/2-goalDepth" [attr.y1]="-goalWidth/2"
+          [attr.x2]="-fieldLength/2-goalDepth" [attr.y2]="goalWidth/2"
+          style="stroke:black;stroke-width:10px"></line>
+
+    <line [attr.x1]="fieldLength/2" [attr.y1]="-goalWidth/2"
+          [attr.x2]="fieldLength/2+goalDepth" [attr.y2]="-goalWidth/2"
+          style="stroke:black;stroke-width:10px"></line>
+    <line [attr.x1]="fieldLength/2" [attr.y1]="goalWidth/2"
+          [attr.x2]="fieldLength/2+goalDepth" [attr.y2]="goalWidth/2"
+          style="stroke:black;stroke-width:10px"></line>
+    <line [attr.x1]="fieldLength/2+goalDepth" [attr.y1]="-goalWidth/2"
+          [attr.x2]="fieldLength/2+goalDepth" [attr.y2]="goalWidth/2"
+          style="stroke:black;stroke-width:10px"></line>
+
 
     <!-- robots -->
     <circle *ngFor="let r of getRobotsYellow()" [attr.r]="botRadius" [attr.cx]="r.x" [attr.cy]="r.y"
