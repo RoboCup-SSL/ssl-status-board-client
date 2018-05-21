@@ -10,10 +10,10 @@
 </div>
 
 <mat-form-field class="settings-form-field">
-  <input #box matInput type="text" placeholder="Custom Status Address" value="{{statusWebSocket}}"
-         (keyup.enter)="updateStatusWebSocket(box.value)">
+  <input #statusAddress matInput type="text" placeholder="Custom Status Address" value="{{statusWebSocket}}"
+         (keyup.enter)="updateStatusWebSocket(statusAddress.value)">
 </mat-form-field>
 <mat-form-field class="settings-form-field">
-  <input #box matInput type="text" placeholder="Custom Vision Address" value="{{visionWebSocket}}"
-         (keyup.enter)="updateVisionWebSocket(box.value)">
+  <input #visionAddress matInput type="text" placeholder="Custom Vision Address" value="{{visionWebSocket}}"
+         (keyup.enter)="updateVisionWebSocket(visionAddress.value)">
 </mat-form-field>
