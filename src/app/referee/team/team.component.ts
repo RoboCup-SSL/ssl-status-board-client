@@ -8,8 +8,8 @@ import {Team} from '../../Team';
 })
 export class TeamComponent {
 
-  @Input('team') team: Team;
-  @Input('color') color: string;
+  @Input() team: Team;
+  @Input() color: string;
 
 
   numberReturn(length) {

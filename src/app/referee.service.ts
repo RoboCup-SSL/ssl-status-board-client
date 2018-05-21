@@ -12,10 +12,9 @@ export class RefereeService {
   subject: Subject<any>;
 
   constructor() {
-    this.subject = this.createSubject(RefereeService.getStatusWebSocketAddress());
   }
 
-  public static getStatusWebSocketAddress() {
+  public static getWebSocketAddress() {
     let statusWebSocket = localStorage.getItem(RefereeService.webSocketKey);
     if (statusWebSocket == null) {
       statusWebSocket = environment.availableStatusWebSockets.values().next().value;
@@ -23,7 +22,7 @@ export class RefereeService {
     return statusWebSocket;
   }
 
-  public updateWebSocketAddress(statusWebSocketAddress) {
+  public static updateWebSocketAddress(statusWebSocketAddress) {
     localStorage.setItem(RefereeService.webSocketKey, statusWebSocketAddress);
     window.location.reload();
   }
@@ -39,5 +38,12 @@ export class RefereeService {
       }
     );
     return Subject.create(null, observable);
+  }
+
+  public getSubject() {
+    if (this.subject == null) {
+      this.subject = this.createSubject(RefereeService.getWebSocketAddress());
+    }
+    return this.subject;
   }
 }

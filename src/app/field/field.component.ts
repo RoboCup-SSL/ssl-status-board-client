@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {VisionService} from '../vision.service';
 import {
   ISSL_DetectionBall,
@@ -19,7 +19,7 @@ import {Robot} from './Robot';
 export class FieldComponent implements OnInit {
 
   useShapesFromGeometry = true;
-  rotateField = false;
+  @Input() rotateField = false;
 
   fieldWidth = 9000;
   fieldLength = 12000;
@@ -64,7 +64,7 @@ export class FieldComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.visionService.subject.subscribe(
+    this.visionService.getSubject().subscribe(
       (visionWrapper: MessageEvent) => this.onNewVisionWrapper(visionWrapper.data));
   }
 

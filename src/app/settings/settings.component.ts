@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {RefereeService} from '../referee.service';
 import {environment} from '../../environments/environment';
+import {VisionService} from '../vision.service';
 
 @Component({
   selector: 'app-settings',
@@ -9,26 +10,32 @@ import {environment} from '../../environments/environment';
 })
 export class SettingsComponent {
 
-  private refereeService: RefereeService;
   private statusWebSocket: string;
-  private webSockets = environment.availableStatusWebSockets;
+  private visionWebSocket: string;
 
-  constructor(refereeService: RefereeService) {
-    this.refereeService = refereeService;
-    this.statusWebSocket = RefereeService.getStatusWebSocketAddress();
+  constructor() {
+    this.statusWebSocket = RefereeService.getWebSocketAddress();
+    this.visionWebSocket = VisionService.getWebSocketAddress();
   }
 
-  getWebSocketLabels() {
-    return Array.from(this.webSockets.keys());
+  getAvailableLabels() {
+    return Array.from(environment.availableStatusWebSockets.keys());
   }
 
-  updateWebSocket(socketAddress: string) {
-    this.refereeService.updateWebSocketAddress(socketAddress);
-    this.statusWebSocket = RefereeService.getStatusWebSocketAddress();
+  updateStatusWebSocket(socketAddress: string) {
+    RefereeService.updateWebSocketAddress(socketAddress);
+    this.statusWebSocket = RefereeService.getWebSocketAddress();
+  }
+
+  updateVisionWebSocket(socketAddress: string) {
+    VisionService.updateWebSocketAddress(socketAddress);
+    this.visionWebSocket = VisionService.getWebSocketAddress();
   }
 
   onAddressSelected(label: string) {
-    const address = this.webSockets.get(label);
-    this.updateWebSocket(address);
+    const statusAddress = environment.availableStatusWebSockets.get(label);
+    this.updateStatusWebSocket(statusAddress);
+    const visionAddress = environment.availableVisionWebSockets.get(label);
+    this.updateVisionWebSocket(visionAddress);
   }
 }

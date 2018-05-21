@@ -9,10 +9,9 @@ export class VisionService {
 
   private static webSocketKey = 'ssl-status-board-vision-websocket-address';
 
-  subject: Subject<any>;
+  private subject: Subject<any>;
 
   constructor() {
-    this.subject = this.createSubject(VisionService.getWebSocketAddress());
   }
 
   public static getWebSocketAddress() {
@@ -23,7 +22,7 @@ export class VisionService {
     return webSocketAddress;
   }
 
-  public updateWebSocketAddress(webSocketAddress) {
+  public static updateWebSocketAddress(webSocketAddress) {
     localStorage.setItem(VisionService.webSocketKey, webSocketAddress);
     window.location.reload();
   }
@@ -42,4 +41,10 @@ export class VisionService {
     return Subject.create(null, observable);
   }
 
+  public getSubject() {
+    if (this.subject == null) {
+      this.subject = this.createSubject(VisionService.getWebSocketAddress());
+    }
+    return this.subject;
+  }
 }
