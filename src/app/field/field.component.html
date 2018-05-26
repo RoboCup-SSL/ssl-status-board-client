@@ -80,14 +80,14 @@
       <path *ngFor="let r of getRobotsYellow()"
             attr.d="
             M {{r.x + r.botRightX()}},{{r.y + r.botRightY()}}
-            A {{r.botRadius}} {{r.botRadius}} 0 1 0 {{r.x + r.botLeftX()}},{{r.y + r.botLeftY()}}
+            A {{r.botRadius}} {{r.botRadius}} 0 1 1 {{r.x + r.botLeftX()}},{{r.y + r.botLeftY()}}
             L {{r.x + r.botRightX()}},{{r.y + r.botRightY()}}"
             style="stroke:black;stroke-width:0.3em;fill: yellow; fill-opacity:1"></path>
 
       <path *ngFor="let r of getRobotsBlue()"
             attr.d="
             M {{r.x + r.botRightX()}},{{r.y + r.botRightY()}}
-            A {{r.botRadius}} {{r.botRadius}} 0 1 0 {{r.x + r.botLeftX()}},{{r.y + r.botLeftY()}}
+            A {{r.botRadius}} {{r.botRadius}} 0 1 1 {{r.x + r.botLeftX()}},{{r.y + r.botLeftY()}}
             L {{r.x + r.botRightX()}},{{r.y + r.botRightY()}}"
             style="stroke:black;stroke-width:0.3em;fill: blue; fill-opacity:1"></path>
 

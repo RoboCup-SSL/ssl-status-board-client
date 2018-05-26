@@ -24,12 +24,12 @@ export class FieldComponent implements OnInit {
   useShapesFromGeometry = false;
   @Input() rotateField = false;
 
-  fieldWidth = 9000;
-  fieldLength = 12000;
+  fieldWidth = 2000;
+  fieldLength = 3000;
   boundaryWidth = 300;
-  penAreaWidth = 2400;
-  penAreaDepth = 1200;
-  goalWidth = 1200;
+  penAreaWidth = 1000;
+  penAreaDepth = 500;
+  goalWidth = 600;
   goalDepth = 180;
   centerCircleRadius = 500;
   ballRadius = 21.5;
@@ -108,21 +108,23 @@ export class FieldComponent implements OnInit {
 
   private initSampleData() {
     this.balls[0] = SSL_DetectionBall.create({
-        confidence: 0, area: 0, x: 1000, y: 1000, z: 0, pixelX: 0, pixelY: 0
+      confidence: 0, area: 0, x: 0, y: 0, z: 0, pixelX: 0, pixelY: 0
       }
     );
-    const bot0y = new Robot();
-    bot0y.id = 0;
-    bot0y.x = -1000;
-    bot0y.y = 1000;
-    bot0y.orientation = 1;
-    this.robotsYellow.set(0, bot0y);
-    const bot1b = new Robot();
-    bot1b.id = 1;
-    bot1b.x = -1300;
-    bot1b.y = 1000;
-    bot1b.orientation = 3.14;
-    this.robotsBlue.set(0, bot1b);
+    const pi = 3.14;
+    this.robotsYellow.set(0, Robot.create(0, -1000, +500, 0));
+    this.robotsYellow.set(1, Robot.create(1, -1000, +300, pi / 4.0));
+    this.robotsYellow.set(2, Robot.create(2, -1000, +100, pi / 2.0));
+    this.robotsYellow.set(3, Robot.create(3, -1000, -100, pi / 4.0 * 3.0));
+    this.robotsYellow.set(4, Robot.create(4, -1000, -300, pi));
+    this.robotsYellow.set(5, Robot.create(5, -1000, -500, 2 * pi));
+
+    this.robotsBlue.set(0, Robot.create(0, 1000, -500, pi));
+    this.robotsBlue.set(1, Robot.create(1, 1000, -300, pi + pi / 4.0));
+    this.robotsBlue.set(2, Robot.create(2, 1000, -100, pi + pi / 2.0));
+    this.robotsBlue.set(3, Robot.create(3, 1000, +100, pi + pi / 4.0 * 3.0));
+    this.robotsBlue.set(4, Robot.create(4, 1000, +300, 2 * pi));
+    this.robotsBlue.set(5, Robot.create(5, 1000, +500, pi));
   }
 
   updateDetection(detection: ISSL_DetectionFrame) {
