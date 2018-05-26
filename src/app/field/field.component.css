@@ -27,3 +27,7 @@
 .command {
   font-weight: bold;
 }
+
+.bot-id {
+  font: bold 7em sans-serif;
+}

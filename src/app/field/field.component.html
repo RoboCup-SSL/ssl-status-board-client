@@ -77,14 +77,44 @@
 
 
       <!-- robots -->
-      <circle *ngFor="let r of getRobotsYellow()" [attr.r]="botRadius" [attr.cx]="r.x" [attr.cy]="r.y"
-              style="stroke:white;stroke-width:1px;fill: yellow; fill-opacity:1"></circle>
-      <circle *ngFor="let r of getRobotsBlue()" [attr.r]="botRadius" [attr.cx]="r.x" [attr.cy]="r.y"
-              style="stroke:white;stroke-width:1px;fill: blue; fill-opacity:1"></circle>
+      <path *ngFor="let r of getRobotsYellow()"
+            attr.d="
+            M {{r.x + r.botRightX()}},{{r.y + r.botRightY()}}
+            A {{r.botRadius}} {{r.botRadius}} 0 1 0 {{r.x + r.botLeftX()}},{{r.y + r.botLeftY()}}
+            L {{r.x + r.botRightX()}},{{r.y + r.botRightY()}}"
+            style="stroke:black;stroke-width:0.3em;fill: yellow; fill-opacity:1"></path>
+
+      <path *ngFor="let r of getRobotsBlue()"
+            attr.d="
+            M {{r.x + r.botRightX()}},{{r.y + r.botRightY()}}
+            A {{r.botRadius}} {{r.botRadius}} 0 1 0 {{r.x + r.botLeftX()}},{{r.y + r.botLeftY()}}
+            L {{r.x + r.botRightX()}},{{r.y + r.botRightY()}}"
+            style="stroke:black;stroke-width:0.3em;fill: blue; fill-opacity:1"></path>
+
+      <!-- robot ids -->
+      <text *ngFor="let r of getRobotsYellow()"
+            [attr.x]="r.x" [attr.y]="r.y"
+            [attr.dx]="'-40'" [attr.dy]="'45'"
+            [attr.textLength]="r.botRadius+20"
+            attr.lengthAdjust="spacingAndGlyphs"
+            class="bot-id"
+            style="stroke-width:0;fill: black">{{r.id}}
+      </text>
+
+      <text *ngFor="let r of getRobotsBlue()"
+            [attr.x]="r.x" [attr.y]="r.y"
+            [attr.dx]="'-40'" [attr.dy]="'45'"
+            [attr.textLength]="r.botRadius+20"
+            attr.lengthAdjust="spacingAndGlyphs"
+            class="bot-id"
+            style="stroke-width:0;fill: white">{{r.id}}
+      </text>
 
       <!-- balls -->
       <circle *ngFor="let r of balls" [attr.r]="ballRadius" [attr.cx]="r.x" [attr.cy]="r.y"
-              style="stroke:black;stroke-width:1px;fill: orangered; fill-opacity:1"></circle>
+              style="stroke:black;stroke-width:0.3em;fill: orangered; fill-opacity:1"></circle>
+      <circle *ngFor="let r of balls" [attr.r]="300" [attr.cx]="r.x" [attr.cy]="r.y"
+              style="stroke:red;stroke-width:0.5em; fill-opacity:0"></circle>
     </g>
   </svg>
 

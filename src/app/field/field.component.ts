@@ -32,7 +32,6 @@ export class FieldComponent implements OnInit {
   goalWidth = 1200;
   goalDepth = 180;
   centerCircleRadius = 500;
-  botRadius = 90;
   ballRadius = 21.5;
 
   lines: ISSL_FieldLineSegment[] = [];
@@ -116,6 +115,7 @@ export class FieldComponent implements OnInit {
     bot0y.id = 0;
     bot0y.x = -1000;
     bot0y.y = 1000;
+    bot0y.orientation = 1;
     this.robotsYellow.set(0, bot0y);
     const bot1b = new Robot();
     bot1b.id = 1;
