@@ -7,6 +7,7 @@ import {
   ISSL_FieldCicularArc,
   ISSL_FieldLineSegment,
   ISSL_GeometryData,
+  SSL_DetectionBall,
   SSL_WrapperPacket
 } from '../sslProto';
 import {Robot} from './Robot';
@@ -20,7 +21,7 @@ import {RefereeMessage} from '../RefereeMessage';
 })
 export class FieldComponent implements OnInit {
 
-  useShapesFromGeometry = true;
+  useShapesFromGeometry = false;
   @Input() rotateField = false;
 
   fieldWidth = 9000;
@@ -48,6 +49,7 @@ export class FieldComponent implements OnInit {
   constructor(visionService: VisionService, refereeService: RefereeService) {
     this.visionService = visionService;
     this.refereeService = refereeService;
+    this.initSampleData();
   }
 
   static updateRobot(frame: ISSL_DetectionFrame, bot: ISSL_DetectionRobot, robots: Map<number, Robot>) {
@@ -67,6 +69,17 @@ export class FieldComponent implements OnInit {
         robots.delete(bot.id);
       }
     }
+  }
+
+  updateGeometry(geometry: ISSL_GeometryData) {
+    this.fieldLength = geometry.field.fieldLength;
+    this.fieldWidth = geometry.field.fieldWidth;
+    this.boundaryWidth = geometry.field.boundaryWidth;
+    this.goalDepth = geometry.field.goalDepth;
+    this.goalWidth = geometry.field.goalWidth;
+    this.lines = geometry.field.fieldLines;
+    this.arcs = geometry.field.fieldArcs;
+    this.useShapesFromGeometry = true;
   }
 
   ngOnInit() {
@@ -94,16 +107,22 @@ export class FieldComponent implements OnInit {
     }
   }
 
-  updateGeometry(geometry: ISSL_GeometryData) {
-    this.fieldLength = geometry.field.fieldLength;
-    this.fieldWidth = geometry.field.fieldWidth;
-    this.boundaryWidth = geometry.field.boundaryWidth;
-    this.goalDepth = geometry.field.goalDepth;
-    this.goalWidth = geometry.field.goalWidth;
-    if (this.useShapesFromGeometry) {
-      this.lines = geometry.field.fieldLines;
-      this.arcs = geometry.field.fieldArcs;
-    }
+  private initSampleData() {
+    this.balls[0] = SSL_DetectionBall.create({
+        confidence: 0, area: 0, x: 1000, y: 1000, z: 0, pixelX: 0, pixelY: 0
+      }
+    );
+    const bot0y = new Robot();
+    bot0y.id = 0;
+    bot0y.x = -1000;
+    bot0y.y = 1000;
+    this.robotsYellow.set(0, bot0y);
+    const bot1b = new Robot();
+    bot1b.id = 1;
+    bot1b.x = -1300;
+    bot1b.y = 1000;
+    bot1b.orientation = 3.14;
+    this.robotsBlue.set(0, bot1b);
   }
 
   updateDetection(detection: ISSL_DetectionFrame) {
