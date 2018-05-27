@@ -10,5 +10,7 @@ export const environment = {
     .set('Field B', 'ws://localhost:4201/ssl-status/field-b/subscribe'),
   availableVisionWebSockets: new Map()
     .set('Field A', 'ws://localhost:4201/ssl-vision/field-a/subscribe')
-    .set('Field B', 'ws://localhost:4201/ssl-vision/field-b/subscribe')
+    .set('Field B', 'ws://localhost:4201/ssl-vision/field-b/subscribe'),
+  legalNoticeUrl: '/legal-notice',
+  dataProtectionUrl: '/data-protection',
 };
