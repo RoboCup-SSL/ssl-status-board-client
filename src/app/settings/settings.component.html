@@ -13,3 +13,8 @@
   <input #visionAddress matInput type="text" placeholder="Custom Vision Address" value="{{visionWebSocket}}"
          (keyup.enter)="updateVisionWebSocket(visionAddress.value)">
 </mat-form-field>
+
+<div>
+  <a href="{{getLegalNoticeUrl()}}">Legal Notice</a>
+  <a href="{{getDataProtectionUrl()}}">Data Protection</a>
+</div>

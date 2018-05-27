@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -15,13 +14,5 @@ export class AppComponent {
         (<any>window).ga('send', 'pageview');
       }
     });
-  }
-
-  getLegalNoticeUrl() {
-    return environment.legalNoticeUrl;
-  }
-
-  getDataProtectionUrl() {
-    return environment.dataProtectionUrl;
   }
 }

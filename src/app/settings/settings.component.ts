@@ -38,4 +38,12 @@ export class SettingsComponent {
     const visionAddress = environment.availableVisionWebSockets.get(label);
     this.updateVisionWebSocket(visionAddress);
   }
+
+  getLegalNoticeUrl() {
+    return environment.legalNoticeUrl;
+  }
+
+  getDataProtectionUrl() {
+    return environment.dataProtectionUrl;
+  }
 }
