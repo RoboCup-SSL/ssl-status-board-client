@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {VisionService} from '../vision.service';
 import {
-  ISSL_DetectionBall,
-  ISSL_DetectionFrame,
-  ISSL_DetectionRobot,
-  ISSL_FieldCicularArc,
-  ISSL_FieldLineSegment,
-  ISSL_GeometryData,
-  SSL_DetectionBall,
-  SSL_WrapperPacket
+  ISSL_Micro_DetectionBall,
+  ISSL_Micro_DetectionFrame,
+  ISSL_Micro_DetectionRobot,
+  ISSL_Micro_FieldCicularArc,
+  ISSL_Micro_FieldLineSegment,
+  ISSL_Micro_GeometryData,
+  SSL_Micro_DetectionBall,
+  SSL_Micro_WrapperPacket
 } from '../sslProto';
 import {Robot} from './Robot';
 import {RefereeService} from '../referee.service';
@@ -34,11 +34,11 @@ export class FieldComponent implements OnInit {
   centerCircleRadius = 500;
   ballRadius = 21.5;
 
-  lines: ISSL_FieldLineSegment[] = [];
-  arcs: ISSL_FieldCicularArc[] = [];
+  lines: ISSL_Micro_FieldLineSegment[] = [];
+  arcs: ISSL_Micro_FieldCicularArc[] = [];
   robotsYellow: Map<number, Robot> = new Map();
   robotsBlue: Map<number, Robot> = new Map();
-  balls: ISSL_DetectionBall[] = [];
+  balls: ISSL_Micro_DetectionBall[] = [];
 
   refereeMessage: RefereeMessage = new RefereeMessage();
 
@@ -51,26 +51,26 @@ export class FieldComponent implements OnInit {
     this.initSampleData();
   }
 
-  static updateRobot(frame: ISSL_DetectionFrame, bot: ISSL_DetectionRobot, robots: Map<number, Robot>) {
+  static updateRobot(frame: ISSL_Micro_DetectionFrame, bot: ISSL_Micro_DetectionRobot, robots: Map<number, Robot>) {
     const robot = new Robot();
     robot.id = bot.robotId;
     robot.orientation = bot.orientation;
     robot.x = bot.x;
     robot.y = bot.y;
-    robot.timestamp = frame.tCapture;
+    robot.timestamp = Date.now();
     robots.set(robot.id, robot);
   }
 
 
-  static removeVanishedRobots(currentTimestamp: number, robots: Map<number, Robot>) {
+  static removeVanishedRobots(robots: Map<number, Robot>) {
     for (const bot of  Array.from(robots.values())) {
-      if ((currentTimestamp - bot.timestamp) > 0.5) {
+      if ((Date.now() - bot.timestamp) > 500) {
         robots.delete(bot.id);
       }
     }
   }
 
-  updateGeometry(geometry: ISSL_GeometryData) {
+  updateGeometry(geometry: ISSL_Micro_GeometryData) {
     this.fieldLength = geometry.field.fieldLength;
     this.fieldWidth = geometry.field.fieldWidth;
     this.boundaryWidth = geometry.field.boundaryWidth;
@@ -97,7 +97,7 @@ export class FieldComponent implements OnInit {
   }
 
   onReadData(arr: Uint8Array) {
-    const packet = SSL_WrapperPacket.decode(arr);
+    const packet = SSL_Micro_WrapperPacket.decode(arr);
     if (packet.geometry != null) {
       this.updateGeometry(packet.geometry);
     }
@@ -106,9 +106,23 @@ export class FieldComponent implements OnInit {
     }
   }
 
+  updateDetection(detection: ISSL_Micro_DetectionFrame) {
+    for (const bot of detection.robotsYellow) {
+      FieldComponent.updateRobot(detection, bot, this.robotsYellow);
+    }
+    FieldComponent.removeVanishedRobots(this.robotsYellow);
+
+    for (const bot of detection.robotsBlue) {
+      FieldComponent.updateRobot(detection, bot, this.robotsBlue);
+    }
+    FieldComponent.removeVanishedRobots(this.robotsBlue);
+
+    this.balls = detection.balls;
+  }
+
   private initSampleData() {
-    this.balls[0] = SSL_DetectionBall.create({
-      confidence: 0, area: 0, x: 0, y: 0, z: 0, pixelX: 0, pixelY: 0
+    this.balls[0] = SSL_Micro_DetectionBall.create({
+      x: 0, y: 0
       }
     );
     const pi = 3.14;
@@ -125,20 +139,6 @@ export class FieldComponent implements OnInit {
     this.robotsBlue.set(3, Robot.create(3, 1000, +100, pi + pi / 4.0 * 3.0));
     this.robotsBlue.set(4, Robot.create(4, 1000, +300, 2 * pi));
     this.robotsBlue.set(5, Robot.create(5, 1000, +500, pi));
-  }
-
-  updateDetection(detection: ISSL_DetectionFrame) {
-    for (const bot of detection.robotsYellow) {
-      FieldComponent.updateRobot(detection, bot, this.robotsYellow);
-    }
-    FieldComponent.removeVanishedRobots(detection.tCapture, this.robotsYellow);
-
-    for (const bot of detection.robotsBlue) {
-      FieldComponent.updateRobot(detection, bot, this.robotsBlue);
-    }
-    FieldComponent.removeVanishedRobots(detection.tCapture, this.robotsBlue);
-
-    this.balls = detection.balls;
   }
 
   getRobotsYellow() {

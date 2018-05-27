@@ -9,30 +9,25 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.SSL_DetectionBall = (function () {
+$root.SSL_Micro_DetectionBall = (function () {
 
   /**
-   * Properties of a SSL_DetectionBall.
-   * @exports ISSL_DetectionBall
-   * @interface ISSL_DetectionBall
-   * @property {number} confidence SSL_DetectionBall confidence
-   * @property {number|null} [area] SSL_DetectionBall area
-   * @property {number} x SSL_DetectionBall x
-   * @property {number} y SSL_DetectionBall y
-   * @property {number|null} [z] SSL_DetectionBall z
-   * @property {number} pixelX SSL_DetectionBall pixelX
-   * @property {number} pixelY SSL_DetectionBall pixelY
+   * Properties of a SSL_Micro_DetectionBall.
+   * @exports ISSL_Micro_DetectionBall
+   * @interface ISSL_Micro_DetectionBall
+   * @property {number} x SSL_Micro_DetectionBall x
+   * @property {number} y SSL_Micro_DetectionBall y
    */
 
   /**
-   * Constructs a new SSL_DetectionBall.
-   * @exports SSL_DetectionBall
-   * @classdesc Represents a SSL_DetectionBall.
-   * @implements ISSL_DetectionBall
+   * Constructs a new SSL_Micro_DetectionBall.
+   * @exports SSL_Micro_DetectionBall
+   * @classdesc Represents a SSL_Micro_DetectionBall.
+   * @implements ISSL_Micro_DetectionBall
    * @constructor
-   * @param {ISSL_DetectionBall=} [properties] Properties to set
+   * @param {ISSL_Micro_DetectionBall=} [properties] Properties to set
    */
-  function SSL_DetectionBall(properties) {
+  function SSL_Micro_DetectionBall(properties) {
     if (properties)
       for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
         if (properties[keys[i]] != null)
@@ -40,320 +35,211 @@ $root.SSL_DetectionBall = (function () {
   }
 
   /**
-   * SSL_DetectionBall confidence.
-   * @member {number} confidence
-   * @memberof SSL_DetectionBall
-   * @instance
-   */
-  SSL_DetectionBall.prototype.confidence = 0;
-
-  /**
-   * SSL_DetectionBall area.
-   * @member {number} area
-   * @memberof SSL_DetectionBall
-   * @instance
-   */
-  SSL_DetectionBall.prototype.area = 0;
-
-  /**
-   * SSL_DetectionBall x.
+   * SSL_Micro_DetectionBall x.
    * @member {number} x
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @instance
    */
-  SSL_DetectionBall.prototype.x = 0;
+  SSL_Micro_DetectionBall.prototype.x = 0;
 
   /**
-   * SSL_DetectionBall y.
+   * SSL_Micro_DetectionBall y.
    * @member {number} y
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @instance
    */
-  SSL_DetectionBall.prototype.y = 0;
+  SSL_Micro_DetectionBall.prototype.y = 0;
 
   /**
-   * SSL_DetectionBall z.
-   * @member {number} z
-   * @memberof SSL_DetectionBall
-   * @instance
-   */
-  SSL_DetectionBall.prototype.z = 0;
-
-  /**
-   * SSL_DetectionBall pixelX.
-   * @member {number} pixelX
-   * @memberof SSL_DetectionBall
-   * @instance
-   */
-  SSL_DetectionBall.prototype.pixelX = 0;
-
-  /**
-   * SSL_DetectionBall pixelY.
-   * @member {number} pixelY
-   * @memberof SSL_DetectionBall
-   * @instance
-   */
-  SSL_DetectionBall.prototype.pixelY = 0;
-
-  /**
-   * Creates a new SSL_DetectionBall instance using the specified properties.
+   * Creates a new SSL_Micro_DetectionBall instance using the specified properties.
    * @function create
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @static
-   * @param {ISSL_DetectionBall=} [properties] Properties to set
-   * @returns {SSL_DetectionBall} SSL_DetectionBall instance
+   * @param {ISSL_Micro_DetectionBall=} [properties] Properties to set
+   * @returns {SSL_Micro_DetectionBall} SSL_Micro_DetectionBall instance
    */
-  SSL_DetectionBall.create = function create(properties) {
-    return new SSL_DetectionBall(properties);
+  SSL_Micro_DetectionBall.create = function create(properties) {
+    return new SSL_Micro_DetectionBall(properties);
   };
 
   /**
-   * Encodes the specified SSL_DetectionBall message. Does not implicitly {@link SSL_DetectionBall.verify|verify} messages.
+   * Encodes the specified SSL_Micro_DetectionBall message. Does not implicitly {@link SSL_Micro_DetectionBall.verify|verify} messages.
    * @function encode
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @static
-   * @param {ISSL_DetectionBall} message SSL_DetectionBall message or plain object to encode
+   * @param {ISSL_Micro_DetectionBall} message SSL_Micro_DetectionBall message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_DetectionBall.encode = function encode(message, writer) {
+  SSL_Micro_DetectionBall.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
-    writer.uint32(/* id 1, wireType 5 =*/13).float(message.confidence);
-    if (message.area != null && message.hasOwnProperty("area"))
-      writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.area);
-    writer.uint32(/* id 3, wireType 5 =*/29).float(message.x);
-    writer.uint32(/* id 4, wireType 5 =*/37).float(message.y);
-    if (message.z != null && message.hasOwnProperty("z"))
-      writer.uint32(/* id 5, wireType 5 =*/45).float(message.z);
-    writer.uint32(/* id 6, wireType 5 =*/53).float(message.pixelX);
-    writer.uint32(/* id 7, wireType 5 =*/61).float(message.pixelY);
+    writer.uint32(/* id 1, wireType 5 =*/13).float(message.x);
+    writer.uint32(/* id 2, wireType 5 =*/21).float(message.y);
     return writer;
   };
 
   /**
-   * Encodes the specified SSL_DetectionBall message, length delimited. Does not implicitly {@link SSL_DetectionBall.verify|verify} messages.
+   * Encodes the specified SSL_Micro_DetectionBall message, length delimited. Does not implicitly {@link SSL_Micro_DetectionBall.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @static
-   * @param {ISSL_DetectionBall} message SSL_DetectionBall message or plain object to encode
+   * @param {ISSL_Micro_DetectionBall} message SSL_Micro_DetectionBall message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_DetectionBall.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_DetectionBall.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_DetectionBall message from the specified reader or buffer.
+   * Decodes a SSL_Micro_DetectionBall message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_DetectionBall} SSL_DetectionBall
+   * @returns {SSL_Micro_DetectionBall} SSL_Micro_DetectionBall
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_DetectionBall.decode = function decode(reader, length) {
+  SSL_Micro_DetectionBall.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_DetectionBall();
+    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_Micro_DetectionBall();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          message.confidence = reader.float();
-          break;
-        case 2:
-          message.area = reader.uint32();
-          break;
-        case 3:
           message.x = reader.float();
           break;
-        case 4:
+        case 2:
           message.y = reader.float();
-          break;
-        case 5:
-          message.z = reader.float();
-          break;
-        case 6:
-          message.pixelX = reader.float();
-          break;
-        case 7:
-          message.pixelY = reader.float();
           break;
         default:
           reader.skipType(tag & 7);
           break;
       }
     }
-    if (!message.hasOwnProperty("confidence"))
-      throw $util.ProtocolError("missing required 'confidence'", {instance: message});
     if (!message.hasOwnProperty("x"))
       throw $util.ProtocolError("missing required 'x'", {instance: message});
     if (!message.hasOwnProperty("y"))
       throw $util.ProtocolError("missing required 'y'", {instance: message});
-    if (!message.hasOwnProperty("pixelX"))
-      throw $util.ProtocolError("missing required 'pixelX'", {instance: message});
-    if (!message.hasOwnProperty("pixelY"))
-      throw $util.ProtocolError("missing required 'pixelY'", {instance: message});
     return message;
   };
 
   /**
-   * Decodes a SSL_DetectionBall message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_DetectionBall message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_DetectionBall} SSL_DetectionBall
+   * @returns {SSL_Micro_DetectionBall} SSL_Micro_DetectionBall
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_DetectionBall.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_DetectionBall.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_DetectionBall message.
+   * Verifies a SSL_Micro_DetectionBall message.
    * @function verify
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_DetectionBall.verify = function verify(message) {
+  SSL_Micro_DetectionBall.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
-    if (typeof message.confidence !== "number")
-      return "confidence: number expected";
-    if (message.area != null && message.hasOwnProperty("area"))
-      if (!$util.isInteger(message.area))
-        return "area: integer expected";
     if (typeof message.x !== "number")
       return "x: number expected";
     if (typeof message.y !== "number")
       return "y: number expected";
-    if (message.z != null && message.hasOwnProperty("z"))
-      if (typeof message.z !== "number")
-        return "z: number expected";
-    if (typeof message.pixelX !== "number")
-      return "pixelX: number expected";
-    if (typeof message.pixelY !== "number")
-      return "pixelY: number expected";
     return null;
   };
 
   /**
-   * Creates a SSL_DetectionBall message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_DetectionBall message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_DetectionBall} SSL_DetectionBall
+   * @returns {SSL_Micro_DetectionBall} SSL_Micro_DetectionBall
    */
-  SSL_DetectionBall.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_DetectionBall)
+  SSL_Micro_DetectionBall.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_DetectionBall)
       return object;
-    var message = new $root.SSL_DetectionBall();
-    if (object.confidence != null)
-      message.confidence = Number(object.confidence);
-    if (object.area != null)
-      message.area = object.area >>> 0;
+    var message = new $root.SSL_Micro_DetectionBall();
     if (object.x != null)
       message.x = Number(object.x);
     if (object.y != null)
       message.y = Number(object.y);
-    if (object.z != null)
-      message.z = Number(object.z);
-    if (object.pixelX != null)
-      message.pixelX = Number(object.pixelX);
-    if (object.pixelY != null)
-      message.pixelY = Number(object.pixelY);
     return message;
   };
 
   /**
-   * Creates a plain object from a SSL_DetectionBall message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_DetectionBall message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @static
-   * @param {SSL_DetectionBall} message SSL_DetectionBall
+   * @param {SSL_Micro_DetectionBall} message SSL_Micro_DetectionBall
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_DetectionBall.toObject = function toObject(message, options) {
+  SSL_Micro_DetectionBall.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
     if (options.defaults) {
-      object.confidence = 0;
-      object.area = 0;
       object.x = 0;
       object.y = 0;
-      object.z = 0;
-      object.pixelX = 0;
-      object.pixelY = 0;
     }
-    if (message.confidence != null && message.hasOwnProperty("confidence"))
-      object.confidence = options.json && !isFinite(message.confidence) ? String(message.confidence) : message.confidence;
-    if (message.area != null && message.hasOwnProperty("area"))
-      object.area = message.area;
     if (message.x != null && message.hasOwnProperty("x"))
       object.x = options.json && !isFinite(message.x) ? String(message.x) : message.x;
     if (message.y != null && message.hasOwnProperty("y"))
       object.y = options.json && !isFinite(message.y) ? String(message.y) : message.y;
-    if (message.z != null && message.hasOwnProperty("z"))
-      object.z = options.json && !isFinite(message.z) ? String(message.z) : message.z;
-    if (message.pixelX != null && message.hasOwnProperty("pixelX"))
-      object.pixelX = options.json && !isFinite(message.pixelX) ? String(message.pixelX) : message.pixelX;
-    if (message.pixelY != null && message.hasOwnProperty("pixelY"))
-      object.pixelY = options.json && !isFinite(message.pixelY) ? String(message.pixelY) : message.pixelY;
     return object;
   };
 
   /**
-   * Converts this SSL_DetectionBall to JSON.
+   * Converts this SSL_Micro_DetectionBall to JSON.
    * @function toJSON
-   * @memberof SSL_DetectionBall
+   * @memberof SSL_Micro_DetectionBall
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_DetectionBall.prototype.toJSON = function toJSON() {
+  SSL_Micro_DetectionBall.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_DetectionBall;
+  return SSL_Micro_DetectionBall;
 })();
 
-$root.SSL_DetectionRobot = (function () {
+$root.SSL_Micro_DetectionRobot = (function () {
 
   /**
-   * Properties of a SSL_DetectionRobot.
-   * @exports ISSL_DetectionRobot
-   * @interface ISSL_DetectionRobot
-   * @property {number} confidence SSL_DetectionRobot confidence
-   * @property {number|null} [robotId] SSL_DetectionRobot robotId
-   * @property {number} x SSL_DetectionRobot x
-   * @property {number} y SSL_DetectionRobot y
-   * @property {number|null} [orientation] SSL_DetectionRobot orientation
-   * @property {number} pixelX SSL_DetectionRobot pixelX
-   * @property {number} pixelY SSL_DetectionRobot pixelY
-   * @property {number|null} [height] SSL_DetectionRobot height
+   * Properties of a SSL_Micro_DetectionRobot.
+   * @exports ISSL_Micro_DetectionRobot
+   * @interface ISSL_Micro_DetectionRobot
+   * @property {number|null} [robotId] SSL_Micro_DetectionRobot robotId
+   * @property {number} x SSL_Micro_DetectionRobot x
+   * @property {number} y SSL_Micro_DetectionRobot y
+   * @property {number|null} [orientation] SSL_Micro_DetectionRobot orientation
    */
 
   /**
-   * Constructs a new SSL_DetectionRobot.
-   * @exports SSL_DetectionRobot
-   * @classdesc Represents a SSL_DetectionRobot.
-   * @implements ISSL_DetectionRobot
+   * Constructs a new SSL_Micro_DetectionRobot.
+   * @exports SSL_Micro_DetectionRobot
+   * @classdesc Represents a SSL_Micro_DetectionRobot.
+   * @implements ISSL_Micro_DetectionRobot
    * @constructor
-   * @param {ISSL_DetectionRobot=} [properties] Properties to set
+   * @param {ISSL_Micro_DetectionRobot=} [properties] Properties to set
    */
-  function SSL_DetectionRobot(properties) {
+  function SSL_Micro_DetectionRobot(properties) {
     if (properties)
       for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
         if (properties[keys[i]] != null)
@@ -361,209 +247,152 @@ $root.SSL_DetectionRobot = (function () {
   }
 
   /**
-   * SSL_DetectionRobot confidence.
-   * @member {number} confidence
-   * @memberof SSL_DetectionRobot
-   * @instance
-   */
-  SSL_DetectionRobot.prototype.confidence = 0;
-
-  /**
-   * SSL_DetectionRobot robotId.
+   * SSL_Micro_DetectionRobot robotId.
    * @member {number} robotId
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @instance
    */
-  SSL_DetectionRobot.prototype.robotId = 0;
+  SSL_Micro_DetectionRobot.prototype.robotId = 0;
 
   /**
-   * SSL_DetectionRobot x.
+   * SSL_Micro_DetectionRobot x.
    * @member {number} x
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @instance
    */
-  SSL_DetectionRobot.prototype.x = 0;
+  SSL_Micro_DetectionRobot.prototype.x = 0;
 
   /**
-   * SSL_DetectionRobot y.
+   * SSL_Micro_DetectionRobot y.
    * @member {number} y
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @instance
    */
-  SSL_DetectionRobot.prototype.y = 0;
+  SSL_Micro_DetectionRobot.prototype.y = 0;
 
   /**
-   * SSL_DetectionRobot orientation.
+   * SSL_Micro_DetectionRobot orientation.
    * @member {number} orientation
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @instance
    */
-  SSL_DetectionRobot.prototype.orientation = 0;
+  SSL_Micro_DetectionRobot.prototype.orientation = 0;
 
   /**
-   * SSL_DetectionRobot pixelX.
-   * @member {number} pixelX
-   * @memberof SSL_DetectionRobot
-   * @instance
-   */
-  SSL_DetectionRobot.prototype.pixelX = 0;
-
-  /**
-   * SSL_DetectionRobot pixelY.
-   * @member {number} pixelY
-   * @memberof SSL_DetectionRobot
-   * @instance
-   */
-  SSL_DetectionRobot.prototype.pixelY = 0;
-
-  /**
-   * SSL_DetectionRobot height.
-   * @member {number} height
-   * @memberof SSL_DetectionRobot
-   * @instance
-   */
-  SSL_DetectionRobot.prototype.height = 0;
-
-  /**
-   * Creates a new SSL_DetectionRobot instance using the specified properties.
+   * Creates a new SSL_Micro_DetectionRobot instance using the specified properties.
    * @function create
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @static
-   * @param {ISSL_DetectionRobot=} [properties] Properties to set
-   * @returns {SSL_DetectionRobot} SSL_DetectionRobot instance
+   * @param {ISSL_Micro_DetectionRobot=} [properties] Properties to set
+   * @returns {SSL_Micro_DetectionRobot} SSL_Micro_DetectionRobot instance
    */
-  SSL_DetectionRobot.create = function create(properties) {
-    return new SSL_DetectionRobot(properties);
+  SSL_Micro_DetectionRobot.create = function create(properties) {
+    return new SSL_Micro_DetectionRobot(properties);
   };
 
   /**
-   * Encodes the specified SSL_DetectionRobot message. Does not implicitly {@link SSL_DetectionRobot.verify|verify} messages.
+   * Encodes the specified SSL_Micro_DetectionRobot message. Does not implicitly {@link SSL_Micro_DetectionRobot.verify|verify} messages.
    * @function encode
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @static
-   * @param {ISSL_DetectionRobot} message SSL_DetectionRobot message or plain object to encode
+   * @param {ISSL_Micro_DetectionRobot} message SSL_Micro_DetectionRobot message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_DetectionRobot.encode = function encode(message, writer) {
+  SSL_Micro_DetectionRobot.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
-    writer.uint32(/* id 1, wireType 5 =*/13).float(message.confidence);
     if (message.robotId != null && message.hasOwnProperty("robotId"))
-      writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.robotId);
-    writer.uint32(/* id 3, wireType 5 =*/29).float(message.x);
-    writer.uint32(/* id 4, wireType 5 =*/37).float(message.y);
+      writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.robotId);
+    writer.uint32(/* id 2, wireType 5 =*/21).float(message.x);
+    writer.uint32(/* id 3, wireType 5 =*/29).float(message.y);
     if (message.orientation != null && message.hasOwnProperty("orientation"))
-      writer.uint32(/* id 5, wireType 5 =*/45).float(message.orientation);
-    writer.uint32(/* id 6, wireType 5 =*/53).float(message.pixelX);
-    writer.uint32(/* id 7, wireType 5 =*/61).float(message.pixelY);
-    if (message.height != null && message.hasOwnProperty("height"))
-      writer.uint32(/* id 8, wireType 5 =*/69).float(message.height);
+      writer.uint32(/* id 4, wireType 5 =*/37).float(message.orientation);
     return writer;
   };
 
   /**
-   * Encodes the specified SSL_DetectionRobot message, length delimited. Does not implicitly {@link SSL_DetectionRobot.verify|verify} messages.
+   * Encodes the specified SSL_Micro_DetectionRobot message, length delimited. Does not implicitly {@link SSL_Micro_DetectionRobot.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @static
-   * @param {ISSL_DetectionRobot} message SSL_DetectionRobot message or plain object to encode
+   * @param {ISSL_Micro_DetectionRobot} message SSL_Micro_DetectionRobot message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_DetectionRobot.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_DetectionRobot.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_DetectionRobot message from the specified reader or buffer.
+   * Decodes a SSL_Micro_DetectionRobot message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_DetectionRobot} SSL_DetectionRobot
+   * @returns {SSL_Micro_DetectionRobot} SSL_Micro_DetectionRobot
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_DetectionRobot.decode = function decode(reader, length) {
+  SSL_Micro_DetectionRobot.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_DetectionRobot();
+    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_Micro_DetectionRobot();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          message.confidence = reader.float();
-          break;
-        case 2:
           message.robotId = reader.uint32();
           break;
-        case 3:
+        case 2:
           message.x = reader.float();
           break;
-        case 4:
+        case 3:
           message.y = reader.float();
           break;
-        case 5:
+        case 4:
           message.orientation = reader.float();
-          break;
-        case 6:
-          message.pixelX = reader.float();
-          break;
-        case 7:
-          message.pixelY = reader.float();
-          break;
-        case 8:
-          message.height = reader.float();
           break;
         default:
           reader.skipType(tag & 7);
           break;
       }
     }
-    if (!message.hasOwnProperty("confidence"))
-      throw $util.ProtocolError("missing required 'confidence'", {instance: message});
     if (!message.hasOwnProperty("x"))
       throw $util.ProtocolError("missing required 'x'", {instance: message});
     if (!message.hasOwnProperty("y"))
       throw $util.ProtocolError("missing required 'y'", {instance: message});
-    if (!message.hasOwnProperty("pixelX"))
-      throw $util.ProtocolError("missing required 'pixelX'", {instance: message});
-    if (!message.hasOwnProperty("pixelY"))
-      throw $util.ProtocolError("missing required 'pixelY'", {instance: message});
     return message;
   };
 
   /**
-   * Decodes a SSL_DetectionRobot message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_DetectionRobot message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_DetectionRobot} SSL_DetectionRobot
+   * @returns {SSL_Micro_DetectionRobot} SSL_Micro_DetectionRobot
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_DetectionRobot.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_DetectionRobot.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_DetectionRobot message.
+   * Verifies a SSL_Micro_DetectionRobot message.
    * @function verify
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_DetectionRobot.verify = function verify(message) {
+  SSL_Micro_DetectionRobot.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
-    if (typeof message.confidence !== "number")
-      return "confidence: number expected";
     if (message.robotId != null && message.hasOwnProperty("robotId"))
       if (!$util.isInteger(message.robotId))
         return "robotId: integer expected";
@@ -574,30 +403,21 @@ $root.SSL_DetectionRobot = (function () {
     if (message.orientation != null && message.hasOwnProperty("orientation"))
       if (typeof message.orientation !== "number")
         return "orientation: number expected";
-    if (typeof message.pixelX !== "number")
-      return "pixelX: number expected";
-    if (typeof message.pixelY !== "number")
-      return "pixelY: number expected";
-    if (message.height != null && message.hasOwnProperty("height"))
-      if (typeof message.height !== "number")
-        return "height: number expected";
     return null;
   };
 
   /**
-   * Creates a SSL_DetectionRobot message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_DetectionRobot message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_DetectionRobot} SSL_DetectionRobot
+   * @returns {SSL_Micro_DetectionRobot} SSL_Micro_DetectionRobot
    */
-  SSL_DetectionRobot.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_DetectionRobot)
+  SSL_Micro_DetectionRobot.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_DetectionRobot)
       return object;
-    var message = new $root.SSL_DetectionRobot();
-    if (object.confidence != null)
-      message.confidence = Number(object.confidence);
+    var message = new $root.SSL_Micro_DetectionRobot();
     if (object.robotId != null)
       message.robotId = object.robotId >>> 0;
     if (object.x != null)
@@ -606,40 +426,28 @@ $root.SSL_DetectionRobot = (function () {
       message.y = Number(object.y);
     if (object.orientation != null)
       message.orientation = Number(object.orientation);
-    if (object.pixelX != null)
-      message.pixelX = Number(object.pixelX);
-    if (object.pixelY != null)
-      message.pixelY = Number(object.pixelY);
-    if (object.height != null)
-      message.height = Number(object.height);
     return message;
   };
 
   /**
-   * Creates a plain object from a SSL_DetectionRobot message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_DetectionRobot message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @static
-   * @param {SSL_DetectionRobot} message SSL_DetectionRobot
+   * @param {SSL_Micro_DetectionRobot} message SSL_Micro_DetectionRobot
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_DetectionRobot.toObject = function toObject(message, options) {
+  SSL_Micro_DetectionRobot.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
     if (options.defaults) {
-      object.confidence = 0;
       object.robotId = 0;
       object.x = 0;
       object.y = 0;
       object.orientation = 0;
-      object.pixelX = 0;
-      object.pixelY = 0;
-      object.height = 0;
     }
-    if (message.confidence != null && message.hasOwnProperty("confidence"))
-      object.confidence = options.json && !isFinite(message.confidence) ? String(message.confidence) : message.confidence;
     if (message.robotId != null && message.hasOwnProperty("robotId"))
       object.robotId = message.robotId;
     if (message.x != null && message.hasOwnProperty("x"))
@@ -648,53 +456,43 @@ $root.SSL_DetectionRobot = (function () {
       object.y = options.json && !isFinite(message.y) ? String(message.y) : message.y;
     if (message.orientation != null && message.hasOwnProperty("orientation"))
       object.orientation = options.json && !isFinite(message.orientation) ? String(message.orientation) : message.orientation;
-    if (message.pixelX != null && message.hasOwnProperty("pixelX"))
-      object.pixelX = options.json && !isFinite(message.pixelX) ? String(message.pixelX) : message.pixelX;
-    if (message.pixelY != null && message.hasOwnProperty("pixelY"))
-      object.pixelY = options.json && !isFinite(message.pixelY) ? String(message.pixelY) : message.pixelY;
-    if (message.height != null && message.hasOwnProperty("height"))
-      object.height = options.json && !isFinite(message.height) ? String(message.height) : message.height;
     return object;
   };
 
   /**
-   * Converts this SSL_DetectionRobot to JSON.
+   * Converts this SSL_Micro_DetectionRobot to JSON.
    * @function toJSON
-   * @memberof SSL_DetectionRobot
+   * @memberof SSL_Micro_DetectionRobot
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_DetectionRobot.prototype.toJSON = function toJSON() {
+  SSL_Micro_DetectionRobot.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_DetectionRobot;
+  return SSL_Micro_DetectionRobot;
 })();
 
-$root.SSL_DetectionFrame = (function () {
+$root.SSL_Micro_DetectionFrame = (function () {
 
   /**
-   * Properties of a SSL_DetectionFrame.
-   * @exports ISSL_DetectionFrame
-   * @interface ISSL_DetectionFrame
-   * @property {number} frameNumber SSL_DetectionFrame frameNumber
-   * @property {number} tCapture SSL_DetectionFrame tCapture
-   * @property {number} tSent SSL_DetectionFrame tSent
-   * @property {number} cameraId SSL_DetectionFrame cameraId
-   * @property {Array.<ISSL_DetectionBall>|null} [balls] SSL_DetectionFrame balls
-   * @property {Array.<ISSL_DetectionRobot>|null} [robotsYellow] SSL_DetectionFrame robotsYellow
-   * @property {Array.<ISSL_DetectionRobot>|null} [robotsBlue] SSL_DetectionFrame robotsBlue
+   * Properties of a SSL_Micro_DetectionFrame.
+   * @exports ISSL_Micro_DetectionFrame
+   * @interface ISSL_Micro_DetectionFrame
+   * @property {Array.<ISSL_Micro_DetectionBall>|null} [balls] SSL_Micro_DetectionFrame balls
+   * @property {Array.<ISSL_Micro_DetectionRobot>|null} [robotsYellow] SSL_Micro_DetectionFrame robotsYellow
+   * @property {Array.<ISSL_Micro_DetectionRobot>|null} [robotsBlue] SSL_Micro_DetectionFrame robotsBlue
    */
 
   /**
-   * Constructs a new SSL_DetectionFrame.
-   * @exports SSL_DetectionFrame
-   * @classdesc Represents a SSL_DetectionFrame.
-   * @implements ISSL_DetectionFrame
+   * Constructs a new SSL_Micro_DetectionFrame.
+   * @exports SSL_Micro_DetectionFrame
+   * @classdesc Represents a SSL_Micro_DetectionFrame.
+   * @implements ISSL_Micro_DetectionFrame
    * @constructor
-   * @param {ISSL_DetectionFrame=} [properties] Properties to set
+   * @param {ISSL_Micro_DetectionFrame=} [properties] Properties to set
    */
-  function SSL_DetectionFrame(properties) {
+  function SSL_Micro_DetectionFrame(properties) {
     this.balls = [];
     this.robotsYellow = [];
     this.robotsBlue = [];
@@ -705,215 +503,151 @@ $root.SSL_DetectionFrame = (function () {
   }
 
   /**
-   * SSL_DetectionFrame frameNumber.
-   * @member {number} frameNumber
-   * @memberof SSL_DetectionFrame
+   * SSL_Micro_DetectionFrame balls.
+   * @member {Array.<ISSL_Micro_DetectionBall>} balls
+   * @memberof SSL_Micro_DetectionFrame
    * @instance
    */
-  SSL_DetectionFrame.prototype.frameNumber = 0;
+  SSL_Micro_DetectionFrame.prototype.balls = $util.emptyArray;
 
   /**
-   * SSL_DetectionFrame tCapture.
-   * @member {number} tCapture
-   * @memberof SSL_DetectionFrame
+   * SSL_Micro_DetectionFrame robotsYellow.
+   * @member {Array.<ISSL_Micro_DetectionRobot>} robotsYellow
+   * @memberof SSL_Micro_DetectionFrame
    * @instance
    */
-  SSL_DetectionFrame.prototype.tCapture = 0;
+  SSL_Micro_DetectionFrame.prototype.robotsYellow = $util.emptyArray;
 
   /**
-   * SSL_DetectionFrame tSent.
-   * @member {number} tSent
-   * @memberof SSL_DetectionFrame
+   * SSL_Micro_DetectionFrame robotsBlue.
+   * @member {Array.<ISSL_Micro_DetectionRobot>} robotsBlue
+   * @memberof SSL_Micro_DetectionFrame
    * @instance
    */
-  SSL_DetectionFrame.prototype.tSent = 0;
+  SSL_Micro_DetectionFrame.prototype.robotsBlue = $util.emptyArray;
 
   /**
-   * SSL_DetectionFrame cameraId.
-   * @member {number} cameraId
-   * @memberof SSL_DetectionFrame
-   * @instance
-   */
-  SSL_DetectionFrame.prototype.cameraId = 0;
-
-  /**
-   * SSL_DetectionFrame balls.
-   * @member {Array.<ISSL_DetectionBall>} balls
-   * @memberof SSL_DetectionFrame
-   * @instance
-   */
-  SSL_DetectionFrame.prototype.balls = $util.emptyArray;
-
-  /**
-   * SSL_DetectionFrame robotsYellow.
-   * @member {Array.<ISSL_DetectionRobot>} robotsYellow
-   * @memberof SSL_DetectionFrame
-   * @instance
-   */
-  SSL_DetectionFrame.prototype.robotsYellow = $util.emptyArray;
-
-  /**
-   * SSL_DetectionFrame robotsBlue.
-   * @member {Array.<ISSL_DetectionRobot>} robotsBlue
-   * @memberof SSL_DetectionFrame
-   * @instance
-   */
-  SSL_DetectionFrame.prototype.robotsBlue = $util.emptyArray;
-
-  /**
-   * Creates a new SSL_DetectionFrame instance using the specified properties.
+   * Creates a new SSL_Micro_DetectionFrame instance using the specified properties.
    * @function create
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @static
-   * @param {ISSL_DetectionFrame=} [properties] Properties to set
-   * @returns {SSL_DetectionFrame} SSL_DetectionFrame instance
+   * @param {ISSL_Micro_DetectionFrame=} [properties] Properties to set
+   * @returns {SSL_Micro_DetectionFrame} SSL_Micro_DetectionFrame instance
    */
-  SSL_DetectionFrame.create = function create(properties) {
-    return new SSL_DetectionFrame(properties);
+  SSL_Micro_DetectionFrame.create = function create(properties) {
+    return new SSL_Micro_DetectionFrame(properties);
   };
 
   /**
-   * Encodes the specified SSL_DetectionFrame message. Does not implicitly {@link SSL_DetectionFrame.verify|verify} messages.
+   * Encodes the specified SSL_Micro_DetectionFrame message. Does not implicitly {@link SSL_Micro_DetectionFrame.verify|verify} messages.
    * @function encode
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @static
-   * @param {ISSL_DetectionFrame} message SSL_DetectionFrame message or plain object to encode
+   * @param {ISSL_Micro_DetectionFrame} message SSL_Micro_DetectionFrame message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_DetectionFrame.encode = function encode(message, writer) {
+  SSL_Micro_DetectionFrame.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
-    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.frameNumber);
-    writer.uint32(/* id 2, wireType 1 =*/17).double(message.tCapture);
-    writer.uint32(/* id 3, wireType 1 =*/25).double(message.tSent);
-    writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.cameraId);
     if (message.balls != null && message.balls.length)
       for (var i = 0; i < message.balls.length; ++i)
-        $root.SSL_DetectionBall.encode(message.balls[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        $root.SSL_Micro_DetectionBall.encode(message.balls[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
     if (message.robotsYellow != null && message.robotsYellow.length)
       for (var i = 0; i < message.robotsYellow.length; ++i)
-        $root.SSL_DetectionRobot.encode(message.robotsYellow[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+        $root.SSL_Micro_DetectionRobot.encode(message.robotsYellow[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
     if (message.robotsBlue != null && message.robotsBlue.length)
       for (var i = 0; i < message.robotsBlue.length; ++i)
-        $root.SSL_DetectionRobot.encode(message.robotsBlue[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+        $root.SSL_Micro_DetectionRobot.encode(message.robotsBlue[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
     return writer;
   };
 
   /**
-   * Encodes the specified SSL_DetectionFrame message, length delimited. Does not implicitly {@link SSL_DetectionFrame.verify|verify} messages.
+   * Encodes the specified SSL_Micro_DetectionFrame message, length delimited. Does not implicitly {@link SSL_Micro_DetectionFrame.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @static
-   * @param {ISSL_DetectionFrame} message SSL_DetectionFrame message or plain object to encode
+   * @param {ISSL_Micro_DetectionFrame} message SSL_Micro_DetectionFrame message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_DetectionFrame.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_DetectionFrame.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_DetectionFrame message from the specified reader or buffer.
+   * Decodes a SSL_Micro_DetectionFrame message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_DetectionFrame} SSL_DetectionFrame
+   * @returns {SSL_Micro_DetectionFrame} SSL_Micro_DetectionFrame
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_DetectionFrame.decode = function decode(reader, length) {
+  SSL_Micro_DetectionFrame.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_DetectionFrame();
+    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_Micro_DetectionFrame();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
-        case 1:
-          message.frameNumber = reader.uint32();
-          break;
-        case 2:
-          message.tCapture = reader.double();
-          break;
-        case 3:
-          message.tSent = reader.double();
-          break;
-        case 4:
-          message.cameraId = reader.uint32();
-          break;
         case 5:
           if (!(message.balls && message.balls.length))
             message.balls = [];
-          message.balls.push($root.SSL_DetectionBall.decode(reader, reader.uint32()));
+          message.balls.push($root.SSL_Micro_DetectionBall.decode(reader, reader.uint32()));
           break;
         case 6:
           if (!(message.robotsYellow && message.robotsYellow.length))
             message.robotsYellow = [];
-          message.robotsYellow.push($root.SSL_DetectionRobot.decode(reader, reader.uint32()));
+          message.robotsYellow.push($root.SSL_Micro_DetectionRobot.decode(reader, reader.uint32()));
           break;
         case 7:
           if (!(message.robotsBlue && message.robotsBlue.length))
             message.robotsBlue = [];
-          message.robotsBlue.push($root.SSL_DetectionRobot.decode(reader, reader.uint32()));
+          message.robotsBlue.push($root.SSL_Micro_DetectionRobot.decode(reader, reader.uint32()));
           break;
         default:
           reader.skipType(tag & 7);
           break;
       }
     }
-    if (!message.hasOwnProperty("frameNumber"))
-      throw $util.ProtocolError("missing required 'frameNumber'", {instance: message});
-    if (!message.hasOwnProperty("tCapture"))
-      throw $util.ProtocolError("missing required 'tCapture'", {instance: message});
-    if (!message.hasOwnProperty("tSent"))
-      throw $util.ProtocolError("missing required 'tSent'", {instance: message});
-    if (!message.hasOwnProperty("cameraId"))
-      throw $util.ProtocolError("missing required 'cameraId'", {instance: message});
     return message;
   };
 
   /**
-   * Decodes a SSL_DetectionFrame message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_DetectionFrame message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_DetectionFrame} SSL_DetectionFrame
+   * @returns {SSL_Micro_DetectionFrame} SSL_Micro_DetectionFrame
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_DetectionFrame.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_DetectionFrame.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_DetectionFrame message.
+   * Verifies a SSL_Micro_DetectionFrame message.
    * @function verify
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_DetectionFrame.verify = function verify(message) {
+  SSL_Micro_DetectionFrame.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
-    if (!$util.isInteger(message.frameNumber))
-      return "frameNumber: integer expected";
-    if (typeof message.tCapture !== "number")
-      return "tCapture: number expected";
-    if (typeof message.tSent !== "number")
-      return "tSent: number expected";
-    if (!$util.isInteger(message.cameraId))
-      return "cameraId: integer expected";
     if (message.balls != null && message.hasOwnProperty("balls")) {
       if (!Array.isArray(message.balls))
         return "balls: array expected";
       for (var i = 0; i < message.balls.length; ++i) {
-        var error = $root.SSL_DetectionBall.verify(message.balls[i]);
+        var error = $root.SSL_Micro_DetectionBall.verify(message.balls[i]);
         if (error)
           return "balls." + error;
       }
@@ -922,7 +656,7 @@ $root.SSL_DetectionFrame = (function () {
       if (!Array.isArray(message.robotsYellow))
         return "robotsYellow: array expected";
       for (var i = 0; i < message.robotsYellow.length; ++i) {
-        var error = $root.SSL_DetectionRobot.verify(message.robotsYellow[i]);
+        var error = $root.SSL_Micro_DetectionRobot.verify(message.robotsYellow[i]);
         if (error)
           return "robotsYellow." + error;
       }
@@ -931,7 +665,7 @@ $root.SSL_DetectionFrame = (function () {
       if (!Array.isArray(message.robotsBlue))
         return "robotsBlue: array expected";
       for (var i = 0; i < message.robotsBlue.length; ++i) {
-        var error = $root.SSL_DetectionRobot.verify(message.robotsBlue[i]);
+        var error = $root.SSL_Micro_DetectionRobot.verify(message.robotsBlue[i]);
         if (error)
           return "robotsBlue." + error;
       }
@@ -940,68 +674,60 @@ $root.SSL_DetectionFrame = (function () {
   };
 
   /**
-   * Creates a SSL_DetectionFrame message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_DetectionFrame message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_DetectionFrame} SSL_DetectionFrame
+   * @returns {SSL_Micro_DetectionFrame} SSL_Micro_DetectionFrame
    */
-  SSL_DetectionFrame.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_DetectionFrame)
+  SSL_Micro_DetectionFrame.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_DetectionFrame)
       return object;
-    var message = new $root.SSL_DetectionFrame();
-    if (object.frameNumber != null)
-      message.frameNumber = object.frameNumber >>> 0;
-    if (object.tCapture != null)
-      message.tCapture = Number(object.tCapture);
-    if (object.tSent != null)
-      message.tSent = Number(object.tSent);
-    if (object.cameraId != null)
-      message.cameraId = object.cameraId >>> 0;
+    var message = new $root.SSL_Micro_DetectionFrame();
     if (object.balls) {
       if (!Array.isArray(object.balls))
-        throw TypeError(".SSL_DetectionFrame.balls: array expected");
+        throw TypeError(".SSL_Micro_DetectionFrame.balls: array expected");
       message.balls = [];
       for (var i = 0; i < object.balls.length; ++i) {
         if (typeof object.balls[i] !== "object")
-          throw TypeError(".SSL_DetectionFrame.balls: object expected");
-        message.balls[i] = $root.SSL_DetectionBall.fromObject(object.balls[i]);
+          throw TypeError(".SSL_Micro_DetectionFrame.balls: object expected");
+        message.balls[i] = $root.SSL_Micro_DetectionBall.fromObject(object.balls[i]);
       }
     }
     if (object.robotsYellow) {
       if (!Array.isArray(object.robotsYellow))
-        throw TypeError(".SSL_DetectionFrame.robotsYellow: array expected");
+        throw TypeError(".SSL_Micro_DetectionFrame.robotsYellow: array expected");
       message.robotsYellow = [];
       for (var i = 0; i < object.robotsYellow.length; ++i) {
         if (typeof object.robotsYellow[i] !== "object")
-          throw TypeError(".SSL_DetectionFrame.robotsYellow: object expected");
-        message.robotsYellow[i] = $root.SSL_DetectionRobot.fromObject(object.robotsYellow[i]);
+          throw TypeError(".SSL_Micro_DetectionFrame.robotsYellow: object expected");
+        message.robotsYellow[i] = $root.SSL_Micro_DetectionRobot.fromObject(object.robotsYellow[i]);
       }
     }
     if (object.robotsBlue) {
       if (!Array.isArray(object.robotsBlue))
-        throw TypeError(".SSL_DetectionFrame.robotsBlue: array expected");
+        throw TypeError(".SSL_Micro_DetectionFrame.robotsBlue: array expected");
       message.robotsBlue = [];
       for (var i = 0; i < object.robotsBlue.length; ++i) {
         if (typeof object.robotsBlue[i] !== "object")
-          throw TypeError(".SSL_DetectionFrame.robotsBlue: object expected");
-        message.robotsBlue[i] = $root.SSL_DetectionRobot.fromObject(object.robotsBlue[i]);
+          throw TypeError(".SSL_Micro_DetectionFrame.robotsBlue: object expected");
+        message.robotsBlue[i] = $root.SSL_Micro_DetectionRobot.fromObject(object.robotsBlue[i]);
       }
     }
     return message;
   };
 
   /**
-   * Creates a plain object from a SSL_DetectionFrame message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_DetectionFrame message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @static
-   * @param {SSL_DetectionFrame} message SSL_DetectionFrame
+   * @param {SSL_Micro_DetectionFrame} message SSL_Micro_DetectionFrame
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_DetectionFrame.toObject = function toObject(message, options) {
+  SSL_Micro_DetectionFrame.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
@@ -1010,71 +736,57 @@ $root.SSL_DetectionFrame = (function () {
       object.robotsYellow = [];
       object.robotsBlue = [];
     }
-    if (options.defaults) {
-      object.frameNumber = 0;
-      object.tCapture = 0;
-      object.tSent = 0;
-      object.cameraId = 0;
-    }
-    if (message.frameNumber != null && message.hasOwnProperty("frameNumber"))
-      object.frameNumber = message.frameNumber;
-    if (message.tCapture != null && message.hasOwnProperty("tCapture"))
-      object.tCapture = options.json && !isFinite(message.tCapture) ? String(message.tCapture) : message.tCapture;
-    if (message.tSent != null && message.hasOwnProperty("tSent"))
-      object.tSent = options.json && !isFinite(message.tSent) ? String(message.tSent) : message.tSent;
-    if (message.cameraId != null && message.hasOwnProperty("cameraId"))
-      object.cameraId = message.cameraId;
     if (message.balls && message.balls.length) {
       object.balls = [];
       for (var j = 0; j < message.balls.length; ++j)
-        object.balls[j] = $root.SSL_DetectionBall.toObject(message.balls[j], options);
+        object.balls[j] = $root.SSL_Micro_DetectionBall.toObject(message.balls[j], options);
     }
     if (message.robotsYellow && message.robotsYellow.length) {
       object.robotsYellow = [];
       for (var j = 0; j < message.robotsYellow.length; ++j)
-        object.robotsYellow[j] = $root.SSL_DetectionRobot.toObject(message.robotsYellow[j], options);
+        object.robotsYellow[j] = $root.SSL_Micro_DetectionRobot.toObject(message.robotsYellow[j], options);
     }
     if (message.robotsBlue && message.robotsBlue.length) {
       object.robotsBlue = [];
       for (var j = 0; j < message.robotsBlue.length; ++j)
-        object.robotsBlue[j] = $root.SSL_DetectionRobot.toObject(message.robotsBlue[j], options);
+        object.robotsBlue[j] = $root.SSL_Micro_DetectionRobot.toObject(message.robotsBlue[j], options);
     }
     return object;
   };
 
   /**
-   * Converts this SSL_DetectionFrame to JSON.
+   * Converts this SSL_Micro_DetectionFrame to JSON.
    * @function toJSON
-   * @memberof SSL_DetectionFrame
+   * @memberof SSL_Micro_DetectionFrame
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_DetectionFrame.prototype.toJSON = function toJSON() {
+  SSL_Micro_DetectionFrame.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_DetectionFrame;
+  return SSL_Micro_DetectionFrame;
 })();
 
-$root.Vector2f = (function () {
+$root.Micro_Vector2f = (function () {
 
   /**
-   * Properties of a Vector2f.
-   * @exports IVector2f
-   * @interface IVector2f
-   * @property {number} x Vector2f x
-   * @property {number} y Vector2f y
+   * Properties of a Micro_Vector2f.
+   * @exports IMicro_Vector2f
+   * @interface IMicro_Vector2f
+   * @property {number} x Micro_Vector2f x
+   * @property {number} y Micro_Vector2f y
    */
 
   /**
-   * Constructs a new Vector2f.
-   * @exports Vector2f
-   * @classdesc Represents a Vector2f.
-   * @implements IVector2f
+   * Constructs a new Micro_Vector2f.
+   * @exports Micro_Vector2f
+   * @classdesc Represents a Micro_Vector2f.
+   * @implements IMicro_Vector2f
    * @constructor
-   * @param {IVector2f=} [properties] Properties to set
+   * @param {IMicro_Vector2f=} [properties] Properties to set
    */
-  function Vector2f(properties) {
+  function Micro_Vector2f(properties) {
     if (properties)
       for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
         if (properties[keys[i]] != null)
@@ -1082,43 +794,43 @@ $root.Vector2f = (function () {
   }
 
   /**
-   * Vector2f x.
+   * Micro_Vector2f x.
    * @member {number} x
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @instance
    */
-  Vector2f.prototype.x = 0;
+  Micro_Vector2f.prototype.x = 0;
 
   /**
-   * Vector2f y.
+   * Micro_Vector2f y.
    * @member {number} y
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @instance
    */
-  Vector2f.prototype.y = 0;
+  Micro_Vector2f.prototype.y = 0;
 
   /**
-   * Creates a new Vector2f instance using the specified properties.
+   * Creates a new Micro_Vector2f instance using the specified properties.
    * @function create
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @static
-   * @param {IVector2f=} [properties] Properties to set
-   * @returns {Vector2f} Vector2f instance
+   * @param {IMicro_Vector2f=} [properties] Properties to set
+   * @returns {Micro_Vector2f} Micro_Vector2f instance
    */
-  Vector2f.create = function create(properties) {
-    return new Vector2f(properties);
+  Micro_Vector2f.create = function create(properties) {
+    return new Micro_Vector2f(properties);
   };
 
   /**
-   * Encodes the specified Vector2f message. Does not implicitly {@link Vector2f.verify|verify} messages.
+   * Encodes the specified Micro_Vector2f message. Does not implicitly {@link Micro_Vector2f.verify|verify} messages.
    * @function encode
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @static
-   * @param {IVector2f} message Vector2f message or plain object to encode
+   * @param {IMicro_Vector2f} message Micro_Vector2f message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  Vector2f.encode = function encode(message, writer) {
+  Micro_Vector2f.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
     writer.uint32(/* id 1, wireType 5 =*/13).float(message.x);
@@ -1127,33 +839,33 @@ $root.Vector2f = (function () {
   };
 
   /**
-   * Encodes the specified Vector2f message, length delimited. Does not implicitly {@link Vector2f.verify|verify} messages.
+   * Encodes the specified Micro_Vector2f message, length delimited. Does not implicitly {@link Micro_Vector2f.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @static
-   * @param {IVector2f} message Vector2f message or plain object to encode
+   * @param {IMicro_Vector2f} message Micro_Vector2f message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  Vector2f.encodeDelimited = function encodeDelimited(message, writer) {
+  Micro_Vector2f.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a Vector2f message from the specified reader or buffer.
+   * Decodes a Micro_Vector2f message from the specified reader or buffer.
    * @function decode
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {Vector2f} Vector2f
+   * @returns {Micro_Vector2f} Micro_Vector2f
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  Vector2f.decode = function decode(reader, length) {
+  Micro_Vector2f.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Vector2f();
+    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Micro_Vector2f();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1176,30 +888,30 @@ $root.Vector2f = (function () {
   };
 
   /**
-   * Decodes a Vector2f message from the specified reader or buffer, length delimited.
+   * Decodes a Micro_Vector2f message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {Vector2f} Vector2f
+   * @returns {Micro_Vector2f} Micro_Vector2f
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  Vector2f.decodeDelimited = function decodeDelimited(reader) {
+  Micro_Vector2f.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a Vector2f message.
+   * Verifies a Micro_Vector2f message.
    * @function verify
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  Vector2f.verify = function verify(message) {
+  Micro_Vector2f.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
     if (typeof message.x !== "number")
@@ -1210,17 +922,17 @@ $root.Vector2f = (function () {
   };
 
   /**
-   * Creates a Vector2f message from a plain object. Also converts values to their respective internal types.
+   * Creates a Micro_Vector2f message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {Vector2f} Vector2f
+   * @returns {Micro_Vector2f} Micro_Vector2f
    */
-  Vector2f.fromObject = function fromObject(object) {
-    if (object instanceof $root.Vector2f)
+  Micro_Vector2f.fromObject = function fromObject(object) {
+    if (object instanceof $root.Micro_Vector2f)
       return object;
-    var message = new $root.Vector2f();
+    var message = new $root.Micro_Vector2f();
     if (object.x != null)
       message.x = Number(object.x);
     if (object.y != null)
@@ -1229,15 +941,15 @@ $root.Vector2f = (function () {
   };
 
   /**
-   * Creates a plain object from a Vector2f message. Also converts values to other types if specified.
+   * Creates a plain object from a Micro_Vector2f message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @static
-   * @param {Vector2f} message Vector2f
+   * @param {Micro_Vector2f} message Micro_Vector2f
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  Vector2f.toObject = function toObject(message, options) {
+  Micro_Vector2f.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
@@ -1253,40 +965,40 @@ $root.Vector2f = (function () {
   };
 
   /**
-   * Converts this Vector2f to JSON.
+   * Converts this Micro_Vector2f to JSON.
    * @function toJSON
-   * @memberof Vector2f
+   * @memberof Micro_Vector2f
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  Vector2f.prototype.toJSON = function toJSON() {
+  Micro_Vector2f.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return Vector2f;
+  return Micro_Vector2f;
 })();
 
-$root.SSL_FieldLineSegment = (function () {
+$root.SSL_Micro_FieldLineSegment = (function () {
 
   /**
-   * Properties of a SSL_FieldLineSegment.
-   * @exports ISSL_FieldLineSegment
-   * @interface ISSL_FieldLineSegment
-   * @property {string} name SSL_FieldLineSegment name
-   * @property {IVector2f} p1 SSL_FieldLineSegment p1
-   * @property {IVector2f} p2 SSL_FieldLineSegment p2
-   * @property {number} thickness SSL_FieldLineSegment thickness
+   * Properties of a SSL_Micro_FieldLineSegment.
+   * @exports ISSL_Micro_FieldLineSegment
+   * @interface ISSL_Micro_FieldLineSegment
+   * @property {string|null} [name] SSL_Micro_FieldLineSegment name
+   * @property {IMicro_Vector2f} p1 SSL_Micro_FieldLineSegment p1
+   * @property {IMicro_Vector2f} p2 SSL_Micro_FieldLineSegment p2
+   * @property {number|null} [thickness] SSL_Micro_FieldLineSegment thickness
    */
 
   /**
-   * Constructs a new SSL_FieldLineSegment.
-   * @exports SSL_FieldLineSegment
-   * @classdesc Represents a SSL_FieldLineSegment.
-   * @implements ISSL_FieldLineSegment
+   * Constructs a new SSL_Micro_FieldLineSegment.
+   * @exports SSL_Micro_FieldLineSegment
+   * @classdesc Represents a SSL_Micro_FieldLineSegment.
+   * @implements ISSL_Micro_FieldLineSegment
    * @constructor
-   * @param {ISSL_FieldLineSegment=} [properties] Properties to set
+   * @param {ISSL_Micro_FieldLineSegment=} [properties] Properties to set
    */
-  function SSL_FieldLineSegment(properties) {
+  function SSL_Micro_FieldLineSegment(properties) {
     if (properties)
       for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
         if (properties[keys[i]] != null)
@@ -1294,96 +1006,98 @@ $root.SSL_FieldLineSegment = (function () {
   }
 
   /**
-   * SSL_FieldLineSegment name.
+   * SSL_Micro_FieldLineSegment name.
    * @member {string} name
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @instance
    */
-  SSL_FieldLineSegment.prototype.name = "";
+  SSL_Micro_FieldLineSegment.prototype.name = "";
 
   /**
-   * SSL_FieldLineSegment p1.
-   * @member {IVector2f} p1
-   * @memberof SSL_FieldLineSegment
+   * SSL_Micro_FieldLineSegment p1.
+   * @member {IMicro_Vector2f} p1
+   * @memberof SSL_Micro_FieldLineSegment
    * @instance
    */
-  SSL_FieldLineSegment.prototype.p1 = null;
+  SSL_Micro_FieldLineSegment.prototype.p1 = null;
 
   /**
-   * SSL_FieldLineSegment p2.
-   * @member {IVector2f} p2
-   * @memberof SSL_FieldLineSegment
+   * SSL_Micro_FieldLineSegment p2.
+   * @member {IMicro_Vector2f} p2
+   * @memberof SSL_Micro_FieldLineSegment
    * @instance
    */
-  SSL_FieldLineSegment.prototype.p2 = null;
+  SSL_Micro_FieldLineSegment.prototype.p2 = null;
 
   /**
-   * SSL_FieldLineSegment thickness.
+   * SSL_Micro_FieldLineSegment thickness.
    * @member {number} thickness
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @instance
    */
-  SSL_FieldLineSegment.prototype.thickness = 0;
+  SSL_Micro_FieldLineSegment.prototype.thickness = 0;
 
   /**
-   * Creates a new SSL_FieldLineSegment instance using the specified properties.
+   * Creates a new SSL_Micro_FieldLineSegment instance using the specified properties.
    * @function create
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @static
-   * @param {ISSL_FieldLineSegment=} [properties] Properties to set
-   * @returns {SSL_FieldLineSegment} SSL_FieldLineSegment instance
+   * @param {ISSL_Micro_FieldLineSegment=} [properties] Properties to set
+   * @returns {SSL_Micro_FieldLineSegment} SSL_Micro_FieldLineSegment instance
    */
-  SSL_FieldLineSegment.create = function create(properties) {
-    return new SSL_FieldLineSegment(properties);
+  SSL_Micro_FieldLineSegment.create = function create(properties) {
+    return new SSL_Micro_FieldLineSegment(properties);
   };
 
   /**
-   * Encodes the specified SSL_FieldLineSegment message. Does not implicitly {@link SSL_FieldLineSegment.verify|verify} messages.
+   * Encodes the specified SSL_Micro_FieldLineSegment message. Does not implicitly {@link SSL_Micro_FieldLineSegment.verify|verify} messages.
    * @function encode
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @static
-   * @param {ISSL_FieldLineSegment} message SSL_FieldLineSegment message or plain object to encode
+   * @param {ISSL_Micro_FieldLineSegment} message SSL_Micro_FieldLineSegment message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_FieldLineSegment.encode = function encode(message, writer) {
+  SSL_Micro_FieldLineSegment.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
-    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-    $root.Vector2f.encode(message.p1, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-    $root.Vector2f.encode(message.p2, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-    writer.uint32(/* id 4, wireType 5 =*/37).float(message.thickness);
+    if (message.name != null && message.hasOwnProperty("name"))
+      writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+    $root.Micro_Vector2f.encode(message.p1, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+    $root.Micro_Vector2f.encode(message.p2, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+    if (message.thickness != null && message.hasOwnProperty("thickness"))
+      writer.uint32(/* id 4, wireType 5 =*/37).float(message.thickness);
     return writer;
   };
 
   /**
-   * Encodes the specified SSL_FieldLineSegment message, length delimited. Does not implicitly {@link SSL_FieldLineSegment.verify|verify} messages.
+   * Encodes the specified SSL_Micro_FieldLineSegment message, length delimited. Does not implicitly {@link SSL_Micro_FieldLineSegment.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @static
-   * @param {ISSL_FieldLineSegment} message SSL_FieldLineSegment message or plain object to encode
+   * @param {ISSL_Micro_FieldLineSegment} message SSL_Micro_FieldLineSegment message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_FieldLineSegment.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_FieldLineSegment.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_FieldLineSegment message from the specified reader or buffer.
+   * Decodes a SSL_Micro_FieldLineSegment message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_FieldLineSegment} SSL_FieldLineSegment
+   * @returns {SSL_Micro_FieldLineSegment} SSL_Micro_FieldLineSegment
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_FieldLineSegment.decode = function decode(reader, length) {
+  SSL_Micro_FieldLineSegment.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_FieldLineSegment();
+    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_Micro_FieldLineSegment();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1391,10 +1105,10 @@ $root.SSL_FieldLineSegment = (function () {
           message.name = reader.string();
           break;
         case 2:
-          message.p1 = $root.Vector2f.decode(reader, reader.uint32());
+          message.p1 = $root.Micro_Vector2f.decode(reader, reader.uint32());
           break;
         case 3:
-          message.p2 = $root.Vector2f.decode(reader, reader.uint32());
+          message.p2 = $root.Micro_Vector2f.decode(reader, reader.uint32());
           break;
         case 4:
           message.thickness = reader.float();
@@ -1404,84 +1118,82 @@ $root.SSL_FieldLineSegment = (function () {
           break;
       }
     }
-    if (!message.hasOwnProperty("name"))
-      throw $util.ProtocolError("missing required 'name'", {instance: message});
     if (!message.hasOwnProperty("p1"))
       throw $util.ProtocolError("missing required 'p1'", {instance: message});
     if (!message.hasOwnProperty("p2"))
       throw $util.ProtocolError("missing required 'p2'", {instance: message});
-    if (!message.hasOwnProperty("thickness"))
-      throw $util.ProtocolError("missing required 'thickness'", {instance: message});
     return message;
   };
 
   /**
-   * Decodes a SSL_FieldLineSegment message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_FieldLineSegment message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_FieldLineSegment} SSL_FieldLineSegment
+   * @returns {SSL_Micro_FieldLineSegment} SSL_Micro_FieldLineSegment
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_FieldLineSegment.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_FieldLineSegment.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_FieldLineSegment message.
+   * Verifies a SSL_Micro_FieldLineSegment message.
    * @function verify
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_FieldLineSegment.verify = function verify(message) {
+  SSL_Micro_FieldLineSegment.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
-    if (!$util.isString(message.name))
-      return "name: string expected";
+    if (message.name != null && message.hasOwnProperty("name"))
+      if (!$util.isString(message.name))
+        return "name: string expected";
     {
-      var error = $root.Vector2f.verify(message.p1);
+      var error = $root.Micro_Vector2f.verify(message.p1);
       if (error)
         return "p1." + error;
     }
     {
-      var error = $root.Vector2f.verify(message.p2);
+      var error = $root.Micro_Vector2f.verify(message.p2);
       if (error)
         return "p2." + error;
     }
-    if (typeof message.thickness !== "number")
-      return "thickness: number expected";
+    if (message.thickness != null && message.hasOwnProperty("thickness"))
+      if (typeof message.thickness !== "number")
+        return "thickness: number expected";
     return null;
   };
 
   /**
-   * Creates a SSL_FieldLineSegment message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_FieldLineSegment message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_FieldLineSegment} SSL_FieldLineSegment
+   * @returns {SSL_Micro_FieldLineSegment} SSL_Micro_FieldLineSegment
    */
-  SSL_FieldLineSegment.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_FieldLineSegment)
+  SSL_Micro_FieldLineSegment.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_FieldLineSegment)
       return object;
-    var message = new $root.SSL_FieldLineSegment();
+    var message = new $root.SSL_Micro_FieldLineSegment();
     if (object.name != null)
       message.name = String(object.name);
     if (object.p1 != null) {
       if (typeof object.p1 !== "object")
-        throw TypeError(".SSL_FieldLineSegment.p1: object expected");
-      message.p1 = $root.Vector2f.fromObject(object.p1);
+        throw TypeError(".SSL_Micro_FieldLineSegment.p1: object expected");
+      message.p1 = $root.Micro_Vector2f.fromObject(object.p1);
     }
     if (object.p2 != null) {
       if (typeof object.p2 !== "object")
-        throw TypeError(".SSL_FieldLineSegment.p2: object expected");
-      message.p2 = $root.Vector2f.fromObject(object.p2);
+        throw TypeError(".SSL_Micro_FieldLineSegment.p2: object expected");
+      message.p2 = $root.Micro_Vector2f.fromObject(object.p2);
     }
     if (object.thickness != null)
       message.thickness = Number(object.thickness);
@@ -1489,15 +1201,15 @@ $root.SSL_FieldLineSegment = (function () {
   };
 
   /**
-   * Creates a plain object from a SSL_FieldLineSegment message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_FieldLineSegment message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @static
-   * @param {SSL_FieldLineSegment} message SSL_FieldLineSegment
+   * @param {SSL_Micro_FieldLineSegment} message SSL_Micro_FieldLineSegment
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_FieldLineSegment.toObject = function toObject(message, options) {
+  SSL_Micro_FieldLineSegment.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
@@ -1510,51 +1222,51 @@ $root.SSL_FieldLineSegment = (function () {
     if (message.name != null && message.hasOwnProperty("name"))
       object.name = message.name;
     if (message.p1 != null && message.hasOwnProperty("p1"))
-      object.p1 = $root.Vector2f.toObject(message.p1, options);
+      object.p1 = $root.Micro_Vector2f.toObject(message.p1, options);
     if (message.p2 != null && message.hasOwnProperty("p2"))
-      object.p2 = $root.Vector2f.toObject(message.p2, options);
+      object.p2 = $root.Micro_Vector2f.toObject(message.p2, options);
     if (message.thickness != null && message.hasOwnProperty("thickness"))
       object.thickness = options.json && !isFinite(message.thickness) ? String(message.thickness) : message.thickness;
     return object;
   };
 
   /**
-   * Converts this SSL_FieldLineSegment to JSON.
+   * Converts this SSL_Micro_FieldLineSegment to JSON.
    * @function toJSON
-   * @memberof SSL_FieldLineSegment
+   * @memberof SSL_Micro_FieldLineSegment
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_FieldLineSegment.prototype.toJSON = function toJSON() {
+  SSL_Micro_FieldLineSegment.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_FieldLineSegment;
+  return SSL_Micro_FieldLineSegment;
 })();
 
-$root.SSL_FieldCicularArc = (function () {
+$root.SSL_Micro_FieldCicularArc = (function () {
 
   /**
-   * Properties of a SSL_FieldCicularArc.
-   * @exports ISSL_FieldCicularArc
-   * @interface ISSL_FieldCicularArc
-   * @property {string} name SSL_FieldCicularArc name
-   * @property {IVector2f} center SSL_FieldCicularArc center
-   * @property {number} radius SSL_FieldCicularArc radius
-   * @property {number} a1 SSL_FieldCicularArc a1
-   * @property {number} a2 SSL_FieldCicularArc a2
-   * @property {number} thickness SSL_FieldCicularArc thickness
+   * Properties of a SSL_Micro_FieldCicularArc.
+   * @exports ISSL_Micro_FieldCicularArc
+   * @interface ISSL_Micro_FieldCicularArc
+   * @property {string|null} [name] SSL_Micro_FieldCicularArc name
+   * @property {IMicro_Vector2f} center SSL_Micro_FieldCicularArc center
+   * @property {number} radius SSL_Micro_FieldCicularArc radius
+   * @property {number|null} [a1] SSL_Micro_FieldCicularArc a1
+   * @property {number|null} [a2] SSL_Micro_FieldCicularArc a2
+   * @property {number|null} [thickness] SSL_Micro_FieldCicularArc thickness
    */
 
   /**
-   * Constructs a new SSL_FieldCicularArc.
-   * @exports SSL_FieldCicularArc
-   * @classdesc Represents a SSL_FieldCicularArc.
-   * @implements ISSL_FieldCicularArc
+   * Constructs a new SSL_Micro_FieldCicularArc.
+   * @exports SSL_Micro_FieldCicularArc
+   * @classdesc Represents a SSL_Micro_FieldCicularArc.
+   * @implements ISSL_Micro_FieldCicularArc
    * @constructor
-   * @param {ISSL_FieldCicularArc=} [properties] Properties to set
+   * @param {ISSL_Micro_FieldCicularArc=} [properties] Properties to set
    */
-  function SSL_FieldCicularArc(properties) {
+  function SSL_Micro_FieldCicularArc(properties) {
     if (properties)
       for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
         if (properties[keys[i]] != null)
@@ -1562,114 +1274,118 @@ $root.SSL_FieldCicularArc = (function () {
   }
 
   /**
-   * SSL_FieldCicularArc name.
+   * SSL_Micro_FieldCicularArc name.
    * @member {string} name
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @instance
    */
-  SSL_FieldCicularArc.prototype.name = "";
+  SSL_Micro_FieldCicularArc.prototype.name = "";
 
   /**
-   * SSL_FieldCicularArc center.
-   * @member {IVector2f} center
-   * @memberof SSL_FieldCicularArc
+   * SSL_Micro_FieldCicularArc center.
+   * @member {IMicro_Vector2f} center
+   * @memberof SSL_Micro_FieldCicularArc
    * @instance
    */
-  SSL_FieldCicularArc.prototype.center = null;
+  SSL_Micro_FieldCicularArc.prototype.center = null;
 
   /**
-   * SSL_FieldCicularArc radius.
+   * SSL_Micro_FieldCicularArc radius.
    * @member {number} radius
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @instance
    */
-  SSL_FieldCicularArc.prototype.radius = 0;
+  SSL_Micro_FieldCicularArc.prototype.radius = 0;
 
   /**
-   * SSL_FieldCicularArc a1.
+   * SSL_Micro_FieldCicularArc a1.
    * @member {number} a1
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @instance
    */
-  SSL_FieldCicularArc.prototype.a1 = 0;
+  SSL_Micro_FieldCicularArc.prototype.a1 = 0;
 
   /**
-   * SSL_FieldCicularArc a2.
+   * SSL_Micro_FieldCicularArc a2.
    * @member {number} a2
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @instance
    */
-  SSL_FieldCicularArc.prototype.a2 = 0;
+  SSL_Micro_FieldCicularArc.prototype.a2 = 0;
 
   /**
-   * SSL_FieldCicularArc thickness.
+   * SSL_Micro_FieldCicularArc thickness.
    * @member {number} thickness
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @instance
    */
-  SSL_FieldCicularArc.prototype.thickness = 0;
+  SSL_Micro_FieldCicularArc.prototype.thickness = 0;
 
   /**
-   * Creates a new SSL_FieldCicularArc instance using the specified properties.
+   * Creates a new SSL_Micro_FieldCicularArc instance using the specified properties.
    * @function create
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @static
-   * @param {ISSL_FieldCicularArc=} [properties] Properties to set
-   * @returns {SSL_FieldCicularArc} SSL_FieldCicularArc instance
+   * @param {ISSL_Micro_FieldCicularArc=} [properties] Properties to set
+   * @returns {SSL_Micro_FieldCicularArc} SSL_Micro_FieldCicularArc instance
    */
-  SSL_FieldCicularArc.create = function create(properties) {
-    return new SSL_FieldCicularArc(properties);
+  SSL_Micro_FieldCicularArc.create = function create(properties) {
+    return new SSL_Micro_FieldCicularArc(properties);
   };
 
   /**
-   * Encodes the specified SSL_FieldCicularArc message. Does not implicitly {@link SSL_FieldCicularArc.verify|verify} messages.
+   * Encodes the specified SSL_Micro_FieldCicularArc message. Does not implicitly {@link SSL_Micro_FieldCicularArc.verify|verify} messages.
    * @function encode
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @static
-   * @param {ISSL_FieldCicularArc} message SSL_FieldCicularArc message or plain object to encode
+   * @param {ISSL_Micro_FieldCicularArc} message SSL_Micro_FieldCicularArc message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_FieldCicularArc.encode = function encode(message, writer) {
+  SSL_Micro_FieldCicularArc.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
-    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-    $root.Vector2f.encode(message.center, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+    if (message.name != null && message.hasOwnProperty("name"))
+      writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+    $root.Micro_Vector2f.encode(message.center, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
     writer.uint32(/* id 3, wireType 5 =*/29).float(message.radius);
-    writer.uint32(/* id 4, wireType 5 =*/37).float(message.a1);
-    writer.uint32(/* id 5, wireType 5 =*/45).float(message.a2);
-    writer.uint32(/* id 6, wireType 5 =*/53).float(message.thickness);
+    if (message.a1 != null && message.hasOwnProperty("a1"))
+      writer.uint32(/* id 4, wireType 5 =*/37).float(message.a1);
+    if (message.a2 != null && message.hasOwnProperty("a2"))
+      writer.uint32(/* id 5, wireType 5 =*/45).float(message.a2);
+    if (message.thickness != null && message.hasOwnProperty("thickness"))
+      writer.uint32(/* id 6, wireType 5 =*/53).float(message.thickness);
     return writer;
   };
 
   /**
-   * Encodes the specified SSL_FieldCicularArc message, length delimited. Does not implicitly {@link SSL_FieldCicularArc.verify|verify} messages.
+   * Encodes the specified SSL_Micro_FieldCicularArc message, length delimited. Does not implicitly {@link SSL_Micro_FieldCicularArc.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @static
-   * @param {ISSL_FieldCicularArc} message SSL_FieldCicularArc message or plain object to encode
+   * @param {ISSL_Micro_FieldCicularArc} message SSL_Micro_FieldCicularArc message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_FieldCicularArc.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_FieldCicularArc.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_FieldCicularArc message from the specified reader or buffer.
+   * Decodes a SSL_Micro_FieldCicularArc message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_FieldCicularArc} SSL_FieldCicularArc
+   * @returns {SSL_Micro_FieldCicularArc} SSL_Micro_FieldCicularArc
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_FieldCicularArc.decode = function decode(reader, length) {
+  SSL_Micro_FieldCicularArc.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_FieldCicularArc();
+    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_Micro_FieldCicularArc();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1677,7 +1393,7 @@ $root.SSL_FieldCicularArc = (function () {
           message.name = reader.string();
           break;
         case 2:
-          message.center = $root.Vector2f.decode(reader, reader.uint32());
+          message.center = $root.Micro_Vector2f.decode(reader, reader.uint32());
           break;
         case 3:
           message.radius = reader.float();
@@ -1696,84 +1412,80 @@ $root.SSL_FieldCicularArc = (function () {
           break;
       }
     }
-    if (!message.hasOwnProperty("name"))
-      throw $util.ProtocolError("missing required 'name'", {instance: message});
     if (!message.hasOwnProperty("center"))
       throw $util.ProtocolError("missing required 'center'", {instance: message});
     if (!message.hasOwnProperty("radius"))
       throw $util.ProtocolError("missing required 'radius'", {instance: message});
-    if (!message.hasOwnProperty("a1"))
-      throw $util.ProtocolError("missing required 'a1'", {instance: message});
-    if (!message.hasOwnProperty("a2"))
-      throw $util.ProtocolError("missing required 'a2'", {instance: message});
-    if (!message.hasOwnProperty("thickness"))
-      throw $util.ProtocolError("missing required 'thickness'", {instance: message});
     return message;
   };
 
   /**
-   * Decodes a SSL_FieldCicularArc message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_FieldCicularArc message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_FieldCicularArc} SSL_FieldCicularArc
+   * @returns {SSL_Micro_FieldCicularArc} SSL_Micro_FieldCicularArc
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_FieldCicularArc.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_FieldCicularArc.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_FieldCicularArc message.
+   * Verifies a SSL_Micro_FieldCicularArc message.
    * @function verify
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_FieldCicularArc.verify = function verify(message) {
+  SSL_Micro_FieldCicularArc.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
-    if (!$util.isString(message.name))
-      return "name: string expected";
+    if (message.name != null && message.hasOwnProperty("name"))
+      if (!$util.isString(message.name))
+        return "name: string expected";
     {
-      var error = $root.Vector2f.verify(message.center);
+      var error = $root.Micro_Vector2f.verify(message.center);
       if (error)
         return "center." + error;
     }
     if (typeof message.radius !== "number")
       return "radius: number expected";
-    if (typeof message.a1 !== "number")
-      return "a1: number expected";
-    if (typeof message.a2 !== "number")
-      return "a2: number expected";
-    if (typeof message.thickness !== "number")
-      return "thickness: number expected";
+    if (message.a1 != null && message.hasOwnProperty("a1"))
+      if (typeof message.a1 !== "number")
+        return "a1: number expected";
+    if (message.a2 != null && message.hasOwnProperty("a2"))
+      if (typeof message.a2 !== "number")
+        return "a2: number expected";
+    if (message.thickness != null && message.hasOwnProperty("thickness"))
+      if (typeof message.thickness !== "number")
+        return "thickness: number expected";
     return null;
   };
 
   /**
-   * Creates a SSL_FieldCicularArc message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_FieldCicularArc message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_FieldCicularArc} SSL_FieldCicularArc
+   * @returns {SSL_Micro_FieldCicularArc} SSL_Micro_FieldCicularArc
    */
-  SSL_FieldCicularArc.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_FieldCicularArc)
+  SSL_Micro_FieldCicularArc.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_FieldCicularArc)
       return object;
-    var message = new $root.SSL_FieldCicularArc();
+    var message = new $root.SSL_Micro_FieldCicularArc();
     if (object.name != null)
       message.name = String(object.name);
     if (object.center != null) {
       if (typeof object.center !== "object")
-        throw TypeError(".SSL_FieldCicularArc.center: object expected");
-      message.center = $root.Vector2f.fromObject(object.center);
+        throw TypeError(".SSL_Micro_FieldCicularArc.center: object expected");
+      message.center = $root.Micro_Vector2f.fromObject(object.center);
     }
     if (object.radius != null)
       message.radius = Number(object.radius);
@@ -1787,15 +1499,15 @@ $root.SSL_FieldCicularArc = (function () {
   };
 
   /**
-   * Creates a plain object from a SSL_FieldCicularArc message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_FieldCicularArc message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @static
-   * @param {SSL_FieldCicularArc} message SSL_FieldCicularArc
+   * @param {SSL_Micro_FieldCicularArc} message SSL_Micro_FieldCicularArc
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_FieldCicularArc.toObject = function toObject(message, options) {
+  SSL_Micro_FieldCicularArc.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
@@ -1810,7 +1522,7 @@ $root.SSL_FieldCicularArc = (function () {
     if (message.name != null && message.hasOwnProperty("name"))
       object.name = message.name;
     if (message.center != null && message.hasOwnProperty("center"))
-      object.center = $root.Vector2f.toObject(message.center, options);
+      object.center = $root.Micro_Vector2f.toObject(message.center, options);
     if (message.radius != null && message.hasOwnProperty("radius"))
       object.radius = options.json && !isFinite(message.radius) ? String(message.radius) : message.radius;
     if (message.a1 != null && message.hasOwnProperty("a1"))
@@ -1823,43 +1535,43 @@ $root.SSL_FieldCicularArc = (function () {
   };
 
   /**
-   * Converts this SSL_FieldCicularArc to JSON.
+   * Converts this SSL_Micro_FieldCicularArc to JSON.
    * @function toJSON
-   * @memberof SSL_FieldCicularArc
+   * @memberof SSL_Micro_FieldCicularArc
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_FieldCicularArc.prototype.toJSON = function toJSON() {
+  SSL_Micro_FieldCicularArc.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_FieldCicularArc;
+  return SSL_Micro_FieldCicularArc;
 })();
 
-$root.SSL_GeometryFieldSize = (function () {
+$root.SSL_Micro_GeometryFieldSize = (function () {
 
   /**
-   * Properties of a SSL_GeometryFieldSize.
-   * @exports ISSL_GeometryFieldSize
-   * @interface ISSL_GeometryFieldSize
-   * @property {number} fieldLength SSL_GeometryFieldSize fieldLength
-   * @property {number} fieldWidth SSL_GeometryFieldSize fieldWidth
-   * @property {number} goalWidth SSL_GeometryFieldSize goalWidth
-   * @property {number} goalDepth SSL_GeometryFieldSize goalDepth
-   * @property {number} boundaryWidth SSL_GeometryFieldSize boundaryWidth
-   * @property {Array.<ISSL_FieldLineSegment>|null} [fieldLines] SSL_GeometryFieldSize fieldLines
-   * @property {Array.<ISSL_FieldCicularArc>|null} [fieldArcs] SSL_GeometryFieldSize fieldArcs
+   * Properties of a SSL_Micro_GeometryFieldSize.
+   * @exports ISSL_Micro_GeometryFieldSize
+   * @interface ISSL_Micro_GeometryFieldSize
+   * @property {number|null} [fieldLength] SSL_Micro_GeometryFieldSize fieldLength
+   * @property {number|null} [fieldWidth] SSL_Micro_GeometryFieldSize fieldWidth
+   * @property {number|null} [goalWidth] SSL_Micro_GeometryFieldSize goalWidth
+   * @property {number|null} [goalDepth] SSL_Micro_GeometryFieldSize goalDepth
+   * @property {number|null} [boundaryWidth] SSL_Micro_GeometryFieldSize boundaryWidth
+   * @property {Array.<ISSL_Micro_FieldLineSegment>|null} [fieldLines] SSL_Micro_GeometryFieldSize fieldLines
+   * @property {Array.<ISSL_Micro_FieldCicularArc>|null} [fieldArcs] SSL_Micro_GeometryFieldSize fieldArcs
    */
 
   /**
-   * Constructs a new SSL_GeometryFieldSize.
-   * @exports SSL_GeometryFieldSize
-   * @classdesc Represents a SSL_GeometryFieldSize.
-   * @implements ISSL_GeometryFieldSize
+   * Constructs a new SSL_Micro_GeometryFieldSize.
+   * @exports SSL_Micro_GeometryFieldSize
+   * @classdesc Represents a SSL_Micro_GeometryFieldSize.
+   * @implements ISSL_Micro_GeometryFieldSize
    * @constructor
-   * @param {ISSL_GeometryFieldSize=} [properties] Properties to set
+   * @param {ISSL_Micro_GeometryFieldSize=} [properties] Properties to set
    */
-  function SSL_GeometryFieldSize(properties) {
+  function SSL_Micro_GeometryFieldSize(properties) {
     this.fieldLines = [];
     this.fieldArcs = [];
     if (properties)
@@ -1869,127 +1581,133 @@ $root.SSL_GeometryFieldSize = (function () {
   }
 
   /**
-   * SSL_GeometryFieldSize fieldLength.
+   * SSL_Micro_GeometryFieldSize fieldLength.
    * @member {number} fieldLength
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @instance
    */
-  SSL_GeometryFieldSize.prototype.fieldLength = 0;
+  SSL_Micro_GeometryFieldSize.prototype.fieldLength = 0;
 
   /**
-   * SSL_GeometryFieldSize fieldWidth.
+   * SSL_Micro_GeometryFieldSize fieldWidth.
    * @member {number} fieldWidth
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @instance
    */
-  SSL_GeometryFieldSize.prototype.fieldWidth = 0;
+  SSL_Micro_GeometryFieldSize.prototype.fieldWidth = 0;
 
   /**
-   * SSL_GeometryFieldSize goalWidth.
+   * SSL_Micro_GeometryFieldSize goalWidth.
    * @member {number} goalWidth
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @instance
    */
-  SSL_GeometryFieldSize.prototype.goalWidth = 0;
+  SSL_Micro_GeometryFieldSize.prototype.goalWidth = 0;
 
   /**
-   * SSL_GeometryFieldSize goalDepth.
+   * SSL_Micro_GeometryFieldSize goalDepth.
    * @member {number} goalDepth
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @instance
    */
-  SSL_GeometryFieldSize.prototype.goalDepth = 0;
+  SSL_Micro_GeometryFieldSize.prototype.goalDepth = 0;
 
   /**
-   * SSL_GeometryFieldSize boundaryWidth.
+   * SSL_Micro_GeometryFieldSize boundaryWidth.
    * @member {number} boundaryWidth
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @instance
    */
-  SSL_GeometryFieldSize.prototype.boundaryWidth = 0;
+  SSL_Micro_GeometryFieldSize.prototype.boundaryWidth = 0;
 
   /**
-   * SSL_GeometryFieldSize fieldLines.
-   * @member {Array.<ISSL_FieldLineSegment>} fieldLines
-   * @memberof SSL_GeometryFieldSize
+   * SSL_Micro_GeometryFieldSize fieldLines.
+   * @member {Array.<ISSL_Micro_FieldLineSegment>} fieldLines
+   * @memberof SSL_Micro_GeometryFieldSize
    * @instance
    */
-  SSL_GeometryFieldSize.prototype.fieldLines = $util.emptyArray;
+  SSL_Micro_GeometryFieldSize.prototype.fieldLines = $util.emptyArray;
 
   /**
-   * SSL_GeometryFieldSize fieldArcs.
-   * @member {Array.<ISSL_FieldCicularArc>} fieldArcs
-   * @memberof SSL_GeometryFieldSize
+   * SSL_Micro_GeometryFieldSize fieldArcs.
+   * @member {Array.<ISSL_Micro_FieldCicularArc>} fieldArcs
+   * @memberof SSL_Micro_GeometryFieldSize
    * @instance
    */
-  SSL_GeometryFieldSize.prototype.fieldArcs = $util.emptyArray;
+  SSL_Micro_GeometryFieldSize.prototype.fieldArcs = $util.emptyArray;
 
   /**
-   * Creates a new SSL_GeometryFieldSize instance using the specified properties.
+   * Creates a new SSL_Micro_GeometryFieldSize instance using the specified properties.
    * @function create
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @static
-   * @param {ISSL_GeometryFieldSize=} [properties] Properties to set
-   * @returns {SSL_GeometryFieldSize} SSL_GeometryFieldSize instance
+   * @param {ISSL_Micro_GeometryFieldSize=} [properties] Properties to set
+   * @returns {SSL_Micro_GeometryFieldSize} SSL_Micro_GeometryFieldSize instance
    */
-  SSL_GeometryFieldSize.create = function create(properties) {
-    return new SSL_GeometryFieldSize(properties);
+  SSL_Micro_GeometryFieldSize.create = function create(properties) {
+    return new SSL_Micro_GeometryFieldSize(properties);
   };
 
   /**
-   * Encodes the specified SSL_GeometryFieldSize message. Does not implicitly {@link SSL_GeometryFieldSize.verify|verify} messages.
+   * Encodes the specified SSL_Micro_GeometryFieldSize message. Does not implicitly {@link SSL_Micro_GeometryFieldSize.verify|verify} messages.
    * @function encode
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @static
-   * @param {ISSL_GeometryFieldSize} message SSL_GeometryFieldSize message or plain object to encode
+   * @param {ISSL_Micro_GeometryFieldSize} message SSL_Micro_GeometryFieldSize message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_GeometryFieldSize.encode = function encode(message, writer) {
+  SSL_Micro_GeometryFieldSize.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
-    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.fieldLength);
-    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.fieldWidth);
-    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.goalWidth);
-    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.goalDepth);
-    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.boundaryWidth);
+    if (message.fieldLength != null && message.hasOwnProperty("fieldLength"))
+      writer.uint32(/* id 1, wireType 0 =*/8).int32(message.fieldLength);
+    if (message.fieldWidth != null && message.hasOwnProperty("fieldWidth"))
+      writer.uint32(/* id 2, wireType 0 =*/16).int32(message.fieldWidth);
+    if (message.goalWidth != null && message.hasOwnProperty("goalWidth"))
+      writer.uint32(/* id 3, wireType 0 =*/24).int32(message.goalWidth);
+    if (message.goalDepth != null && message.hasOwnProperty("goalDepth"))
+      writer.uint32(/* id 4, wireType 0 =*/32).int32(message.goalDepth);
+    if (message.boundaryWidth != null && message.hasOwnProperty("boundaryWidth"))
+      writer.uint32(/* id 5, wireType 0 =*/40).int32(message.boundaryWidth);
     if (message.fieldLines != null && message.fieldLines.length)
       for (var i = 0; i < message.fieldLines.length; ++i)
-        $root.SSL_FieldLineSegment.encode(message.fieldLines[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+        $root.SSL_Micro_FieldLineSegment.encode(message.fieldLines[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
     if (message.fieldArcs != null && message.fieldArcs.length)
       for (var i = 0; i < message.fieldArcs.length; ++i)
-        $root.SSL_FieldCicularArc.encode(message.fieldArcs[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+        $root.SSL_Micro_FieldCicularArc.encode(message.fieldArcs[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
     return writer;
   };
 
   /**
-   * Encodes the specified SSL_GeometryFieldSize message, length delimited. Does not implicitly {@link SSL_GeometryFieldSize.verify|verify} messages.
+   * Encodes the specified SSL_Micro_GeometryFieldSize message, length delimited. Does not implicitly {@link SSL_Micro_GeometryFieldSize.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @static
-   * @param {ISSL_GeometryFieldSize} message SSL_GeometryFieldSize message or plain object to encode
+   * @param {ISSL_Micro_GeometryFieldSize} message SSL_Micro_GeometryFieldSize message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_GeometryFieldSize.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_GeometryFieldSize.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_GeometryFieldSize message from the specified reader or buffer.
+   * Decodes a SSL_Micro_GeometryFieldSize message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_GeometryFieldSize} SSL_GeometryFieldSize
+   * @returns {SSL_Micro_GeometryFieldSize} SSL_Micro_GeometryFieldSize
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_GeometryFieldSize.decode = function decode(reader, length) {
+  SSL_Micro_GeometryFieldSize.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_GeometryFieldSize();
+    var end = length === undefined ? reader.len : reader.pos + length,
+      message = new $root.SSL_Micro_GeometryFieldSize();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2011,73 +1729,68 @@ $root.SSL_GeometryFieldSize = (function () {
         case 6:
           if (!(message.fieldLines && message.fieldLines.length))
             message.fieldLines = [];
-          message.fieldLines.push($root.SSL_FieldLineSegment.decode(reader, reader.uint32()));
+          message.fieldLines.push($root.SSL_Micro_FieldLineSegment.decode(reader, reader.uint32()));
           break;
         case 7:
           if (!(message.fieldArcs && message.fieldArcs.length))
             message.fieldArcs = [];
-          message.fieldArcs.push($root.SSL_FieldCicularArc.decode(reader, reader.uint32()));
+          message.fieldArcs.push($root.SSL_Micro_FieldCicularArc.decode(reader, reader.uint32()));
           break;
         default:
           reader.skipType(tag & 7);
           break;
       }
     }
-    if (!message.hasOwnProperty("fieldLength"))
-      throw $util.ProtocolError("missing required 'fieldLength'", {instance: message});
-    if (!message.hasOwnProperty("fieldWidth"))
-      throw $util.ProtocolError("missing required 'fieldWidth'", {instance: message});
-    if (!message.hasOwnProperty("goalWidth"))
-      throw $util.ProtocolError("missing required 'goalWidth'", {instance: message});
-    if (!message.hasOwnProperty("goalDepth"))
-      throw $util.ProtocolError("missing required 'goalDepth'", {instance: message});
-    if (!message.hasOwnProperty("boundaryWidth"))
-      throw $util.ProtocolError("missing required 'boundaryWidth'", {instance: message});
     return message;
   };
 
   /**
-   * Decodes a SSL_GeometryFieldSize message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_GeometryFieldSize message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_GeometryFieldSize} SSL_GeometryFieldSize
+   * @returns {SSL_Micro_GeometryFieldSize} SSL_Micro_GeometryFieldSize
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_GeometryFieldSize.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_GeometryFieldSize.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_GeometryFieldSize message.
+   * Verifies a SSL_Micro_GeometryFieldSize message.
    * @function verify
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_GeometryFieldSize.verify = function verify(message) {
+  SSL_Micro_GeometryFieldSize.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
-    if (!$util.isInteger(message.fieldLength))
-      return "fieldLength: integer expected";
-    if (!$util.isInteger(message.fieldWidth))
-      return "fieldWidth: integer expected";
-    if (!$util.isInteger(message.goalWidth))
-      return "goalWidth: integer expected";
-    if (!$util.isInteger(message.goalDepth))
-      return "goalDepth: integer expected";
-    if (!$util.isInteger(message.boundaryWidth))
-      return "boundaryWidth: integer expected";
+    if (message.fieldLength != null && message.hasOwnProperty("fieldLength"))
+      if (!$util.isInteger(message.fieldLength))
+        return "fieldLength: integer expected";
+    if (message.fieldWidth != null && message.hasOwnProperty("fieldWidth"))
+      if (!$util.isInteger(message.fieldWidth))
+        return "fieldWidth: integer expected";
+    if (message.goalWidth != null && message.hasOwnProperty("goalWidth"))
+      if (!$util.isInteger(message.goalWidth))
+        return "goalWidth: integer expected";
+    if (message.goalDepth != null && message.hasOwnProperty("goalDepth"))
+      if (!$util.isInteger(message.goalDepth))
+        return "goalDepth: integer expected";
+    if (message.boundaryWidth != null && message.hasOwnProperty("boundaryWidth"))
+      if (!$util.isInteger(message.boundaryWidth))
+        return "boundaryWidth: integer expected";
     if (message.fieldLines != null && message.hasOwnProperty("fieldLines")) {
       if (!Array.isArray(message.fieldLines))
         return "fieldLines: array expected";
       for (var i = 0; i < message.fieldLines.length; ++i) {
-        var error = $root.SSL_FieldLineSegment.verify(message.fieldLines[i]);
+        var error = $root.SSL_Micro_FieldLineSegment.verify(message.fieldLines[i]);
         if (error)
           return "fieldLines." + error;
       }
@@ -2086,7 +1799,7 @@ $root.SSL_GeometryFieldSize = (function () {
       if (!Array.isArray(message.fieldArcs))
         return "fieldArcs: array expected";
       for (var i = 0; i < message.fieldArcs.length; ++i) {
-        var error = $root.SSL_FieldCicularArc.verify(message.fieldArcs[i]);
+        var error = $root.SSL_Micro_FieldCicularArc.verify(message.fieldArcs[i]);
         if (error)
           return "fieldArcs." + error;
       }
@@ -2095,17 +1808,17 @@ $root.SSL_GeometryFieldSize = (function () {
   };
 
   /**
-   * Creates a SSL_GeometryFieldSize message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_GeometryFieldSize message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_GeometryFieldSize} SSL_GeometryFieldSize
+   * @returns {SSL_Micro_GeometryFieldSize} SSL_Micro_GeometryFieldSize
    */
-  SSL_GeometryFieldSize.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_GeometryFieldSize)
+  SSL_Micro_GeometryFieldSize.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_GeometryFieldSize)
       return object;
-    var message = new $root.SSL_GeometryFieldSize();
+    var message = new $root.SSL_Micro_GeometryFieldSize();
     if (object.fieldLength != null)
       message.fieldLength = object.fieldLength | 0;
     if (object.fieldWidth != null)
@@ -2118,37 +1831,37 @@ $root.SSL_GeometryFieldSize = (function () {
       message.boundaryWidth = object.boundaryWidth | 0;
     if (object.fieldLines) {
       if (!Array.isArray(object.fieldLines))
-        throw TypeError(".SSL_GeometryFieldSize.fieldLines: array expected");
+        throw TypeError(".SSL_Micro_GeometryFieldSize.fieldLines: array expected");
       message.fieldLines = [];
       for (var i = 0; i < object.fieldLines.length; ++i) {
         if (typeof object.fieldLines[i] !== "object")
-          throw TypeError(".SSL_GeometryFieldSize.fieldLines: object expected");
-        message.fieldLines[i] = $root.SSL_FieldLineSegment.fromObject(object.fieldLines[i]);
+          throw TypeError(".SSL_Micro_GeometryFieldSize.fieldLines: object expected");
+        message.fieldLines[i] = $root.SSL_Micro_FieldLineSegment.fromObject(object.fieldLines[i]);
       }
     }
     if (object.fieldArcs) {
       if (!Array.isArray(object.fieldArcs))
-        throw TypeError(".SSL_GeometryFieldSize.fieldArcs: array expected");
+        throw TypeError(".SSL_Micro_GeometryFieldSize.fieldArcs: array expected");
       message.fieldArcs = [];
       for (var i = 0; i < object.fieldArcs.length; ++i) {
         if (typeof object.fieldArcs[i] !== "object")
-          throw TypeError(".SSL_GeometryFieldSize.fieldArcs: object expected");
-        message.fieldArcs[i] = $root.SSL_FieldCicularArc.fromObject(object.fieldArcs[i]);
+          throw TypeError(".SSL_Micro_GeometryFieldSize.fieldArcs: object expected");
+        message.fieldArcs[i] = $root.SSL_Micro_FieldCicularArc.fromObject(object.fieldArcs[i]);
       }
     }
     return message;
   };
 
   /**
-   * Creates a plain object from a SSL_GeometryFieldSize message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_GeometryFieldSize message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @static
-   * @param {SSL_GeometryFieldSize} message SSL_GeometryFieldSize
+   * @param {SSL_Micro_GeometryFieldSize} message SSL_Micro_GeometryFieldSize
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_GeometryFieldSize.toObject = function toObject(message, options) {
+  SSL_Micro_GeometryFieldSize.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
@@ -2176,62 +1889,62 @@ $root.SSL_GeometryFieldSize = (function () {
     if (message.fieldLines && message.fieldLines.length) {
       object.fieldLines = [];
       for (var j = 0; j < message.fieldLines.length; ++j)
-        object.fieldLines[j] = $root.SSL_FieldLineSegment.toObject(message.fieldLines[j], options);
+        object.fieldLines[j] = $root.SSL_Micro_FieldLineSegment.toObject(message.fieldLines[j], options);
     }
     if (message.fieldArcs && message.fieldArcs.length) {
       object.fieldArcs = [];
       for (var j = 0; j < message.fieldArcs.length; ++j)
-        object.fieldArcs[j] = $root.SSL_FieldCicularArc.toObject(message.fieldArcs[j], options);
+        object.fieldArcs[j] = $root.SSL_Micro_FieldCicularArc.toObject(message.fieldArcs[j], options);
     }
     return object;
   };
 
   /**
-   * Converts this SSL_GeometryFieldSize to JSON.
+   * Converts this SSL_Micro_GeometryFieldSize to JSON.
    * @function toJSON
-   * @memberof SSL_GeometryFieldSize
+   * @memberof SSL_Micro_GeometryFieldSize
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_GeometryFieldSize.prototype.toJSON = function toJSON() {
+  SSL_Micro_GeometryFieldSize.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_GeometryFieldSize;
+  return SSL_Micro_GeometryFieldSize;
 })();
 
-$root.SSL_GeometryCameraCalibration = (function () {
+$root.SSL_Micro_GeometryCameraCalibration = (function () {
 
   /**
-   * Properties of a SSL_GeometryCameraCalibration.
-   * @exports ISSL_GeometryCameraCalibration
-   * @interface ISSL_GeometryCameraCalibration
-   * @property {number} cameraId SSL_GeometryCameraCalibration cameraId
-   * @property {number} focalLength SSL_GeometryCameraCalibration focalLength
-   * @property {number} principalPointX SSL_GeometryCameraCalibration principalPointX
-   * @property {number} principalPointY SSL_GeometryCameraCalibration principalPointY
-   * @property {number} distortion SSL_GeometryCameraCalibration distortion
-   * @property {number} q0 SSL_GeometryCameraCalibration q0
-   * @property {number} q1 SSL_GeometryCameraCalibration q1
-   * @property {number} q2 SSL_GeometryCameraCalibration q2
-   * @property {number} q3 SSL_GeometryCameraCalibration q3
-   * @property {number} tx SSL_GeometryCameraCalibration tx
-   * @property {number} ty SSL_GeometryCameraCalibration ty
-   * @property {number} tz SSL_GeometryCameraCalibration tz
-   * @property {number|null} [derivedCameraWorldTx] SSL_GeometryCameraCalibration derivedCameraWorldTx
-   * @property {number|null} [derivedCameraWorldTy] SSL_GeometryCameraCalibration derivedCameraWorldTy
-   * @property {number|null} [derivedCameraWorldTz] SSL_GeometryCameraCalibration derivedCameraWorldTz
+   * Properties of a SSL_Micro_GeometryCameraCalibration.
+   * @exports ISSL_Micro_GeometryCameraCalibration
+   * @interface ISSL_Micro_GeometryCameraCalibration
+   * @property {number} cameraId SSL_Micro_GeometryCameraCalibration cameraId
+   * @property {number|null} [focalLength] SSL_Micro_GeometryCameraCalibration focalLength
+   * @property {number|null} [principalPointX] SSL_Micro_GeometryCameraCalibration principalPointX
+   * @property {number|null} [principalPointY] SSL_Micro_GeometryCameraCalibration principalPointY
+   * @property {number|null} [distortion] SSL_Micro_GeometryCameraCalibration distortion
+   * @property {number|null} [q0] SSL_Micro_GeometryCameraCalibration q0
+   * @property {number|null} [q1] SSL_Micro_GeometryCameraCalibration q1
+   * @property {number|null} [q2] SSL_Micro_GeometryCameraCalibration q2
+   * @property {number|null} [q3] SSL_Micro_GeometryCameraCalibration q3
+   * @property {number|null} [tx] SSL_Micro_GeometryCameraCalibration tx
+   * @property {number|null} [ty] SSL_Micro_GeometryCameraCalibration ty
+   * @property {number|null} [tz] SSL_Micro_GeometryCameraCalibration tz
+   * @property {number|null} [derivedCameraWorldTx] SSL_Micro_GeometryCameraCalibration derivedCameraWorldTx
+   * @property {number|null} [derivedCameraWorldTy] SSL_Micro_GeometryCameraCalibration derivedCameraWorldTy
+   * @property {number|null} [derivedCameraWorldTz] SSL_Micro_GeometryCameraCalibration derivedCameraWorldTz
    */
 
   /**
-   * Constructs a new SSL_GeometryCameraCalibration.
-   * @exports SSL_GeometryCameraCalibration
-   * @classdesc Represents a SSL_GeometryCameraCalibration.
-   * @implements ISSL_GeometryCameraCalibration
+   * Constructs a new SSL_Micro_GeometryCameraCalibration.
+   * @exports SSL_Micro_GeometryCameraCalibration
+   * @classdesc Represents a SSL_Micro_GeometryCameraCalibration.
+   * @implements ISSL_Micro_GeometryCameraCalibration
    * @constructor
-   * @param {ISSL_GeometryCameraCalibration=} [properties] Properties to set
+   * @param {ISSL_Micro_GeometryCameraCalibration=} [properties] Properties to set
    */
-  function SSL_GeometryCameraCalibration(properties) {
+  function SSL_Micro_GeometryCameraCalibration(properties) {
     if (properties)
       for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
         if (properties[keys[i]] != null)
@@ -2239,161 +1952,172 @@ $root.SSL_GeometryCameraCalibration = (function () {
   }
 
   /**
-   * SSL_GeometryCameraCalibration cameraId.
+   * SSL_Micro_GeometryCameraCalibration cameraId.
    * @member {number} cameraId
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.cameraId = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.cameraId = 0;
 
   /**
-   * SSL_GeometryCameraCalibration focalLength.
+   * SSL_Micro_GeometryCameraCalibration focalLength.
    * @member {number} focalLength
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.focalLength = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.focalLength = 0;
 
   /**
-   * SSL_GeometryCameraCalibration principalPointX.
+   * SSL_Micro_GeometryCameraCalibration principalPointX.
    * @member {number} principalPointX
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.principalPointX = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.principalPointX = 0;
 
   /**
-   * SSL_GeometryCameraCalibration principalPointY.
+   * SSL_Micro_GeometryCameraCalibration principalPointY.
    * @member {number} principalPointY
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.principalPointY = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.principalPointY = 0;
 
   /**
-   * SSL_GeometryCameraCalibration distortion.
+   * SSL_Micro_GeometryCameraCalibration distortion.
    * @member {number} distortion
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.distortion = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.distortion = 0;
 
   /**
-   * SSL_GeometryCameraCalibration q0.
+   * SSL_Micro_GeometryCameraCalibration q0.
    * @member {number} q0
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.q0 = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.q0 = 0;
 
   /**
-   * SSL_GeometryCameraCalibration q1.
+   * SSL_Micro_GeometryCameraCalibration q1.
    * @member {number} q1
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.q1 = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.q1 = 0;
 
   /**
-   * SSL_GeometryCameraCalibration q2.
+   * SSL_Micro_GeometryCameraCalibration q2.
    * @member {number} q2
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.q2 = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.q2 = 0;
 
   /**
-   * SSL_GeometryCameraCalibration q3.
+   * SSL_Micro_GeometryCameraCalibration q3.
    * @member {number} q3
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.q3 = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.q3 = 0;
 
   /**
-   * SSL_GeometryCameraCalibration tx.
+   * SSL_Micro_GeometryCameraCalibration tx.
    * @member {number} tx
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.tx = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.tx = 0;
 
   /**
-   * SSL_GeometryCameraCalibration ty.
+   * SSL_Micro_GeometryCameraCalibration ty.
    * @member {number} ty
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.ty = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.ty = 0;
 
   /**
-   * SSL_GeometryCameraCalibration tz.
+   * SSL_Micro_GeometryCameraCalibration tz.
    * @member {number} tz
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.tz = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.tz = 0;
 
   /**
-   * SSL_GeometryCameraCalibration derivedCameraWorldTx.
+   * SSL_Micro_GeometryCameraCalibration derivedCameraWorldTx.
    * @member {number} derivedCameraWorldTx
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.derivedCameraWorldTx = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.derivedCameraWorldTx = 0;
 
   /**
-   * SSL_GeometryCameraCalibration derivedCameraWorldTy.
+   * SSL_Micro_GeometryCameraCalibration derivedCameraWorldTy.
    * @member {number} derivedCameraWorldTy
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.derivedCameraWorldTy = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.derivedCameraWorldTy = 0;
 
   /**
-   * SSL_GeometryCameraCalibration derivedCameraWorldTz.
+   * SSL_Micro_GeometryCameraCalibration derivedCameraWorldTz.
    * @member {number} derivedCameraWorldTz
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    */
-  SSL_GeometryCameraCalibration.prototype.derivedCameraWorldTz = 0;
+  SSL_Micro_GeometryCameraCalibration.prototype.derivedCameraWorldTz = 0;
 
   /**
-   * Creates a new SSL_GeometryCameraCalibration instance using the specified properties.
+   * Creates a new SSL_Micro_GeometryCameraCalibration instance using the specified properties.
    * @function create
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @static
-   * @param {ISSL_GeometryCameraCalibration=} [properties] Properties to set
-   * @returns {SSL_GeometryCameraCalibration} SSL_GeometryCameraCalibration instance
+   * @param {ISSL_Micro_GeometryCameraCalibration=} [properties] Properties to set
+   * @returns {SSL_Micro_GeometryCameraCalibration} SSL_Micro_GeometryCameraCalibration instance
    */
-  SSL_GeometryCameraCalibration.create = function create(properties) {
-    return new SSL_GeometryCameraCalibration(properties);
+  SSL_Micro_GeometryCameraCalibration.create = function create(properties) {
+    return new SSL_Micro_GeometryCameraCalibration(properties);
   };
 
   /**
-   * Encodes the specified SSL_GeometryCameraCalibration message. Does not implicitly {@link SSL_GeometryCameraCalibration.verify|verify} messages.
+   * Encodes the specified SSL_Micro_GeometryCameraCalibration message. Does not implicitly {@link SSL_Micro_GeometryCameraCalibration.verify|verify} messages.
    * @function encode
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @static
-   * @param {ISSL_GeometryCameraCalibration} message SSL_GeometryCameraCalibration message or plain object to encode
+   * @param {ISSL_Micro_GeometryCameraCalibration} message SSL_Micro_GeometryCameraCalibration message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_GeometryCameraCalibration.encode = function encode(message, writer) {
+  SSL_Micro_GeometryCameraCalibration.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.cameraId);
-    writer.uint32(/* id 2, wireType 5 =*/21).float(message.focalLength);
-    writer.uint32(/* id 3, wireType 5 =*/29).float(message.principalPointX);
-    writer.uint32(/* id 4, wireType 5 =*/37).float(message.principalPointY);
-    writer.uint32(/* id 5, wireType 5 =*/45).float(message.distortion);
-    writer.uint32(/* id 6, wireType 5 =*/53).float(message.q0);
-    writer.uint32(/* id 7, wireType 5 =*/61).float(message.q1);
-    writer.uint32(/* id 8, wireType 5 =*/69).float(message.q2);
-    writer.uint32(/* id 9, wireType 5 =*/77).float(message.q3);
-    writer.uint32(/* id 10, wireType 5 =*/85).float(message.tx);
-    writer.uint32(/* id 11, wireType 5 =*/93).float(message.ty);
-    writer.uint32(/* id 12, wireType 5 =*/101).float(message.tz);
+    if (message.focalLength != null && message.hasOwnProperty("focalLength"))
+      writer.uint32(/* id 2, wireType 5 =*/21).float(message.focalLength);
+    if (message.principalPointX != null && message.hasOwnProperty("principalPointX"))
+      writer.uint32(/* id 3, wireType 5 =*/29).float(message.principalPointX);
+    if (message.principalPointY != null && message.hasOwnProperty("principalPointY"))
+      writer.uint32(/* id 4, wireType 5 =*/37).float(message.principalPointY);
+    if (message.distortion != null && message.hasOwnProperty("distortion"))
+      writer.uint32(/* id 5, wireType 5 =*/45).float(message.distortion);
+    if (message.q0 != null && message.hasOwnProperty("q0"))
+      writer.uint32(/* id 6, wireType 5 =*/53).float(message.q0);
+    if (message.q1 != null && message.hasOwnProperty("q1"))
+      writer.uint32(/* id 7, wireType 5 =*/61).float(message.q1);
+    if (message.q2 != null && message.hasOwnProperty("q2"))
+      writer.uint32(/* id 8, wireType 5 =*/69).float(message.q2);
+    if (message.q3 != null && message.hasOwnProperty("q3"))
+      writer.uint32(/* id 9, wireType 5 =*/77).float(message.q3);
+    if (message.tx != null && message.hasOwnProperty("tx"))
+      writer.uint32(/* id 10, wireType 5 =*/85).float(message.tx);
+    if (message.ty != null && message.hasOwnProperty("ty"))
+      writer.uint32(/* id 11, wireType 5 =*/93).float(message.ty);
+    if (message.tz != null && message.hasOwnProperty("tz"))
+      writer.uint32(/* id 12, wireType 5 =*/101).float(message.tz);
     if (message.derivedCameraWorldTx != null && message.hasOwnProperty("derivedCameraWorldTx"))
       writer.uint32(/* id 13, wireType 5 =*/109).float(message.derivedCameraWorldTx);
     if (message.derivedCameraWorldTy != null && message.hasOwnProperty("derivedCameraWorldTy"))
@@ -2404,34 +2128,34 @@ $root.SSL_GeometryCameraCalibration = (function () {
   };
 
   /**
-   * Encodes the specified SSL_GeometryCameraCalibration message, length delimited. Does not implicitly {@link SSL_GeometryCameraCalibration.verify|verify} messages.
+   * Encodes the specified SSL_Micro_GeometryCameraCalibration message, length delimited. Does not implicitly {@link SSL_Micro_GeometryCameraCalibration.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @static
-   * @param {ISSL_GeometryCameraCalibration} message SSL_GeometryCameraCalibration message or plain object to encode
+   * @param {ISSL_Micro_GeometryCameraCalibration} message SSL_Micro_GeometryCameraCalibration message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_GeometryCameraCalibration.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_GeometryCameraCalibration.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_GeometryCameraCalibration message from the specified reader or buffer.
+   * Decodes a SSL_Micro_GeometryCameraCalibration message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_GeometryCameraCalibration} SSL_GeometryCameraCalibration
+   * @returns {SSL_Micro_GeometryCameraCalibration} SSL_Micro_GeometryCameraCalibration
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_GeometryCameraCalibration.decode = function decode(reader, length) {
+  SSL_Micro_GeometryCameraCalibration.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
     var end = length === undefined ? reader.len : reader.pos + length,
-      message = new $root.SSL_GeometryCameraCalibration();
+      message = new $root.SSL_Micro_GeometryCameraCalibration();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2487,82 +2211,71 @@ $root.SSL_GeometryCameraCalibration = (function () {
     }
     if (!message.hasOwnProperty("cameraId"))
       throw $util.ProtocolError("missing required 'cameraId'", {instance: message});
-    if (!message.hasOwnProperty("focalLength"))
-      throw $util.ProtocolError("missing required 'focalLength'", {instance: message});
-    if (!message.hasOwnProperty("principalPointX"))
-      throw $util.ProtocolError("missing required 'principalPointX'", {instance: message});
-    if (!message.hasOwnProperty("principalPointY"))
-      throw $util.ProtocolError("missing required 'principalPointY'", {instance: message});
-    if (!message.hasOwnProperty("distortion"))
-      throw $util.ProtocolError("missing required 'distortion'", {instance: message});
-    if (!message.hasOwnProperty("q0"))
-      throw $util.ProtocolError("missing required 'q0'", {instance: message});
-    if (!message.hasOwnProperty("q1"))
-      throw $util.ProtocolError("missing required 'q1'", {instance: message});
-    if (!message.hasOwnProperty("q2"))
-      throw $util.ProtocolError("missing required 'q2'", {instance: message});
-    if (!message.hasOwnProperty("q3"))
-      throw $util.ProtocolError("missing required 'q3'", {instance: message});
-    if (!message.hasOwnProperty("tx"))
-      throw $util.ProtocolError("missing required 'tx'", {instance: message});
-    if (!message.hasOwnProperty("ty"))
-      throw $util.ProtocolError("missing required 'ty'", {instance: message});
-    if (!message.hasOwnProperty("tz"))
-      throw $util.ProtocolError("missing required 'tz'", {instance: message});
     return message;
   };
 
   /**
-   * Decodes a SSL_GeometryCameraCalibration message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_GeometryCameraCalibration message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_GeometryCameraCalibration} SSL_GeometryCameraCalibration
+   * @returns {SSL_Micro_GeometryCameraCalibration} SSL_Micro_GeometryCameraCalibration
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_GeometryCameraCalibration.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_GeometryCameraCalibration.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_GeometryCameraCalibration message.
+   * Verifies a SSL_Micro_GeometryCameraCalibration message.
    * @function verify
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_GeometryCameraCalibration.verify = function verify(message) {
+  SSL_Micro_GeometryCameraCalibration.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
     if (!$util.isInteger(message.cameraId))
       return "cameraId: integer expected";
-    if (typeof message.focalLength !== "number")
-      return "focalLength: number expected";
-    if (typeof message.principalPointX !== "number")
-      return "principalPointX: number expected";
-    if (typeof message.principalPointY !== "number")
-      return "principalPointY: number expected";
-    if (typeof message.distortion !== "number")
-      return "distortion: number expected";
-    if (typeof message.q0 !== "number")
-      return "q0: number expected";
-    if (typeof message.q1 !== "number")
-      return "q1: number expected";
-    if (typeof message.q2 !== "number")
-      return "q2: number expected";
-    if (typeof message.q3 !== "number")
-      return "q3: number expected";
-    if (typeof message.tx !== "number")
-      return "tx: number expected";
-    if (typeof message.ty !== "number")
-      return "ty: number expected";
-    if (typeof message.tz !== "number")
-      return "tz: number expected";
+    if (message.focalLength != null && message.hasOwnProperty("focalLength"))
+      if (typeof message.focalLength !== "number")
+        return "focalLength: number expected";
+    if (message.principalPointX != null && message.hasOwnProperty("principalPointX"))
+      if (typeof message.principalPointX !== "number")
+        return "principalPointX: number expected";
+    if (message.principalPointY != null && message.hasOwnProperty("principalPointY"))
+      if (typeof message.principalPointY !== "number")
+        return "principalPointY: number expected";
+    if (message.distortion != null && message.hasOwnProperty("distortion"))
+      if (typeof message.distortion !== "number")
+        return "distortion: number expected";
+    if (message.q0 != null && message.hasOwnProperty("q0"))
+      if (typeof message.q0 !== "number")
+        return "q0: number expected";
+    if (message.q1 != null && message.hasOwnProperty("q1"))
+      if (typeof message.q1 !== "number")
+        return "q1: number expected";
+    if (message.q2 != null && message.hasOwnProperty("q2"))
+      if (typeof message.q2 !== "number")
+        return "q2: number expected";
+    if (message.q3 != null && message.hasOwnProperty("q3"))
+      if (typeof message.q3 !== "number")
+        return "q3: number expected";
+    if (message.tx != null && message.hasOwnProperty("tx"))
+      if (typeof message.tx !== "number")
+        return "tx: number expected";
+    if (message.ty != null && message.hasOwnProperty("ty"))
+      if (typeof message.ty !== "number")
+        return "ty: number expected";
+    if (message.tz != null && message.hasOwnProperty("tz"))
+      if (typeof message.tz !== "number")
+        return "tz: number expected";
     if (message.derivedCameraWorldTx != null && message.hasOwnProperty("derivedCameraWorldTx"))
       if (typeof message.derivedCameraWorldTx !== "number")
         return "derivedCameraWorldTx: number expected";
@@ -2576,17 +2289,17 @@ $root.SSL_GeometryCameraCalibration = (function () {
   };
 
   /**
-   * Creates a SSL_GeometryCameraCalibration message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_GeometryCameraCalibration message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_GeometryCameraCalibration} SSL_GeometryCameraCalibration
+   * @returns {SSL_Micro_GeometryCameraCalibration} SSL_Micro_GeometryCameraCalibration
    */
-  SSL_GeometryCameraCalibration.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_GeometryCameraCalibration)
+  SSL_Micro_GeometryCameraCalibration.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_GeometryCameraCalibration)
       return object;
-    var message = new $root.SSL_GeometryCameraCalibration();
+    var message = new $root.SSL_Micro_GeometryCameraCalibration();
     if (object.cameraId != null)
       message.cameraId = object.cameraId >>> 0;
     if (object.focalLength != null)
@@ -2621,15 +2334,15 @@ $root.SSL_GeometryCameraCalibration = (function () {
   };
 
   /**
-   * Creates a plain object from a SSL_GeometryCameraCalibration message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_GeometryCameraCalibration message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @static
-   * @param {SSL_GeometryCameraCalibration} message SSL_GeometryCameraCalibration
+   * @param {SSL_Micro_GeometryCameraCalibration} message SSL_Micro_GeometryCameraCalibration
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_GeometryCameraCalibration.toObject = function toObject(message, options) {
+  SSL_Micro_GeometryCameraCalibration.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
@@ -2684,38 +2397,38 @@ $root.SSL_GeometryCameraCalibration = (function () {
   };
 
   /**
-   * Converts this SSL_GeometryCameraCalibration to JSON.
+   * Converts this SSL_Micro_GeometryCameraCalibration to JSON.
    * @function toJSON
-   * @memberof SSL_GeometryCameraCalibration
+   * @memberof SSL_Micro_GeometryCameraCalibration
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_GeometryCameraCalibration.prototype.toJSON = function toJSON() {
+  SSL_Micro_GeometryCameraCalibration.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_GeometryCameraCalibration;
+  return SSL_Micro_GeometryCameraCalibration;
 })();
 
-$root.SSL_GeometryData = (function () {
+$root.SSL_Micro_GeometryData = (function () {
 
   /**
-   * Properties of a SSL_GeometryData.
-   * @exports ISSL_GeometryData
-   * @interface ISSL_GeometryData
-   * @property {ISSL_GeometryFieldSize} field SSL_GeometryData field
-   * @property {Array.<ISSL_GeometryCameraCalibration>|null} [calib] SSL_GeometryData calib
+   * Properties of a SSL_Micro_GeometryData.
+   * @exports ISSL_Micro_GeometryData
+   * @interface ISSL_Micro_GeometryData
+   * @property {ISSL_Micro_GeometryFieldSize} field SSL_Micro_GeometryData field
+   * @property {Array.<ISSL_Micro_GeometryCameraCalibration>|null} [calib] SSL_Micro_GeometryData calib
    */
 
   /**
-   * Constructs a new SSL_GeometryData.
-   * @exports SSL_GeometryData
-   * @classdesc Represents a SSL_GeometryData.
-   * @implements ISSL_GeometryData
+   * Constructs a new SSL_Micro_GeometryData.
+   * @exports SSL_Micro_GeometryData
+   * @classdesc Represents a SSL_Micro_GeometryData.
+   * @implements ISSL_Micro_GeometryData
    * @constructor
-   * @param {ISSL_GeometryData=} [properties] Properties to set
+   * @param {ISSL_Micro_GeometryData=} [properties] Properties to set
    */
-  function SSL_GeometryData(properties) {
+  function SSL_Micro_GeometryData(properties) {
     this.calib = [];
     if (properties)
       for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -2724,90 +2437,90 @@ $root.SSL_GeometryData = (function () {
   }
 
   /**
-   * SSL_GeometryData field.
-   * @member {ISSL_GeometryFieldSize} field
-   * @memberof SSL_GeometryData
+   * SSL_Micro_GeometryData field.
+   * @member {ISSL_Micro_GeometryFieldSize} field
+   * @memberof SSL_Micro_GeometryData
    * @instance
    */
-  SSL_GeometryData.prototype.field = null;
+  SSL_Micro_GeometryData.prototype.field = null;
 
   /**
-   * SSL_GeometryData calib.
-   * @member {Array.<ISSL_GeometryCameraCalibration>} calib
-   * @memberof SSL_GeometryData
+   * SSL_Micro_GeometryData calib.
+   * @member {Array.<ISSL_Micro_GeometryCameraCalibration>} calib
+   * @memberof SSL_Micro_GeometryData
    * @instance
    */
-  SSL_GeometryData.prototype.calib = $util.emptyArray;
+  SSL_Micro_GeometryData.prototype.calib = $util.emptyArray;
 
   /**
-   * Creates a new SSL_GeometryData instance using the specified properties.
+   * Creates a new SSL_Micro_GeometryData instance using the specified properties.
    * @function create
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @static
-   * @param {ISSL_GeometryData=} [properties] Properties to set
-   * @returns {SSL_GeometryData} SSL_GeometryData instance
+   * @param {ISSL_Micro_GeometryData=} [properties] Properties to set
+   * @returns {SSL_Micro_GeometryData} SSL_Micro_GeometryData instance
    */
-  SSL_GeometryData.create = function create(properties) {
-    return new SSL_GeometryData(properties);
+  SSL_Micro_GeometryData.create = function create(properties) {
+    return new SSL_Micro_GeometryData(properties);
   };
 
   /**
-   * Encodes the specified SSL_GeometryData message. Does not implicitly {@link SSL_GeometryData.verify|verify} messages.
+   * Encodes the specified SSL_Micro_GeometryData message. Does not implicitly {@link SSL_Micro_GeometryData.verify|verify} messages.
    * @function encode
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @static
-   * @param {ISSL_GeometryData} message SSL_GeometryData message or plain object to encode
+   * @param {ISSL_Micro_GeometryData} message SSL_Micro_GeometryData message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_GeometryData.encode = function encode(message, writer) {
+  SSL_Micro_GeometryData.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
-    $root.SSL_GeometryFieldSize.encode(message.field, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+    $root.SSL_Micro_GeometryFieldSize.encode(message.field, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
     if (message.calib != null && message.calib.length)
       for (var i = 0; i < message.calib.length; ++i)
-        $root.SSL_GeometryCameraCalibration.encode(message.calib[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        $root.SSL_Micro_GeometryCameraCalibration.encode(message.calib[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
     return writer;
   };
 
   /**
-   * Encodes the specified SSL_GeometryData message, length delimited. Does not implicitly {@link SSL_GeometryData.verify|verify} messages.
+   * Encodes the specified SSL_Micro_GeometryData message, length delimited. Does not implicitly {@link SSL_Micro_GeometryData.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @static
-   * @param {ISSL_GeometryData} message SSL_GeometryData message or plain object to encode
+   * @param {ISSL_Micro_GeometryData} message SSL_Micro_GeometryData message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_GeometryData.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_GeometryData.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_GeometryData message from the specified reader or buffer.
+   * Decodes a SSL_Micro_GeometryData message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_GeometryData} SSL_GeometryData
+   * @returns {SSL_Micro_GeometryData} SSL_Micro_GeometryData
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_GeometryData.decode = function decode(reader, length) {
+  SSL_Micro_GeometryData.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_GeometryData();
+    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_Micro_GeometryData();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          message.field = $root.SSL_GeometryFieldSize.decode(reader, reader.uint32());
+          message.field = $root.SSL_Micro_GeometryFieldSize.decode(reader, reader.uint32());
           break;
         case 2:
           if (!(message.calib && message.calib.length))
             message.calib = [];
-          message.calib.push($root.SSL_GeometryCameraCalibration.decode(reader, reader.uint32()));
+          message.calib.push($root.SSL_Micro_GeometryCameraCalibration.decode(reader, reader.uint32()));
           break;
         default:
           reader.skipType(tag & 7);
@@ -2820,34 +2533,34 @@ $root.SSL_GeometryData = (function () {
   };
 
   /**
-   * Decodes a SSL_GeometryData message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_GeometryData message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_GeometryData} SSL_GeometryData
+   * @returns {SSL_Micro_GeometryData} SSL_Micro_GeometryData
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_GeometryData.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_GeometryData.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_GeometryData message.
+   * Verifies a SSL_Micro_GeometryData message.
    * @function verify
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_GeometryData.verify = function verify(message) {
+  SSL_Micro_GeometryData.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
     {
-      var error = $root.SSL_GeometryFieldSize.verify(message.field);
+      var error = $root.SSL_Micro_GeometryFieldSize.verify(message.field);
       if (error)
         return "field." + error;
     }
@@ -2855,7 +2568,7 @@ $root.SSL_GeometryData = (function () {
       if (!Array.isArray(message.calib))
         return "calib: array expected";
       for (var i = 0; i < message.calib.length; ++i) {
-        var error = $root.SSL_GeometryCameraCalibration.verify(message.calib[i]);
+        var error = $root.SSL_Micro_GeometryCameraCalibration.verify(message.calib[i]);
         if (error)
           return "calib." + error;
       }
@@ -2864,45 +2577,45 @@ $root.SSL_GeometryData = (function () {
   };
 
   /**
-   * Creates a SSL_GeometryData message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_GeometryData message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_GeometryData} SSL_GeometryData
+   * @returns {SSL_Micro_GeometryData} SSL_Micro_GeometryData
    */
-  SSL_GeometryData.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_GeometryData)
+  SSL_Micro_GeometryData.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_GeometryData)
       return object;
-    var message = new $root.SSL_GeometryData();
+    var message = new $root.SSL_Micro_GeometryData();
     if (object.field != null) {
       if (typeof object.field !== "object")
-        throw TypeError(".SSL_GeometryData.field: object expected");
-      message.field = $root.SSL_GeometryFieldSize.fromObject(object.field);
+        throw TypeError(".SSL_Micro_GeometryData.field: object expected");
+      message.field = $root.SSL_Micro_GeometryFieldSize.fromObject(object.field);
     }
     if (object.calib) {
       if (!Array.isArray(object.calib))
-        throw TypeError(".SSL_GeometryData.calib: array expected");
+        throw TypeError(".SSL_Micro_GeometryData.calib: array expected");
       message.calib = [];
       for (var i = 0; i < object.calib.length; ++i) {
         if (typeof object.calib[i] !== "object")
-          throw TypeError(".SSL_GeometryData.calib: object expected");
-        message.calib[i] = $root.SSL_GeometryCameraCalibration.fromObject(object.calib[i]);
+          throw TypeError(".SSL_Micro_GeometryData.calib: object expected");
+        message.calib[i] = $root.SSL_Micro_GeometryCameraCalibration.fromObject(object.calib[i]);
       }
     }
     return message;
   };
 
   /**
-   * Creates a plain object from a SSL_GeometryData message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_GeometryData message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @static
-   * @param {SSL_GeometryData} message SSL_GeometryData
+   * @param {SSL_Micro_GeometryData} message SSL_Micro_GeometryData
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_GeometryData.toObject = function toObject(message, options) {
+  SSL_Micro_GeometryData.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
@@ -2911,48 +2624,48 @@ $root.SSL_GeometryData = (function () {
     if (options.defaults)
       object.field = null;
     if (message.field != null && message.hasOwnProperty("field"))
-      object.field = $root.SSL_GeometryFieldSize.toObject(message.field, options);
+      object.field = $root.SSL_Micro_GeometryFieldSize.toObject(message.field, options);
     if (message.calib && message.calib.length) {
       object.calib = [];
       for (var j = 0; j < message.calib.length; ++j)
-        object.calib[j] = $root.SSL_GeometryCameraCalibration.toObject(message.calib[j], options);
+        object.calib[j] = $root.SSL_Micro_GeometryCameraCalibration.toObject(message.calib[j], options);
     }
     return object;
   };
 
   /**
-   * Converts this SSL_GeometryData to JSON.
+   * Converts this SSL_Micro_GeometryData to JSON.
    * @function toJSON
-   * @memberof SSL_GeometryData
+   * @memberof SSL_Micro_GeometryData
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_GeometryData.prototype.toJSON = function toJSON() {
+  SSL_Micro_GeometryData.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_GeometryData;
+  return SSL_Micro_GeometryData;
 })();
 
-$root.SSL_WrapperPacket = (function () {
+$root.SSL_Micro_WrapperPacket = (function () {
 
   /**
-   * Properties of a SSL_WrapperPacket.
-   * @exports ISSL_WrapperPacket
-   * @interface ISSL_WrapperPacket
-   * @property {ISSL_DetectionFrame|null} [detection] SSL_WrapperPacket detection
-   * @property {ISSL_GeometryData|null} [geometry] SSL_WrapperPacket geometry
+   * Properties of a SSL_Micro_WrapperPacket.
+   * @exports ISSL_Micro_WrapperPacket
+   * @interface ISSL_Micro_WrapperPacket
+   * @property {ISSL_Micro_DetectionFrame|null} [detection] SSL_Micro_WrapperPacket detection
+   * @property {ISSL_Micro_GeometryData|null} [geometry] SSL_Micro_WrapperPacket geometry
    */
 
   /**
-   * Constructs a new SSL_WrapperPacket.
-   * @exports SSL_WrapperPacket
-   * @classdesc Represents a SSL_WrapperPacket.
-   * @implements ISSL_WrapperPacket
+   * Constructs a new SSL_Micro_WrapperPacket.
+   * @exports SSL_Micro_WrapperPacket
+   * @classdesc Represents a SSL_Micro_WrapperPacket.
+   * @implements ISSL_Micro_WrapperPacket
    * @constructor
-   * @param {ISSL_WrapperPacket=} [properties] Properties to set
+   * @param {ISSL_Micro_WrapperPacket=} [properties] Properties to set
    */
-  function SSL_WrapperPacket(properties) {
+  function SSL_Micro_WrapperPacket(properties) {
     if (properties)
       for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
         if (properties[keys[i]] != null)
@@ -2960,88 +2673,88 @@ $root.SSL_WrapperPacket = (function () {
   }
 
   /**
-   * SSL_WrapperPacket detection.
-   * @member {ISSL_DetectionFrame|null|undefined} detection
-   * @memberof SSL_WrapperPacket
+   * SSL_Micro_WrapperPacket detection.
+   * @member {ISSL_Micro_DetectionFrame|null|undefined} detection
+   * @memberof SSL_Micro_WrapperPacket
    * @instance
    */
-  SSL_WrapperPacket.prototype.detection = null;
+  SSL_Micro_WrapperPacket.prototype.detection = null;
 
   /**
-   * SSL_WrapperPacket geometry.
-   * @member {ISSL_GeometryData|null|undefined} geometry
-   * @memberof SSL_WrapperPacket
+   * SSL_Micro_WrapperPacket geometry.
+   * @member {ISSL_Micro_GeometryData|null|undefined} geometry
+   * @memberof SSL_Micro_WrapperPacket
    * @instance
    */
-  SSL_WrapperPacket.prototype.geometry = null;
+  SSL_Micro_WrapperPacket.prototype.geometry = null;
 
   /**
-   * Creates a new SSL_WrapperPacket instance using the specified properties.
+   * Creates a new SSL_Micro_WrapperPacket instance using the specified properties.
    * @function create
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @static
-   * @param {ISSL_WrapperPacket=} [properties] Properties to set
-   * @returns {SSL_WrapperPacket} SSL_WrapperPacket instance
+   * @param {ISSL_Micro_WrapperPacket=} [properties] Properties to set
+   * @returns {SSL_Micro_WrapperPacket} SSL_Micro_WrapperPacket instance
    */
-  SSL_WrapperPacket.create = function create(properties) {
-    return new SSL_WrapperPacket(properties);
+  SSL_Micro_WrapperPacket.create = function create(properties) {
+    return new SSL_Micro_WrapperPacket(properties);
   };
 
   /**
-   * Encodes the specified SSL_WrapperPacket message. Does not implicitly {@link SSL_WrapperPacket.verify|verify} messages.
+   * Encodes the specified SSL_Micro_WrapperPacket message. Does not implicitly {@link SSL_Micro_WrapperPacket.verify|verify} messages.
    * @function encode
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @static
-   * @param {ISSL_WrapperPacket} message SSL_WrapperPacket message or plain object to encode
+   * @param {ISSL_Micro_WrapperPacket} message SSL_Micro_WrapperPacket message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_WrapperPacket.encode = function encode(message, writer) {
+  SSL_Micro_WrapperPacket.encode = function encode(message, writer) {
     if (!writer)
       writer = $Writer.create();
     if (message.detection != null && message.hasOwnProperty("detection"))
-      $root.SSL_DetectionFrame.encode(message.detection, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+      $root.SSL_Micro_DetectionFrame.encode(message.detection, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
     if (message.geometry != null && message.hasOwnProperty("geometry"))
-      $root.SSL_GeometryData.encode(message.geometry, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+      $root.SSL_Micro_GeometryData.encode(message.geometry, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
     return writer;
   };
 
   /**
-   * Encodes the specified SSL_WrapperPacket message, length delimited. Does not implicitly {@link SSL_WrapperPacket.verify|verify} messages.
+   * Encodes the specified SSL_Micro_WrapperPacket message, length delimited. Does not implicitly {@link SSL_Micro_WrapperPacket.verify|verify} messages.
    * @function encodeDelimited
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @static
-   * @param {ISSL_WrapperPacket} message SSL_WrapperPacket message or plain object to encode
+   * @param {ISSL_Micro_WrapperPacket} message SSL_Micro_WrapperPacket message or plain object to encode
    * @param {$protobuf.Writer} [writer] Writer to encode to
    * @returns {$protobuf.Writer} Writer
    */
-  SSL_WrapperPacket.encodeDelimited = function encodeDelimited(message, writer) {
+  SSL_Micro_WrapperPacket.encodeDelimited = function encodeDelimited(message, writer) {
     return this.encode(message, writer).ldelim();
   };
 
   /**
-   * Decodes a SSL_WrapperPacket message from the specified reader or buffer.
+   * Decodes a SSL_Micro_WrapperPacket message from the specified reader or buffer.
    * @function decode
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
    * @param {number} [length] Message length if known beforehand
-   * @returns {SSL_WrapperPacket} SSL_WrapperPacket
+   * @returns {SSL_Micro_WrapperPacket} SSL_Micro_WrapperPacket
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_WrapperPacket.decode = function decode(reader, length) {
+  SSL_Micro_WrapperPacket.decode = function decode(reader, length) {
     if (!(reader instanceof $Reader))
       reader = $Reader.create(reader);
-    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_WrapperPacket();
+    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SSL_Micro_WrapperPacket();
     while (reader.pos < end) {
       var tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          message.detection = $root.SSL_DetectionFrame.decode(reader, reader.uint32());
+          message.detection = $root.SSL_Micro_DetectionFrame.decode(reader, reader.uint32());
           break;
         case 2:
-          message.geometry = $root.SSL_GeometryData.decode(reader, reader.uint32());
+          message.geometry = $root.SSL_Micro_GeometryData.decode(reader, reader.uint32());
           break;
         default:
           reader.skipType(tag & 7);
@@ -3052,39 +2765,39 @@ $root.SSL_WrapperPacket = (function () {
   };
 
   /**
-   * Decodes a SSL_WrapperPacket message from the specified reader or buffer, length delimited.
+   * Decodes a SSL_Micro_WrapperPacket message from the specified reader or buffer, length delimited.
    * @function decodeDelimited
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @static
    * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-   * @returns {SSL_WrapperPacket} SSL_WrapperPacket
+   * @returns {SSL_Micro_WrapperPacket} SSL_Micro_WrapperPacket
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  SSL_WrapperPacket.decodeDelimited = function decodeDelimited(reader) {
+  SSL_Micro_WrapperPacket.decodeDelimited = function decodeDelimited(reader) {
     if (!(reader instanceof $Reader))
       reader = new $Reader(reader);
     return this.decode(reader, reader.uint32());
   };
 
   /**
-   * Verifies a SSL_WrapperPacket message.
+   * Verifies a SSL_Micro_WrapperPacket message.
    * @function verify
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @static
    * @param {Object.<string,*>} message Plain object to verify
    * @returns {string|null} `null` if valid, otherwise the reason why it is not
    */
-  SSL_WrapperPacket.verify = function verify(message) {
+  SSL_Micro_WrapperPacket.verify = function verify(message) {
     if (typeof message !== "object" || message === null)
       return "object expected";
     if (message.detection != null && message.hasOwnProperty("detection")) {
-      var error = $root.SSL_DetectionFrame.verify(message.detection);
+      var error = $root.SSL_Micro_DetectionFrame.verify(message.detection);
       if (error)
         return "detection." + error;
     }
     if (message.geometry != null && message.hasOwnProperty("geometry")) {
-      var error = $root.SSL_GeometryData.verify(message.geometry);
+      var error = $root.SSL_Micro_GeometryData.verify(message.geometry);
       if (error)
         return "geometry." + error;
     }
@@ -3092,40 +2805,40 @@ $root.SSL_WrapperPacket = (function () {
   };
 
   /**
-   * Creates a SSL_WrapperPacket message from a plain object. Also converts values to their respective internal types.
+   * Creates a SSL_Micro_WrapperPacket message from a plain object. Also converts values to their respective internal types.
    * @function fromObject
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @static
    * @param {Object.<string,*>} object Plain object
-   * @returns {SSL_WrapperPacket} SSL_WrapperPacket
+   * @returns {SSL_Micro_WrapperPacket} SSL_Micro_WrapperPacket
    */
-  SSL_WrapperPacket.fromObject = function fromObject(object) {
-    if (object instanceof $root.SSL_WrapperPacket)
+  SSL_Micro_WrapperPacket.fromObject = function fromObject(object) {
+    if (object instanceof $root.SSL_Micro_WrapperPacket)
       return object;
-    var message = new $root.SSL_WrapperPacket();
+    var message = new $root.SSL_Micro_WrapperPacket();
     if (object.detection != null) {
       if (typeof object.detection !== "object")
-        throw TypeError(".SSL_WrapperPacket.detection: object expected");
-      message.detection = $root.SSL_DetectionFrame.fromObject(object.detection);
+        throw TypeError(".SSL_Micro_WrapperPacket.detection: object expected");
+      message.detection = $root.SSL_Micro_DetectionFrame.fromObject(object.detection);
     }
     if (object.geometry != null) {
       if (typeof object.geometry !== "object")
-        throw TypeError(".SSL_WrapperPacket.geometry: object expected");
-      message.geometry = $root.SSL_GeometryData.fromObject(object.geometry);
+        throw TypeError(".SSL_Micro_WrapperPacket.geometry: object expected");
+      message.geometry = $root.SSL_Micro_GeometryData.fromObject(object.geometry);
     }
     return message;
   };
 
   /**
-   * Creates a plain object from a SSL_WrapperPacket message. Also converts values to other types if specified.
+   * Creates a plain object from a SSL_Micro_WrapperPacket message. Also converts values to other types if specified.
    * @function toObject
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @static
-   * @param {SSL_WrapperPacket} message SSL_WrapperPacket
+   * @param {SSL_Micro_WrapperPacket} message SSL_Micro_WrapperPacket
    * @param {$protobuf.IConversionOptions} [options] Conversion options
    * @returns {Object.<string,*>} Plain object
    */
-  SSL_WrapperPacket.toObject = function toObject(message, options) {
+  SSL_Micro_WrapperPacket.toObject = function toObject(message, options) {
     if (!options)
       options = {};
     var object = {};
@@ -3134,24 +2847,24 @@ $root.SSL_WrapperPacket = (function () {
       object.geometry = null;
     }
     if (message.detection != null && message.hasOwnProperty("detection"))
-      object.detection = $root.SSL_DetectionFrame.toObject(message.detection, options);
+      object.detection = $root.SSL_Micro_DetectionFrame.toObject(message.detection, options);
     if (message.geometry != null && message.hasOwnProperty("geometry"))
-      object.geometry = $root.SSL_GeometryData.toObject(message.geometry, options);
+      object.geometry = $root.SSL_Micro_GeometryData.toObject(message.geometry, options);
     return object;
   };
 
   /**
-   * Converts this SSL_WrapperPacket to JSON.
+   * Converts this SSL_Micro_WrapperPacket to JSON.
    * @function toJSON
-   * @memberof SSL_WrapperPacket
+   * @memberof SSL_Micro_WrapperPacket
    * @instance
    * @returns {Object.<string,*>} JSON object
    */
-  SSL_WrapperPacket.prototype.toJSON = function toJSON() {
+  SSL_Micro_WrapperPacket.prototype.toJSON = function toJSON() {
     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
   };
 
-  return SSL_WrapperPacket;
+  return SSL_Micro_WrapperPacket;
 })();
 
 module.exports = $root;
