@@ -18,6 +18,7 @@ export class RefereeComponent implements OnInit {
     'er-force',
     'immortals',
     'kiks',
+    'neuislanders',
     'robodragons',
     'robofei',
     'roboime',
