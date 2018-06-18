@@ -26,7 +26,7 @@ export class RefereeComponent implements OnInit {
     'roboteam-twente',
     'tigers-mannheim',
     'ubc-thunderbots',
-    'umass',
+    'umass-minutebots',
     'zjunlict'
   ];
 
