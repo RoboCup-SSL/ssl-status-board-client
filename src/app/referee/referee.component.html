@@ -11,7 +11,7 @@
         <hr class="no-margin"/>
         <div class="stage-container">
           <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft >= 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
-          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft < 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
+          <div class="time-container time-negativ" *ngIf="refereeMessage.Stage.TimeLeft < 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
         </div>
       </div>
     </div>
@@ -39,8 +39,8 @@
         {{refereeMessage.GameEvent.Message}}
         </div>
       </div>
+        <div *ngIf="refereeMessage.GameEvent.Type == 'UNKNOWN'" style="height:80%"></div>
         <div class="command-container">{{refereeMessage.Command.Name}}</div>
-    </div>
-    
+    </div>  
   </div>
 </div>
