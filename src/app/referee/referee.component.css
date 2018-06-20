@@ -8,6 +8,7 @@
 div.team-score-container {
   width: 100%;
   height: 60%;
+  align-items:center;
 }
 
 .status-container {
@@ -25,7 +26,6 @@ div.score-container {
   height: 100%;
   float: left;
   font-size: 3em;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -33,24 +33,46 @@ div.score-container {
 .stage-container {
   width: 100%;
   height: 20%;
+  font-size: 6vmin;
+  margin: 0;
+}
+
+.time-container {
+    border-style:dashed;
+    display:inline-block;
+}
+
+.time-positiv {
+    border-color: green;
+}
+
+.time-negativ {
+    border-color: red;
 }
 
 .game-event-container {
   width: 100%;
-  height: 60%;
+  height: 100%;
+  font-size: 6vmin;
+  font-weight:700;
 }
 
 .game-event-element {
   width: 100%;
+  text-align:center;
+  text-size-adjust:auto;
 }
 
 .command-container {
   width: 100%;
-  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2vmin;
+  border-top-style:dashed;
+  border-top-color:white;
 }
+
 
 .team-yellow {
   color: #fff145;
@@ -58,4 +80,18 @@ div.score-container {
 
 .team-blue {
   color: #779fff;
+}
+
+.inline {
+    display: inline;
+}
+
+.center {
+    align-items:center;
+    margin-top: 7vmin;
+    display: inline;
+}
+
+.no-margin{
+    margin: 4vmin;
 }
