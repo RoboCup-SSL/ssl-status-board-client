@@ -5,16 +5,35 @@
 <div class="team-details">
   <div class="cards">
     <!--suppress JSUnusedLocalSymbols -->
-    <div *ngFor="let _ of numberReturn(team.Timeouts)" class="card timeout-card"></div>
+    <div *ngFor="let _ of numberReturn(team.Timeouts)" class="card-pic timeout-card"></div>
     <div class="card-time">{{team.TimeoutTime | minuteSeconds}}</div>
   </div>
   <div class="cards">
-    <!--suppress JSUnusedLocalSymbols -->
-    <div *ngFor="let _ of numberReturn(team.RedCards)" class="card red-card"></div>
-    <!--suppress JSUnusedLocalSymbols -->
-    <div *ngFor="let _ of numberReturn(team.YellowCards)" class="card yellow-card"></div>
+      <div class="card">
+          <!--suppress JSUnusedLocalSymbols -->
+          <div class="card-pic red-card"></div>
+          <div class="card-count">{{team.RedCards}}</div>
+      </div>
+      <div class="inline"> | </div>
+      <div class="inline" *ngIf="team.YellowCards > 0 && team.YellowCards % 3 == 0">
+          <div class="marked-card">
+              <!--suppress JSUnusedLocalSymbols -->
+              <div class="card-pic yellow-card"></div>
+              <div class="card-count">{{team.YellowCards}}</div>
+          </div>
+      </div>
+      <div class="inline" *ngIf="team.YellowCards == 0 || team.YellowCards % 3 != 0">
+          <div class="card">
+              <!--suppress JSUnusedLocalSymbols -->
+              <div class="card-pic yellow-card"></div>
+              <div class="card-count">{{team.YellowCards}}</div>
+          </div>
+      </div>
     <!--suppress JSUnusedLocalSymbols -> false positive-->
-    <div class="card-time" *ngFor="let time of team.YellowCardTimes; let last=last">{{time | minuteSeconds}}<span
-      *ngIf="!last">,</span></div>
+      <div class="card-times">
+          <div class="card-time" *ngFor="let time of team.YellowCardTimes; let last=last">
+              {{time | minuteSeconds}}<span *ngIf="!last">,</span>
+          </div>
+      </div>
   </div>
 </div>

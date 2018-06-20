@@ -13,10 +13,23 @@
 }
 
 .card {
+    border-style: dotted;
+    border-width: 1px;
+    border-color: white;
+    display: inline-block;
+}
+
+.marked-card {
+    border-style:dashed;
+    border-color: yellow;
+    display: inline-block;
+}
+
+.card-pic {
   border-radius: 0.5vmin;
   width: 3vmin;
   height: 5vmin;
-  margin: 0.5vmin;
+  margin-left: 1vmin;
   display: inline-block;
   font-size: initial;
   /* IE 7 hack */
@@ -31,6 +44,12 @@
 
 .red-card {
   background: #ea1a18;
+}
+
+.card-count {
+    display: inline-block;
+    margin-right: 1vmin;
+    vertical-align: middle;
 }
 
 .timeout-card {
@@ -48,4 +67,8 @@
 .card-time {
   display: inline-block;
   vertical-align: middle;
+}
+
+.inline {
+    display: inline;
 }
