@@ -10,8 +10,8 @@
         <div class="stage-container">{{refereeMessage.Stage.Name}}</div>
         <hr class="no-margin"/>
         <div class="stage-container">
-          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft >= 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
-          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft < 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
+          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft >= 0">{{refereeMessage.Stage.TimeLeft | date:"MM:ss"}}</div>
+          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft < 0">{{refereeMessage.Stage.TimeLeft | date:"MM:ss"}}</div>
         </div>
       </div>
     </div>

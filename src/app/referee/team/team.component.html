@@ -32,7 +32,7 @@
     <!--suppress JSUnusedLocalSymbols -> false positive-->
       <div class="card-times">
           <div class="card-time" *ngFor="let time of team.YellowCardTimes; let last=last">
-              {{time | minuteSeconds}}<span *ngIf="!last">,</span>
+              {{time | minuteSeconds}}<span *ngIf="!last">&nbsp;|&nbsp;</span>
           </div>
       </div>
   </div>
