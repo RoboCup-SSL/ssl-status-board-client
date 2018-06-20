@@ -12,6 +12,6 @@ export class MinuteSecondsPipe implements PipeTransform {
     const minutes: number = Math.floor(seconds / 60);
     const fullSeconds: number = seconds - minutes * 60;
     const sign: string = value < 0 ? '-' : '';
-    return sign + String.Format('{0:0}:{1:00}', minutes, fullSeconds);
+    return sign + String.Format('{0:00}:{1:00}', minutes, fullSeconds);
   }
 }

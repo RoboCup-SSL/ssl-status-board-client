@@ -7,11 +7,11 @@
     <div class="center">
       <div class="score-container">
         <span style="white-space: nowrap; width:100%">{{refereeMessage.TeamYellow.Goals}} : {{refereeMessage.TeamBlue.Goals}}</span>
-        <div class="stage-container">{{refereeMessage.Stage.Name}}</div>
+        <div class="stage-container" style="font-size: 3vmin">{{refereeMessage.Stage.Name}}</div>
         <hr class="no-margin"/>
         <div class="stage-container">
-          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft >= 0">{{refereeMessage.Stage.TimeLeft | date:"MM:ss"}}</div>
-          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft < 0">{{refereeMessage.Stage.TimeLeft | date:"MM:ss"}}</div>
+          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft >= 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
+          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft < 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
 
   <div class="status-container">
     <div class="game-event-container">
-      <div *ngIf="refereeMessage.GameEvent.Type != 'UNKNOWN'">
+      <div *ngIf="refereeMessage.GameEvent.Type != 'UNKNOWN'" style="height:80%">
         <div class="game-event-element">{{refereeMessage.GameEvent.Type}}</div>
         <div class="game-event-element"
              *ngIf="refereeMessage.GameEvent.Originator.Team != null && refereeMessage.GameEvent.Originator.Team != 'TEAM_UNKNOWN'">
@@ -35,7 +35,7 @@
           <span *ngIf="refereeMessage.GameEvent.Originator.Team == 'TEAM_BLUE'"
                 ngClass="team-blue">{{refereeMessage.TeamBlue.Name}}</span>
         </div>
-        <div class="game-event-element" *ngIf="refereeMessage.GameEvent.Message != null">
+        <div class="game-event-element" *ngIf="refereeMessage.GameEvent.Message != null" style="height:20%">
         {{refereeMessage.GameEvent.Message}}
         </div>
       </div>
