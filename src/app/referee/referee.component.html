@@ -4,11 +4,17 @@
     <div class="team-container">
       <app-team [team]="refereeMessage.TeamYellow" [color]="'#fff145'"></app-team>
     </div>
-
-    <div class="score-container">
-      <span style="white-space: nowrap">{{refereeMessage.TeamYellow.Goals}} : {{refereeMessage.TeamBlue.Goals}}</span>
+    <div class="center">
+      <div class="score-container">
+        <span style="white-space: nowrap; width:100%">{{refereeMessage.TeamYellow.Goals}} : {{refereeMessage.TeamBlue.Goals}}</span>
+        <div class="stage-container">{{refereeMessage.Stage.Name}}</div>
+        <hr class="no-margin"/>
+        <div class="stage-container">
+          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft >= 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
+          <div class="time-container time-positiv" *ngIf="refereeMessage.Stage.TimeLeft < 0">{{refereeMessage.Stage.TimeLeft | minuteSeconds}}</div>
+        </div>
+      </div>
     </div>
-
     <div class="team-container">
       <app-team [team]="refereeMessage.TeamBlue" [color]="'#779fff'"></app-team>
     </div>
@@ -33,14 +39,8 @@
         {{refereeMessage.GameEvent.Message}}
         </div>
       </div>
+        <div class="command-container">{{refereeMessage.Command.Name}}</div>
     </div>
-
-    <div class="command-container">
-    {{refereeMessage.Command.Name}}
-    </div>
-
-    <div class="stage-container">
-    {{refereeMessage.Stage.Name}} ({{refereeMessage.Stage.TimeLeft | minuteSeconds}})
-    </div>
+    
   </div>
 </div>
