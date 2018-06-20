@@ -40,6 +40,7 @@ div.score-container {
 .time-container {
     border-style:dashed;
     display:inline-block;
+    padding: 8px;
 }
 
 .time-positiv {
