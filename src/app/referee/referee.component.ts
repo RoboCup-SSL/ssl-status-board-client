@@ -14,7 +14,7 @@ export class RefereeComponent implements OnInit {
   private refereeService: RefereeService;
   knownLogos: string[] = [
     'ais',
-    'cmus',
+    'cmμs',
     'er-force',
     'immortals',
     'kiks',
@@ -26,7 +26,7 @@ export class RefereeComponent implements OnInit {
     'roboteam-twente',
     'tigers-mannheim',
     'ubc-thunderbots',
-    'umass',
+    'umass-minutebots',
     'zjunlict'
   ];
 
