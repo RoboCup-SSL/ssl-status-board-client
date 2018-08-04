@@ -4,6 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 You can find the server component here: https://github.com/RoboCup-SSL/ssl-status-board-server
 
+The status-board is deployed here:
+ * http://ssllive.robocup.org
+ * https://tigers-mannheim.de/status-board/
+
 ## Requirements
 
  * NPM
