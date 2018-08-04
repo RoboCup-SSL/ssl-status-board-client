@@ -28,7 +28,9 @@
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
-        "tigers": "environments/environment.tigers.ts"
+        "tigers": "environments/environment.tigers.ts",
+        "robocup": "environments/environment.robocup.ts",
+        "ssl": "environments/environment.ssl.ts"
       }
     }
   ],
