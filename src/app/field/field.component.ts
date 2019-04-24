@@ -90,8 +90,11 @@ export class FieldComponent implements OnInit {
 
   onNewVisionWrapper(data: Blob) {
     const reader = new FileReader();
-    reader.onload = () => {
-      this.onReadData(new Uint8Array(reader.result));
+    reader.onload = (event) => {
+      const result = reader.result;
+      if (result instanceof ArrayBuffer) {
+        this.onReadData(new Uint8Array(result));
+      }
     };
     reader.readAsArrayBuffer(data);
   }
