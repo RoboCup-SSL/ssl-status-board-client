@@ -22,6 +22,9 @@ import {RefereeService} from '../referee.service';
 })
 export class FieldComponent implements OnInit {
 
+  Stage = Referee.Stage;
+  Command = Referee.Command;
+
   useShapesFromGeometry = false;
   @Input() rotateField = false;
 

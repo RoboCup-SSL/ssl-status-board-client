@@ -121,32 +121,15 @@
   <div class="footer">
     <p>
       <span style="white-space: nowrap">
-        <span class="team-yellow">{{refereeMessage.TeamYellow.Goals}}</span>
+        <span class="team-yellow">{{refereeMessage.yellow.score}}</span>
         :
-        <span class="team-blue">{{refereeMessage.TeamBlue.Goals}}</span>
+        <span class="team-blue">{{refereeMessage.blue.score}}</span>
         |
       </span>
-      <span>{{refereeMessage.Stage.Name}} ({{refereeMessage.Stage.TimeLeft | minuteSeconds}}) |</span>
-      <span class="command team-blue" *ngIf="isCommandForBlue()">{{refereeMessage.Command.Name}}</span>
-      <span class="command team-yellow" *ngIf="isCommandForYellow()">{{refereeMessage.Command.Name}}</span>
-      <span class="command command-neutral" *ngIf="isCommandNeutral()">{{refereeMessage.Command.Name}}</span>
-      <span *ngIf="refereeMessage.GameEvent.Type != 'UNKNOWN'">
-        | {{refereeMessage.GameEvent.Type}}
-        <span
-          *ngIf="refereeMessage.GameEvent.Originator.Team != null && refereeMessage.GameEvent.Originator.Team != 'TEAM_UNKNOWN'">
-          by
-          <span
-            *ngIf="refereeMessage.GameEvent.Originator.BotId != -1"> bot {{refereeMessage.GameEvent.Originator.BotId}}
-              of </span>
-          <span *ngIf="refereeMessage.GameEvent.Originator.Team == 'TEAM_YELLOW'"
-                ngClass="team-yellow">{{refereeMessage.TeamYellow.Name}}</span>
-          <span *ngIf="refereeMessage.GameEvent.Originator.Team == 'TEAM_BLUE'"
-                ngClass="team-blue">{{refereeMessage.TeamBlue.Name}}</span>
-        </span>
-        <span class="game-event-element" *ngIf="refereeMessage.GameEvent.Message != null">
-          {{refereeMessage.GameEvent.Message}}
-        </span>
-      </span>
+      <span>{{Stage[refereeMessage.stage]}} ({{refereeMessage.stageTimeLeft | minuteSeconds}}) |</span>
+      <span *ngIf="isCommandForBlue()" class="command team-blue">{{Command[refereeMessage.command]}}</span>
+      <span *ngIf="isCommandForYellow()" class="command team-yellow">{{Command[refereeMessage.command]}}</span>
+      <span *ngIf="isCommandNeutral()" class="command command-neutral">{{Command[refereeMessage.command]}}</span>
     </p>
   </div>
 </div>
