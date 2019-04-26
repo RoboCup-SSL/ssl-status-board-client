@@ -3,6 +3,9 @@ import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
 import {Observer} from 'rxjs/Observer';
 import {environment} from '../environments/environment';
+import {IReferee, Referee} from './sslProto';
+import ITeamInfo = Referee.ITeamInfo;
+import TeamInfo = Referee.TeamInfo;
 
 @Injectable()
 export class RefereeService {
@@ -27,6 +30,12 @@ export class RefereeService {
     window.location.reload();
   }
 
+  private static defaultTeam(name: string): ITeamInfo {
+    const team = new TeamInfo();
+    team.name = name;
+    return team;
+  }
+
   private createSubject(url: string): Subject<MessageEvent> {
     const socket = new WebSocket(url);
     const observable = Observable.create(
@@ -45,5 +54,19 @@ export class RefereeService {
       this.subject = this.createSubject(RefereeService.getWebSocketAddress());
     }
     return this.subject;
+  }
+
+  public defaultReferee(): IReferee {
+    const ref = new Referee();
+    ref.command = Referee.Command.HALT;
+    ref.gameEvents = [];
+    ref.stage = Referee.Stage.EXTRA_FIRST_HALF_PRE;
+    ref.stageTimeLeft = 0;
+    ref.proposedGameEvents = [];
+    ref.blueTeamOnPositiveHalf = true;
+    ref.commandCounter = 0;
+    ref.blue = RefereeService.defaultTeam('blue team');
+    ref.yellow = RefereeService.defaultTeam('yellow team');
+    return ref;
   }
 }

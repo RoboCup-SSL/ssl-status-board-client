@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Team} from '../../Team';
+import {Referee} from '../../sslProto';
+import ITeamInfo = Referee.ITeamInfo;
 
 @Component({
   selector: 'app-team',
@@ -8,7 +9,8 @@ import {Team} from '../../Team';
 })
 export class TeamComponent {
 
-  @Input() team: Team;
+  @Input() team: ITeamInfo;
+  @Input() logoUrl: string;
   @Input() color: string;
 
 

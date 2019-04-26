@@ -1,18 +1,19 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {VisionService} from '../vision.service';
 import {
+  IReferee,
   ISSL_Micro_DetectionBall,
   ISSL_Micro_DetectionFrame,
   ISSL_Micro_DetectionRobot,
   ISSL_Micro_FieldCicularArc,
   ISSL_Micro_FieldLineSegment,
   ISSL_Micro_GeometryData,
+  Referee,
   SSL_Micro_DetectionBall,
   SSL_Micro_WrapperPacket
 } from '../sslProto';
 import {Robot} from './Robot';
 import {RefereeService} from '../referee.service';
-import {RefereeMessage} from '../RefereeMessage';
 
 @Component({
   selector: 'app-field',
@@ -40,7 +41,7 @@ export class FieldComponent implements OnInit {
   robotsBlue: Map<number, Robot> = new Map();
   balls: ISSL_Micro_DetectionBall[] = [];
 
-  refereeMessage: RefereeMessage = new RefereeMessage();
+  refereeMessage: IReferee;
 
   private visionService: VisionService;
   private refereeService: RefereeService;
@@ -48,6 +49,7 @@ export class FieldComponent implements OnInit {
   constructor(visionService: VisionService, refereeService: RefereeService) {
     this.visionService = visionService;
     this.refereeService = refereeService;
+    this.refereeMessage = refereeService.defaultReferee();
     this.initSampleData();
   }
 
@@ -85,21 +87,36 @@ export class FieldComponent implements OnInit {
     this.visionService.getSubject().subscribe(
       (visionWrapper: MessageEvent) => this.onNewVisionWrapper(visionWrapper.data));
     this.refereeService.getSubject().subscribe(
-      (refereeMsg: MessageEvent) => this.refereeMessage = JSON.parse(refereeMsg.data));
+      (refereeMsg: MessageEvent) => this.onNewRefereeMessage(refereeMsg.data));
   }
 
-  onNewVisionWrapper(data: Blob) {
+  onNewRefereeMessage(data: Blob) {
     const reader = new FileReader();
-    reader.onload = (event) => {
+    reader.onload = () => {
       const result = reader.result;
       if (result instanceof ArrayBuffer) {
-        this.onReadData(new Uint8Array(result));
+        this.readRefereeMessage(new Uint8Array(result));
       }
     };
     reader.readAsArrayBuffer(data);
   }
 
-  onReadData(arr: Uint8Array) {
+  readRefereeMessage(arr: Uint8Array) {
+    this.refereeMessage = Referee.decode(arr);
+  }
+
+  onNewVisionWrapper(data: Blob) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      if (result instanceof ArrayBuffer) {
+        this.readVisionWrapper(new Uint8Array(result));
+      }
+    };
+    reader.readAsArrayBuffer(data);
+  }
+
+  readVisionWrapper(arr: Uint8Array) {
     const packet = SSL_Micro_WrapperPacket.decode(arr);
     if (packet.geometry != null) {
       this.updateGeometry(packet.geometry);
@@ -123,6 +140,29 @@ export class FieldComponent implements OnInit {
     this.balls = detection.balls;
   }
 
+  isCommandForYellow() {
+    return this.refereeMessage.command.toString().includes('YELLOW');
+  }
+
+  getRobotsYellow() {
+    return Array.from(this.robotsYellow.values());
+  }
+
+  getRobotsBlue() {
+    return Array.from(this.robotsBlue.values());
+  }
+
+  getFieldTransformation() {
+    if (this.rotateField) {
+      return 'rotate(90) scale(' + (this.fieldWidth / this.fieldLength) + ')';
+    }
+    return '';
+  }
+
+  isCommandForBlue() {
+    return this.refereeMessage.command.toString().includes('BLUE');
+  }
+
   private initSampleData() {
     this.balls[0] = SSL_Micro_DetectionBall.create({
       x: 0, y: 0
@@ -142,29 +182,6 @@ export class FieldComponent implements OnInit {
     this.robotsBlue.set(3, Robot.create(3, 1000, +100, pi + pi / 4.0 * 3.0));
     this.robotsBlue.set(4, Robot.create(4, 1000, +300, 2 * pi));
     this.robotsBlue.set(5, Robot.create(5, 1000, +500, pi));
-  }
-
-  getRobotsYellow() {
-    return Array.from(this.robotsYellow.values());
-  }
-
-  getRobotsBlue() {
-    return Array.from(this.robotsBlue.values());
-  }
-
-  getFieldTransformation() {
-    if (this.rotateField) {
-      return 'rotate(90) scale(' + (this.fieldWidth / this.fieldLength) + ')';
-    }
-    return '';
-  }
-
-  isCommandForYellow() {
-    return this.refereeMessage.Command.Name.includes('YELLOW');
-  }
-
-  isCommandForBlue() {
-    return this.refereeMessage.Command.Name.includes('BLUE');
   }
 
   isCommandNeutral() {

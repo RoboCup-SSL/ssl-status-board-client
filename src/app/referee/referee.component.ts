@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RefereeService} from '../referee.service';
-import {RefereeMessage} from '../RefereeMessage';
-import {Team} from '../Team';
+import {GameEventType, IReferee, Referee} from '../sslProto';
 
 @Component({
   selector: 'app-referee',
@@ -10,7 +9,12 @@ import {Team} from '../Team';
 })
 export class RefereeComponent implements OnInit {
 
-  refereeMessage: RefereeMessage;
+  GameEventType: typeof GameEventType;
+  Stage = Referee.Stage;
+
+  refereeMessage: IReferee;
+  teamLogoYellow: string;
+  teamLogoBlue: string;
   private refereeService: RefereeService;
   knownLogos: string[] = [
     'ais',
@@ -32,29 +36,43 @@ export class RefereeComponent implements OnInit {
 
   constructor(refereeService: RefereeService) {
     this.refereeService = refereeService;
-    this.updateRefereeMessage(new RefereeMessage());
+    this.refereeMessage = refereeService.defaultReferee();
+    this.updateRefereeMessage(this.refereeMessage);
   }
 
 
-  updateLogoUrl(team: Team) {
-
-    const logoBaseName = team.Name.toLowerCase().replace(' ', '-');
+  getLogoUrl(team: Referee.ITeamInfo): string {
+    const logoBaseName = team.name.toLowerCase().replace(' ', '-');
     if (this.knownLogos.includes(logoBaseName)) {
-      team.logoUrl = 'assets/logos/' + logoBaseName + '.png';
-    } else {
-      team.logoUrl = 'assets/logos/no-logo.png';
+      return 'assets/logos/' + logoBaseName + '.png';
     }
+    return 'assets/logos/no-logo.png';
   }
 
   ngOnInit() {
     this.refereeService.getSubject().subscribe(
-      (refereeMsg: MessageEvent) => this.updateRefereeMessage(JSON.parse(refereeMsg.data))
+      (refereeMsg: MessageEvent) => this.onNewRefereeMessage(refereeMsg.data)
     );
   }
 
-  updateRefereeMessage(refereeMessage: RefereeMessage) {
-    this.refereeMessage = refereeMessage;
-    this.updateLogoUrl(this.refereeMessage.TeamYellow);
-    this.updateLogoUrl(this.refereeMessage.TeamBlue);
+  onNewRefereeMessage(data: Blob) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      if (result instanceof ArrayBuffer) {
+        this.readRefereeMessage(new Uint8Array(result));
+      }
+    };
+    reader.readAsArrayBuffer(data);
+  }
+
+  readRefereeMessage(arr: Uint8Array) {
+    this.updateRefereeMessage(Referee.decode(arr));
+  }
+
+  updateRefereeMessage(refereeMessage: IReferee) {
+    Object.assign(this.refereeMessage, refereeMessage);
+    this.teamLogoYellow = this.getLogoUrl(this.refereeMessage.yellow);
+    this.teamLogoBlue = this.getLogoUrl(this.refereeMessage.blue);
   }
 }
