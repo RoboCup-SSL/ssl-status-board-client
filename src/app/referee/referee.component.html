@@ -31,9 +31,8 @@
   <div class="lower-container">
     <div style="height:80%">
       <div class="game-event-container">
-        <div *ngFor="let gameEvent of refereeMessage.gameEvents" class="game-event-element">
-          {{formatGameEvent(gameEvent)}}
-        </div>
+        <div *ngFor="let gameEvent of refereeMessage.gameEvents" [innerHTML]="formatGameEvent(gameEvent) | safeHtml"
+             class="game-event-element"></div>
       </div>
     </div>
   </div>

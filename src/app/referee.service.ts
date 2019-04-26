@@ -9,6 +9,8 @@ import TeamInfo = Referee.TeamInfo;
 import BallLeftField = GameEvent.BallLeftField;
 import MultipleCards = GameEvent.MultipleCards;
 import BotSubstitution = GameEvent.BotSubstitution;
+import NoProgressInGame = GameEvent.NoProgressInGame;
+import BotCrashUnique = GameEvent.BotCrashUnique;
 
 @Injectable()
 export class RefereeService {
@@ -39,8 +41,8 @@ export class RefereeService {
     ref.gameEvents = [
       RefereeService.dummyBallLeftField(),
       RefereeService.dummyMultipleCards(),
-      RefereeService.dummyBotSubstitution(),
-      RefereeService.dummyBotSubstitution(),
+      RefereeService.dummyNoProgress(),
+      RefereeService.dummyCrashUniqueSkipped(),
       RefereeService.dummyBotSubstitution()];
     ref.stage = Referee.Stage.EXTRA_FIRST_HALF_PRE;
     ref.stageTimeLeft = 200000000;
@@ -66,7 +68,7 @@ export class RefereeService {
     const event = new GameEvent();
     event.type = GameEventType.BOT_SUBSTITUTION;
     event.botSubstitution = new BotSubstitution();
-    event.botSubstitution.byTeam = Team.YELLOW;
+    event.botSubstitution.byTeam = Team.BLUE;
     return event;
   }
 
@@ -84,6 +86,27 @@ export class RefereeService {
     event.type = GameEventType.MULTIPLE_CARDS;
     event.multipleCards = new MultipleCards();
     event.multipleCards.byTeam = Team.YELLOW;
+    return event;
+  }
+
+  private static dummyNoProgress(): IGameEvent {
+    const event = new GameEvent();
+    event.type = GameEventType.NO_PROGRESS_IN_GAME;
+    event.noProgressInGame = new NoProgressInGame();
+    event.noProgressInGame.time = 7.555;
+    return event;
+  }
+
+  private static dummyCrashUniqueSkipped(): IGameEvent {
+    const event = new GameEvent();
+    event.type = GameEventType.BOT_CRASH_UNIQUE_SKIPPED;
+    event.botCrashUniqueSkipped = new BotCrashUnique();
+    event.botCrashUniqueSkipped.byTeam = Team.BLUE;
+    event.botCrashUniqueSkipped.victim = 1;
+    event.botCrashUniqueSkipped.violator = 3;
+    event.botCrashUniqueSkipped.crashAngle = 0.34;
+    event.botCrashUniqueSkipped.crashSpeed = 0.6;
+    event.botCrashUniqueSkipped.speedDiff = 0.2;
     return event;
   }
 

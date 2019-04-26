@@ -15,6 +15,7 @@ import {FieldComponent} from './field/field.component';
 import {RouterModule, Routes} from '@angular/router';
 import {VisionService} from './vision.service';
 import {GreeterComponent} from './greeter/greeter.component';
+import {Safe} from './Safe';
 
 const appRoutes: Routes = [
   {path: 'field', component: FieldComponent},
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     TeamComponent,
     FieldComponent,
     GreeterComponent,
+    Safe,
   ],
   imports: [
     RouterModule.forRoot(
