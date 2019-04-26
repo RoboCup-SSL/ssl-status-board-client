@@ -49,7 +49,7 @@ export class FieldComponent implements OnInit {
   constructor(visionService: VisionService, refereeService: RefereeService) {
     this.visionService = visionService;
     this.refereeService = refereeService;
-    this.refereeMessage = refereeService.defaultReferee();
+    this.refereeMessage = RefereeService.defaultReferee();
     this.initSampleData();
   }
 

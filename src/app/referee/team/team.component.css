@@ -13,16 +13,16 @@
 }
 
 .card {
-    border-style: dotted;
-    border-width: 1px;
-    border-color: white;
-    display: inline-block;
+  border-style: dotted;
+  border-width: 1px;
+  border-color: white;
+  display: inline-block;
 }
 
 .marked-card {
-    border-style:dashed;
-    border-color: yellow;
-    display: inline-block;
+  border-style: dashed;
+  border-color: yellow;
+  display: inline-block;
 }
 
 .card-pic {
@@ -47,9 +47,10 @@
 }
 
 .card-count {
-    display: inline-block;
-    margin-right: 1vmin;
-    vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1vmin;
+  margin-left: 1vmin;
 }
 
 .timeout-card {
@@ -67,8 +68,9 @@
 .card-time {
   display: inline-block;
   vertical-align: middle;
+  margin-left: 1vmin;
 }
 
 .inline {
-    display: inline;
+  display: inline;
 }

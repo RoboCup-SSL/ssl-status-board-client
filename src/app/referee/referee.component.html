@@ -1,49 +1,40 @@
 <div class="referee-container">
-
-  <div class="team-score-container">
+  <div class="upper-container">
     <div class="team-container">
       <app-team [color]="'#fff145'" [logoUrl]="teamLogoYellow" [team]="refereeMessage.yellow"></app-team>
     </div>
-    <div class="center">
-      <div class="score-container">
-        <span style="white-space: nowrap; width:100%">{{refereeMessage.yellow.score}}
-          : {{refereeMessage.blue.score}}</span>
-        <div class="stage-container" style="font-size: 3vmin">{{Stage[refereeMessage.stage]}}</div>
-        <hr class="no-margin"/>
-        <div class="stage-container">
-          <div *ngIf="refereeMessage.stageTimeLeft >= 0"
-               class="time-container time-positiv">{{refereeMessage.stageTimeLeft | minuteSeconds}}</div>
-          <div *ngIf="refereeMessage.stageTimeLeft < 0"
-               class="time-container time-negativ">{{refereeMessage.stageTimeLeft | minuteSeconds}}</div>
-        </div>
+
+    <div class="center-container">
+      <span class="score">
+        {{refereeMessage.yellow.score}} : {{refereeMessage.blue.score}}
+      </span>
+
+      <div class="stage">{{Stage[refereeMessage.stage]}}</div>
+
+      <div class="command">{{Command[refereeMessage.command]}}</div>
+
+      <hr class="separator"/>
+
+      <div *ngIf="refereeMessage.stageTimeLeft >= 0" class="time-container time-positive">
+        {{refereeMessage.stageTimeLeft | minuteSeconds}}
+      </div>
+      <div *ngIf="refereeMessage.stageTimeLeft < 0" class="time-container time-negative">
+        {{refereeMessage.stageTimeLeft | minuteSeconds}}
       </div>
     </div>
+
     <div class="team-container">
       <app-team [color]="'#779fff'" [logoUrl]="teamLogoBlue" [team]="refereeMessage.blue"></app-team>
     </div>
   </div>
 
-  <div class="status-container">
-    <div *ngFor="let gameEvent of refereeMessage.gameEvents" class="game-event-container">
-      <div *ngIf="gameEvent.type != GameEventType.UNKNOWN_GAME_EVENT_TYPE" style="height:80%">
-        <div class="game-event-element">{{gameEvent.type}}</div>
-        <!--        <div class="game-event-element"-->
-        <!--             *ngIf="gameEvent.Originator.Team != null && gameEvent.Originator.Team != 'TEAM_UNKNOWN'">-->
-        <!--          by-->
-        <!--          <span-->
-        <!--            *ngIf="gameEvent.Originator.BotId != -1"> bot {{gameEvent.Originator.BotId}}-->
-        <!--            of </span>-->
-        <!--          <span *ngIf="gameEvent.Originator.Team == 'TEAM_YELLOW'"-->
-        <!--                ngClass="team-yellow">{{refereeMessage.TeamYellow.Name}}</span>-->
-        <!--          <span *ngIf="gameEvent.Originator.Team == 'TEAM_BLUE'"-->
-        <!--                ngClass="team-blue">{{refereeMessage.blue.Name}}</span>-->
-        <!--        </div>-->
-        <!--        <div class="game-event-element" *ngIf="gameEvent.Message != null" style="height:20%">-->
-        <!--          {{gameEvent.Message}}-->
-        <!--        </div>-->
+  <div class="lower-container">
+    <div style="height:80%">
+      <div class="game-event-container">
+        <div *ngFor="let gameEvent of refereeMessage.gameEvents" class="game-event-element">
+          {{formatGameEvent(gameEvent)}}
+        </div>
       </div>
-      <div *ngIf="gameEvent.type == GameEventType.UNKNOWN_GAME_EVENT_TYPE" style="height:80%"></div>
-      <div class="command-container">{{refereeMessage.command}}</div>
     </div>
   </div>
 </div>

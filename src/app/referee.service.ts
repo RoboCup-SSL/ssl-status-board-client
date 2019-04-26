@@ -3,9 +3,12 @@ import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
 import {Observer} from 'rxjs/Observer';
 import {environment} from '../environments/environment';
-import {IReferee, Referee} from './sslProto';
+import {GameEvent, GameEventType, IGameEvent, IReferee, Referee, Team} from './sslProto';
 import ITeamInfo = Referee.ITeamInfo;
 import TeamInfo = Referee.TeamInfo;
+import BallLeftField = GameEvent.BallLeftField;
+import MultipleCards = GameEvent.MultipleCards;
+import BotSubstitution = GameEvent.BotSubstitution;
 
 @Injectable()
 export class RefereeService {
@@ -30,10 +33,58 @@ export class RefereeService {
     window.location.reload();
   }
 
+  public static defaultReferee(): IReferee {
+    const ref = new Referee();
+    ref.command = Referee.Command.HALT;
+    ref.gameEvents = [
+      RefereeService.dummyBallLeftField(),
+      RefereeService.dummyMultipleCards(),
+      RefereeService.dummyBotSubstitution(),
+      RefereeService.dummyBotSubstitution(),
+      RefereeService.dummyBotSubstitution()];
+    ref.stage = Referee.Stage.EXTRA_FIRST_HALF_PRE;
+    ref.stageTimeLeft = 200000000;
+    ref.proposedGameEvents = [];
+    ref.blueTeamOnPositiveHalf = true;
+    ref.blue = RefereeService.defaultTeam('blue team');
+    ref.yellow = RefereeService.defaultTeam('yellow team');
+    return ref;
+  }
+
   private static defaultTeam(name: string): ITeamInfo {
     const team = new TeamInfo();
     team.name = name;
+    team.redCards = 1;
+    team.yellowCards = 2;
+    team.yellowCardTimes = [120000000];
+    team.timeouts = 2;
+    team.timeoutTime = 80000000;
     return team;
+  }
+
+  private static dummyBotSubstitution(): IGameEvent {
+    const event = new GameEvent();
+    event.type = GameEventType.BOT_SUBSTITUTION;
+    event.botSubstitution = new BotSubstitution();
+    event.botSubstitution.byTeam = Team.YELLOW;
+    return event;
+  }
+
+  private static dummyBallLeftField(): IGameEvent {
+    const event = new GameEvent();
+    event.type = GameEventType.BALL_LEFT_FIELD_GOAL_LINE;
+    event.ballLeftFieldGoalLine = new BallLeftField();
+    event.ballLeftFieldGoalLine.byBot = 2;
+    event.ballLeftFieldGoalLine.byTeam = Team.YELLOW;
+    return event;
+  }
+
+  private static dummyMultipleCards(): IGameEvent {
+    const event = new GameEvent();
+    event.type = GameEventType.MULTIPLE_CARDS;
+    event.multipleCards = new MultipleCards();
+    event.multipleCards.byTeam = Team.YELLOW;
+    return event;
   }
 
   private createSubject(url: string): Subject<MessageEvent> {
@@ -54,19 +105,5 @@ export class RefereeService {
       this.subject = this.createSubject(RefereeService.getWebSocketAddress());
     }
     return this.subject;
-  }
-
-  public defaultReferee(): IReferee {
-    const ref = new Referee();
-    ref.command = Referee.Command.HALT;
-    ref.gameEvents = [];
-    ref.stage = Referee.Stage.EXTRA_FIRST_HALF_PRE;
-    ref.stageTimeLeft = 0;
-    ref.proposedGameEvents = [];
-    ref.blueTeamOnPositiveHalf = true;
-    ref.commandCounter = 0;
-    ref.blue = RefereeService.defaultTeam('blue team');
-    ref.yellow = RefereeService.defaultTeam('yellow team');
-    return ref;
   }
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RefereeService} from '../referee.service';
-import {GameEventType, IReferee, Referee} from '../sslProto';
+import {GameEventType, IGameEvent, IReferee, Referee, Team} from '../sslProto';
 
 @Component({
   selector: 'app-referee',
@@ -9,8 +9,9 @@ import {GameEventType, IReferee, Referee} from '../sslProto';
 })
 export class RefereeComponent implements OnInit {
 
-  GameEventType: typeof GameEventType;
+  GameEventType = GameEventType;
   Stage = Referee.Stage;
+  Command = Referee.Command;
 
   refereeMessage: IReferee;
   teamLogoYellow: string;
@@ -36,8 +37,17 @@ export class RefereeComponent implements OnInit {
 
   constructor(refereeService: RefereeService) {
     this.refereeService = refereeService;
-    this.refereeMessage = refereeService.defaultReferee();
+    this.refereeMessage = RefereeService.defaultReferee();
     this.updateRefereeMessage(this.refereeMessage);
+  }
+
+  private static formatTeam(team: Team): string {
+    if (team === Team.BLUE) {
+      return 'Blue';
+    } else if (team === Team.YELLOW) {
+      return 'Yellow';
+    }
+    return 'Unknown;';
   }
 
 
@@ -74,5 +84,22 @@ export class RefereeComponent implements OnInit {
     Object.assign(this.refereeMessage, refereeMessage);
     this.teamLogoYellow = this.getLogoUrl(this.refereeMessage.yellow);
     this.teamLogoBlue = this.getLogoUrl(this.refereeMessage.blue);
+  }
+
+  formatGameEvent(event: IGameEvent): string {
+    if (event.aimlessKick != null) {
+      if (event.aimlessKick.byBot == null) {
+        return RefereeComponent.formatTeam(event.aimlessKick.byTeam) + ' kicked aimlessly';
+      }
+      return 'Bot ' + event.aimlessKick.byBot + ' of ' + RefereeComponent.formatTeam(event.aimlessKick.byTeam) + ' kicked aimlessly';
+    }
+    if (event.ballLeftFieldGoalLine != null) {
+      if (event.ballLeftFieldGoalLine.byBot == null) {
+        return RefereeComponent.formatTeam(event.ballLeftFieldGoalLine.byTeam) + ' kicked ball out via goal line';
+      }
+      return RefereeComponent.formatTeam(event.ballLeftFieldGoalLine.byTeam)
+        + ' ' + event.ballLeftFieldGoalLine.byBot + ' kicked ball out via goal line';
+    }
+    return 'unknown game event';
   }
 }
