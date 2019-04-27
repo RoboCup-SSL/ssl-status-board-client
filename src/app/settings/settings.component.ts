@@ -10,8 +10,8 @@ import {VisionService} from '../vision.service';
 })
 export class SettingsComponent {
 
-  private statusWebSocket: string;
-  private visionWebSocket: string;
+  statusWebSocket: string;
+  visionWebSocket: string;
 
   constructor() {
     this.statusWebSocket = RefereeService.getWebSocketAddress();

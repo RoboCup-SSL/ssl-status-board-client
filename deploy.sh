@@ -23,7 +23,7 @@ esac
 
 
 echo "Build"
-node_modules/.bin/ng build --base-href=${base_href} --env=${target_env}
+node_modules/.bin/ng build --base-href=${base_href} --prod --configuration=${target_env}
 
 echo "Copy"
 rsync -r dist/* ${server}:${remote_dir}
