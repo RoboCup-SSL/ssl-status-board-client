@@ -54,10 +54,10 @@ export class RefereeComponent implements OnInit {
     if (event.byTeam === undefined) {
       return '';
     }
-    if (event.byBot === undefined) {
+    if (event.byBot === undefined || !event.hasOwnProperty('byBot')) {
       return RefereeComponent.formatTeam(event.byTeam);
     }
-    return RefereeComponent.formatTeam(event.byTeam) + ' ' + event.byTeam;
+    return RefereeComponent.formatTeam(event.byTeam) + ' ' + event.byBot;
   }
 
   private static radToDeg(rad: number): string {
@@ -221,7 +221,7 @@ export class RefereeComponent implements OnInit {
         + `held ball deliberately for ${event.botHeldBallDeliberately.duration}`;
     }
     if (event.botTippedOver != null) {
-      return `${RefereeComponent.teamAndBot(event.botTippedOver)} bot tipped over`;
+      return `${RefereeComponent.teamAndBot(event.botTippedOver)} tipped over`;
     }
     if (event.botTooFastInStop != null) {
       return `${RefereeComponent.teamAndBot(event.botTooFastInStop)} `
