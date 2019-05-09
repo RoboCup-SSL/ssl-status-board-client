@@ -1,5 +1,5 @@
 <div class="referee-container">
-  <div class="upper-container">
+	<div class="upper-container" [ngClass]="{stopCommand: Command[refereeMessage.command] == 'STOP', haltCommand: Command[refereeMessage.command] == 'HALT'}">
     <div class="team-container">
       <app-team [color]="'#fff145'" [logoUrl]="teamLogoYellow" [team]="refereeMessage.yellow"></app-team>
     </div>
