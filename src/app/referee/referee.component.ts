@@ -265,12 +265,12 @@ export class RefereeComponent implements OnInit {
     return txt.split('_').join(' ');
   }
   
-  isStop() : bool {
+  isStop() : boolean {
     var cmd = this.Command[this.refereeMessage.command];
     return cmd == "STOP" || cmd.substring(0, 14) == "BALL_PLACEMENT" || cmd.substring(0, 7) == "TIMEOUT";
   }
   
-  isHalt() : bool {
+  isHalt() : boolean {
     return this.Command[this.refereeMessage.command] == "HALT";
   }
 }
