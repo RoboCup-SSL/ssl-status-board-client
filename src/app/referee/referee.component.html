@@ -21,6 +21,9 @@
       <div *ngIf="refereeMessage.stageTimeLeft < 0" class="time-container time-negative">
         {{refereeMessage.stageTimeLeft | minuteSeconds}}
       </div>
+      <div *ngIf="refereeMessage.currentActionTimeRemaining >= 0" class="time-container time-action">
+        {{refereeMessage.currentActionTimeRemaining | minuteSeconds}}
+      </div>
     </div>
 
     <div class="team-container">
