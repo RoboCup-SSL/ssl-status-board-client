@@ -264,4 +264,13 @@ export class RefereeComponent implements OnInit {
   underscoreToSpace(txt : string): string {
     return txt.split('_').join(' ');
   }
+  
+  isStop() : bool {
+    var cmd = this.Command[this.refereeMessage.command];
+    return cmd == "STOP" || cmd.substring(0, 14) == "BALL_PLACEMENT" || cmd.substring(0, 7) == "TIMEOUT";
+  }
+  
+  isHalt() : bool {
+    return this.Command[this.refereeMessage.command] == "HALT";
+  }
 }
