@@ -260,4 +260,8 @@ export class RefereeComponent implements OnInit {
     }
     return 'unknown game event';
   }
+
+  underscoreToSpace(txt : string): string {
+    return txt.split('_').join(' ');
+  }
 }

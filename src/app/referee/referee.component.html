@@ -9,9 +9,9 @@
         {{refereeMessage.yellow.score}} : {{refereeMessage.blue.score}}
       </span>
 
-      <div class="stage">{{Stage[refereeMessage.stage]}}</div>
+      <div class="stage">{{ underscoreToSpace(Stage[refereeMessage.stage]) }}</div>
 
-      <div class="command">{{Command[refereeMessage.command]}}</div>
+      <div class="command">{{ underscoreToSpace(Command[refereeMessage.command]) }}</div>
 
       <hr class="separator"/>
 

@@ -10,6 +10,7 @@
   height: 60%;
   align-items: center;
   transition: background-color 450ms ease;
+  padding-bottom: 10px;
 }
 
 .upper-container.stopCommand {
@@ -106,13 +107,14 @@
   white-space: nowrap;
   width: 100%;
   font-size: 3em;
+  font-weight: bold;
 }
 
 .stage {
-  font-size: 3vmin
+  font-size: 5vmin
 }
 
 .command {
   margin-top: 3vmin;
-  font-size: 6vmin;
+  font-size: 3vmin;
 }
