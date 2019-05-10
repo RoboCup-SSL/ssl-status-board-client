@@ -260,4 +260,17 @@ export class RefereeComponent implements OnInit {
     }
     return 'unknown game event';
   }
+
+  underscoreToSpace(txt : string): string {
+    return txt.split('_').join(' ');
+  }
+  
+  isStop() : boolean {
+    var cmd = this.Command[this.refereeMessage.command];
+    return cmd == "STOP" || cmd.substring(0, 14) == "BALL_PLACEMENT" || cmd.substring(0, 7) == "TIMEOUT";
+  }
+  
+  isHalt() : boolean {
+    return this.Command[this.refereeMessage.command] == "HALT";
+  }
 }
